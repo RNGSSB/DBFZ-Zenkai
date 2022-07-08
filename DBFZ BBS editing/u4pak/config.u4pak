@@ -1,0 +1,6 @@
+pack 
+--version=3 
+--mount-point=../../.. 
+ 
+"ZMOD.pak" 
+":none,rename=/RED:./mod/RED" 
