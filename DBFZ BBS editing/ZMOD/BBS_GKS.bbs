@@ -5978,8 +5978,10 @@ beginState: s32'MeteoSmash'
       Unknown633: 18, 20
       endUpon: 
     upon: (BEFORE_EXIT)
+	  ifNot: (VARIABLE), 3
       resetDefaultMeshSet: 
-      changeDefaultMeshSet: 
+      changeDefaultMeshSet:
+      endIf:	  
       Unknown633: 16, 20
       Unknown633: 17, 20
       Unknown633: 18, 20
@@ -6321,8 +6323,10 @@ beginState: s32'MeteoSmash'
   sprite: s32'gks402_14', 3
   sprite: s32'gks402_15', 3
   createObject: s32'SSJ3_kaijoEff', (PLAYER)
+  ifNot: (VARIABLE), 3
   resetDefaultMeshSet: 
-  changeDefaultMeshSet: 
+  changeDefaultMeshSet:
+  endIf:
   sprite: s32'gks402_16', 3
   sprite: s32'gks402_17', 3
   sprite: s32'gks402_18', 3
@@ -6396,8 +6400,10 @@ beginState: s32'MeteoSmash_CD'
       Unknown633: 18, 20
       endUpon: 
     upon: (BEFORE_EXIT)
+	 ifNot: (VARIABLE), 3
       resetDefaultMeshSet: 
-      changeDefaultMeshSet: 
+      changeDefaultMeshSet:
+	  endIf:
       Unknown633: 16, 20
       Unknown633: 17, 20
       Unknown633: 18, 20
@@ -6737,8 +6743,10 @@ beginState: s32'MeteoSmash_CD'
   sprite: s32'gks402_14', 3
   sprite: s32'gks402_15', 3
   createObject: s32'SSJ3_kaijoEff', (PLAYER)
+  ifNot: (VARIABLE), 3
   resetDefaultMeshSet: 
-  changeDefaultMeshSet: 
+  changeDefaultMeshSet:
+  endIf:
   sprite: s32'gks402_16', 3
   sprite: s32'gks402_17', 3
   sprite: s32'gks402_18', 3
