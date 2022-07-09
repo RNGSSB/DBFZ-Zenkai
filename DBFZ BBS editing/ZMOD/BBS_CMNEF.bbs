@@ -2536,7 +2536,7 @@ beginSubroutine: s32'cmn_InitHomingDashChange'
   upon: (HIT_OR_GUARD_ANY)
     if: (VARIABLE), (IsMainPlayerAttackedEnemy)
       clearRegisteredUponCode: (HIT_OR_GUARD_ANY)
-      Unknown1751: '0x01000000204E0000905F01002C010000DC050000500000005000000001000000'
+      Unknown1751: '0x06000000204E0000905F01002C010000DC050000500000005000000001000000'
       hitStop: 15
       groundHitEffect: (AIR_NORMAL)
       airHitEffect: (AIR_NORMAL)
@@ -2553,7 +2553,7 @@ beginSubroutine: s32'cmn_InitHomingDashChange'
   upon: (HIT)
     if: (VARIABLE), (IsMainPlayerAttackedEnemy)
       clearRegisteredUponCode: (HIT)
-      Unknown1751: '0x01000000204E0000905F01002C010000DC050000500000005000000001000000'
+      Unknown1751: '0x06000000204E0000905F01002C010000DC050000500000005000000000000000'
       faceOpponent: 
       Unknown111: 10
       addVelocityX: 13000
