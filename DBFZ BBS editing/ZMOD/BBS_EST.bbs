@@ -912,6 +912,7 @@ beginSubroutine: s32'OnGuard'
 
 beginSubroutine: s32'OnIdling'
   callSubroutine: s32'cmn_OnIdling'
+  storeValue: (VARIABLE), 80, (STATIC), 110
   if: (VARIABLE), (IsNeutral)
     storeValue: (VARIABLE), 4, (STATIC), 0
     storeValue: (VARIABLE), 5, (STATIC), 0

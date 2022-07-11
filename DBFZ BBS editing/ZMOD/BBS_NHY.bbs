@@ -3104,11 +3104,11 @@ beginState: s32'NmlAtk2B'
         endUpon: 
       endUpon: 
     endUpon: 
-  sprite: s32'nhy231_00', 2
+  sprite: s32'nhy231_00', 3
   Unknown1698: 5
   Unknown1700: 1
-  sprite: s32'nhy231_01', 2
-  sprite: s32'nhy231_02', 2
+  sprite: s32'nhy231_01', 3
+  sprite: s32'nhy231_02', 3
   haltMomentum: 1
   Unknown621: 1, -1
   sprite: s32'nhy231_03', 3

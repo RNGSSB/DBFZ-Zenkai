@@ -233,16 +233,6 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_PRESS_KI)
     Unknown1419: 1073741824
     endMove: 
-  addMove: s32'Dodge'
-    moveType: 42
-    characterState: (STANDING)
-    moveInput: (INPUT_4)
-    moveInput: (INPUT_NOT_H)
-    moveInput: (INPUT_PRESS_KI)
-    disableCancelsIntoMove: 1
-    Unknown1575: 
-    Unknown1539: 80
-    endMove: 
   addMove: s32'Vrush_A1'
     moveType: (SPECIAL)
     characterState: (STANDING)
@@ -817,7 +807,6 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'CmnBAirDash'
   registerMove: s32'CmnFAirDash'
   registerMove: s32'BRendaChainSpecial'
-  registerMove: s32'Dodge'
   registerMove: s32'NmlAtk5D_Miss'
   registerMove: s32'NmlAtk5D'
   registerMove: s32'NmlAtk2D'
@@ -913,6 +902,7 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'RC_Arenda'
   registerMove: s32'RC_Brenda'
   registerMove: s32'RC_Taikuu'
+  registerMove: s32'CmnActShotHajiki'
   grabbedFrames: 0, s32'vdn050_00'
   grabbedFrames: 1, s32'vdn050_01'
   grabbedFrames: 2, s32'vdn050_02'
@@ -1144,6 +1134,7 @@ beginSubroutine: s32'RoundInit'
 
 beginSubroutine: s32'OnIdling'
   callSubroutine: s32'cmn_OnIdling'
+  storeValue: (VARIABLE), 80, (STATIC), 82
   Unknown59: s32'TRP_SAIYAMAN', 2, 157
   ifOperation: (IS_EQUAL), (VARIABLE), (TrainingValue), (STATIC), 1
     storeValue: (VARIABLE), 3, (STATIC), 1
@@ -2008,84 +1999,68 @@ beginState: s32'ChangeEnterAttackUltimate2'
   jumpToState: s32'Jrush'
   endLabel: 
   endState: 
-
-beginState: s32'Dodge'
+  
+  beginState: s32'CmnActShotHajiki'
   upon: (IMMEDIATE)
-    Unknown1058: 1
-    upon: 99
-      clearRegisteredUponCode: 99
-      storeValue: (VARIABLE), 45, (STATIC), 1
-      createObject: s32'4d_muteki', (CENTER)
-      setThrowInvulnerable: 1
-      Unknown1846: 1
-      enableWhiffCancel: 1
-      ifOperation: (IS_EQUAL), (VARIABLE), (CmnCharaReg2), (STATIC), 13
-        addTensionUnscaled: 0, 10000
-        endIf: 
-      endUpon: 
+    callSubroutine: s32'cmnActHajikiInit'
+    checkLastStateName: s32'CmnActShotHajiki'
+    ifNot: (VARIABLE), (Result)
+      storeValue: (VARIABLE), 56, (STATIC), 0
+      endIf: 
     endUpon: 
-  sprite: s32'vdn301_00', 3
-  Unknown1698: 5
-  Unknown1700: 2
-  Unknown2189: 0, 4
-  throwInvulnerableForTime: 0
-  enableSuperArmor: 1
-  superArmorOverdriveInvul: 0
+  goto: s32'rep', 2, 56
+  sprite: s32'vdn301_00', 1
   sprite: s32'vdn301_01', 1
-  Unknown2177: 0, 100
-  Unknown2175: 1, 100
-  sprite: s32'vdn301_01', 2
-  characterSfx: s32'ARC_BTL_VDN_Dodge_Basa'
-  sprite: s32'vdn301_02', 1
+  sprite: s32'vdn301_02', 2
+  sprite: s32'vdn301_03', 2
   Unknown625: s16'vxxx124', 100, s16'vxxx125', 100, s16'', 0, s16'', 0
-  sprite: s32'vdn301_02', 1
-  addWhiffCancelOption: s32'Z_Add'
-  sprite: s32'vdn301_02', 1
-  sprite: s32'vdn301_03', 3
-  setNoCollision: 0
-  sprite: s32'vdn301_04', 3
-  sprite: s32'vdn301_05', 3
-  sprite: s32'vdn301_06', 3
-  sprite: s32'vdn301_07', 1
-  sprite: s32'vdn301_07', 6
-  ifNot: (VARIABLE), 45
-    enableSuperArmor: 0
-    endIf: 
-  setNoCollision: 1
-  Unknown1700: 0
-  sprite: s32'vdn301_08', 4
-  sprite: s32'vdn301_09', 3
-  sprite: s32'vdn301_09', 1
-  if: (VARIABLE), 45
-    callSubroutine: s32'cmn_NandemoEnableStand'
-    enableVanish: 1
-    whiffCancelOptionBufferTime: s32'NmlAtk5A', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk5B', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk6B', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk5C', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk5D', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk6C', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk2A', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk2B', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk2C', 7
-    whiffCancelOptionBufferTime: s32'NmlAtk2D', 7
-    whiffCancelOptionBufferTime: s32'CmnActMikiwameMove', 7
-    whiffCancelOptionBufferTime: s32'CmnActHomingDash', 7
-    whiffCancelOptionBufferTime: s32'CmnActRushStart', 7
-    whiffCancelOptionBufferTime: s32'CmnActSparkingBurst', 7
-    whiffCancelOptionBufferTime: s32'Dodge', 7
-    Unknown1671: 7
-    endIf: 
-  sprite: s32'vdn301_10', 3
+  sprite: s32'vdn301_04', 2
+  sprite: s32'vdn301_05', 2
+  sprite: s32'vdn301_06', 2
+  sprite: s32'vdn301_07', 2
+  sprite: s32'vdn301_08', 2
+  storeValue: (VARIABLE), 51, (STATIC), 1
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
   endLabel: 
-  exitState: 
-  beginLabel: s32'exe'
-  sprite: s32'vdn301_07', 5
-  sprite: s32'vdn301_07', 10
-  setNoCollision: 1
-  sprite: s32'vdn301_08', 4
-  sprite: s32'vdn301_09', 4
-  sprite: s32'vdn301_10', 3
+  gotoLabel: s32'hajiki'
+  beginLabel: s32'rep'
+  sprite: s32'vdn301_08', 2
+  Unknown1698: 6
+  Unknown1700: 4
+  storeValue: (VARIABLE), 51, (STATIC), 1
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  endLabel: 
+  beginLabel: s32'hajiki'
+  sprite: s32'vdn301_08', 2
+  Unknown1698: 6
+  Unknown1700: 4
+  storeValue: (VARIABLE), 56, (STATIC), 1
+  ifNot: (VARIABLE), 51
+
+    endIf: 
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 1
+  Unknown1698: 5
+  Unknown1700: 0
+  sprite: s32'vdn301_10', 1
+  sprite: s32'vdn301_10', 1
+  sprite: s32'vdn301_10', 1
+  sprite: s32'vdn301_10', 1
+  storeValue: (VARIABLE), 56, (STATIC), 0
   endState: 
 
 beginState: s32'CmnActGuardCancelAttack'
@@ -2627,6 +2602,7 @@ beginState: s32'NmlAtk5A3rd'
   sprite: s32'vdn202_34', 3
   endState: 
 
+
 beginState: s32'NmlAtk5A3rdExe'
   upon: (IMMEDIATE)
     Unknown1673: 17, 1
@@ -2903,9 +2879,9 @@ beginState: s32'NmlAtk2B'
   sprite: s32'vdn231_02', 2
   Unknown621: 1, -1
   Unknown1700: 4
-  sprite: s32'vdn231_03', 2
+  sprite: s32'vdn231_03', 1
   cmnSfx: s32'ARC_BTL_CMN_Furi_Hiji'
-  sprite: s32'vdn231_04', 2
+  sprite: s32'vdn231_04', 1
   sprite: s32'vdn231_05', 1
   physicsImpulseX: 10000
   sprite: s32'vdn231_06', 3
@@ -4668,19 +4644,19 @@ beginState: s32'SteinerA'
   sprite: s32'vdn021_02', 1
   sprite: s32'vdn021_03', 1
   sprite: s32'vdn021_04', 2
-  sprite: s32'vdn404_00', 2
+  sprite: s32'vdn404_00', 1
   horizontalMomentum: 90
   createObject: s32'cmn_Windpressure_Tate', (CENTER)
   applyTo: (PREVIOUS)
     setAngle: 28000
     endApply: 
   characterSfx: s32'ARC_BTL_VDN_Steiner_Dash'
-  sprite: s32'vdn404_01', 2
-  sprite: s32'vdn404_02', 2
-  sprite: s32'vdn404_03', 2
+  sprite: s32'vdn404_01', 1
+  sprite: s32'vdn404_02', 1
+  sprite: s32'vdn404_03', 1
   Unknown621: 1, -1
-  sprite: s32'vdn404_04', 2
-  sprite: s32'vdn404_05', 2
+  sprite: s32'vdn404_04', 1
+  sprite: s32'vdn404_05', 1
   sprite: s32'vdn404_06', 1
   horizontalMomentum: 100
   physicsImpulseX: 25000
@@ -4758,11 +4734,11 @@ beginState: s32'SteinerB'
   physicsImpulseY: 18000
   setGravity: 1500
   sprite: s32'vdn404_02', 1
-  sprite: s32'vdn404_03', 2
-  sprite: s32'vdn404_04', 2
-  sprite: s32'vdn404_05', 2
+  sprite: s32'vdn404_03', 1
+  sprite: s32'vdn404_04', 1
+  sprite: s32'vdn404_05', 1
   Unknown621: 1, -1
-  sprite: s32'vdn404_03', 2
+  sprite: s32'vdn404_03', 1
   sprite: s32'vdn404_04', 2
   sprite: s32'vdn404_06', 1
   Unknown1975: 20000
