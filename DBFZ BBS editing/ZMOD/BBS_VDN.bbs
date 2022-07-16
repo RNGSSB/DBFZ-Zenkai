@@ -2012,6 +2012,7 @@ beginState: s32'ChangeEnterAttackUltimate2'
   sprite: s32'vdn301_00', 1
   sprite: s32'vdn301_01', 1
   sprite: s32'vdn301_02', 2
+  createObject: s32'gsn_hajiki', (EX_POINT_F)
   sprite: s32'vdn301_03', 2
   Unknown625: s16'vxxx124', 100, s16'vxxx125', 100, s16'', 0, s16'', 0
   sprite: s32'vdn301_04', 2
@@ -2029,13 +2030,13 @@ beginState: s32'ChangeEnterAttackUltimate2'
   Unknown1698: 6
   Unknown1700: 4
   storeValue: (VARIABLE), 51, (STATIC), 1
-  sprite: s32'vdn301_09', 2
   sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
-  sprite: s32'vdn301_09', 2
   sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
-  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
   endLabel: 
@@ -2047,10 +2048,10 @@ beginState: s32'ChangeEnterAttackUltimate2'
   ifNot: (VARIABLE), 51
 
     endIf: 
-  sprite: s32'vdn301_09', 2
   sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
-  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 2
   sprite: s32'vdn301_10', 1
