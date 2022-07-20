@@ -7,7 +7,9 @@ title Quick BBS - Build and pack
 ::Has to match the directory where your modified BBS files are stored
 set mod_name=ZMOD
 ::Set to 1 to launch the game once the script has completed a cycle
-set launch_game=1
+set /p launch_game= Launch Game (0/1):
+
+set /p pak= Pak or not (0/1):
 
 :init
 for /f "tokens=* delims=@" %%a in ('type "%~f0"') do set dbfz_directory=%%a
@@ -29,11 +31,20 @@ echo.
 echo.Injecting into uasset/uexp...
 for /r %%a in (!mod_name!\dbzscript\*.dbzscript) do call:inject_dbzscript "%%a"
 echo.
+if "%pak%"=="1" {
 echo.Copying to u4pak...
 for /r %%a in (!mod_name!\uasset_uexp\*.uexp) do call:copy_u4pak "%%a"
 for /r %%a in (!mod_name!\uasset_uexp\*.uasset) do call:copy_u4pak "%%a"
+}
 
-echo.
+if "%pak%"=="0" {
+echo.Copying to DBFZ Chara Folder...
+for /r %%a in (!mod_name!\uasset_uexp\*.uexp) do call:copy_dbfzloose "%%a"
+for /r %%a in (!mod_name!\uasset_uexp\*.uasset) do call:copy_dbfzloose "%%a"
+echo
+}
+
+if "%pak%"=="1" {
 echo.Packing assets...
 echo.pack > .\u4pak\config.u4pak
 echo.--version=3 >> .\u4pak\config.u4pak
@@ -48,6 +59,7 @@ echo.Copying to DBFZ mods directory...
 if not exist "!dbfz_directory!\RED\Content\Paks\~mods" md "!dbfz_directory!\RED\Content\Paks\~mods" > nul
 xcopy .\u4pak\!mod_name!.pak "!dbfz_directory!\RED\Content\Paks\~mods\!mod_name!.pak"* /y | find /v "File(s) copied"
 xcopy .\u4pak\sample.sig "!dbfz_directory!\RED\Content\Paks\~mods\!mod_name!.sig"* /y | find /v "File(s) copied"
+}
 echo.
 echo.Done^^!
 goto:exit
@@ -65,6 +77,14 @@ set char=%~n1
 set char=!char:~4,3!
 if not exist .\u4pak\mod\Red\Content\Chara\!char! md .\u4pak\mod\Red\Content\Chara\!char!\Common\Data > nul
 xcopy "%~1" ".\u4pak\mod\Red\Content\Chara\!char!\Common\Data" /y | find /v "File(s) copied"
+set char=
+goto:eof
+
+:copy_dbfzloose
+set char=%~n1
+set char=!char:~4,3!
+if not exist "!dbfz_directory!\Red\Content\Chara\!char!" md "!dbfz_directory!\Red\Content\Chara\!char!\Common\Data" > nul
+xcopy "%~1" "!dbfz_directory!\Red\Content\Chara\!char!\Common\Data" /y | find /v "File(s) copied"
 set char=
 goto:eof
 
@@ -119,6 +139,7 @@ echo.Launching the game without Easy Anti-Cheat right now^^!
 echo.Note: You have to close the game before you restart the script, otherwise it can't update the packed mod.
 echo.
 start "" "RED-Win64-Shipping.exe_no-eac.lnk"
+set launch_game = 0
 )
 echo.Press any key to restart this script, or close the window to exit.
 pause>nul

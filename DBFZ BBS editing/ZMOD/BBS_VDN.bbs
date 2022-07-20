@@ -2012,7 +2012,6 @@ beginState: s32'ChangeEnterAttackUltimate2'
   sprite: s32'vdn301_00', 1
   sprite: s32'vdn301_01', 1
   sprite: s32'vdn301_02', 2
-  createObject: s32'gsn_hajiki', (EX_POINT_F)
   sprite: s32'vdn301_03', 2
   Unknown625: s16'vxxx124', 100, s16'vxxx125', 100, s16'', 0, s16'', 0
   sprite: s32'vdn301_04', 2
