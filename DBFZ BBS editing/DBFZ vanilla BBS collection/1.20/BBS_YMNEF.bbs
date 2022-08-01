@@ -1,0 +1,1896 @@
+beginState: s32'dmy'
+  sprite: s32'null', 1
+  endState: 
+
+beginState: s32'okasi'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'cmn_okasi'
+    endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'ymn_okasi'
+  endState: 
+
+beginState: s32'ymn_hajiki'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn_hajiki1'
+  endState: 
+
+beginState: s32'kidan_smoke'
+  upon: (IMMEDIATE)
+    modifyPositionX: -27000
+    endUpon: 
+  sprite: s32'null', 1
+  createParticle: s32'bg_undersmoke00', (PLAYER)
+  endState: 
+
+beginState: s32'kidan_5D'
+  upon: (IMMEDIATE)
+    normalAttack: 
+    callSubroutine: s32'cmnAtkLevel_2_AtkInit'
+    callSubroutine: s32'cmn5DKidan_AtkInit'
+    callSubroutine: s32'cmnKidan_Init'
+    damage1: 600
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 20000
+    hitAirPushbackY: 20000
+    Unknown1045: 4, s32'cmn_BomHit'
+    horizontalMomentum: 102
+    linkParticle: s32'cmn_kidan'
+    endUpon: 
+  sprite: s32'kidan', 1
+  hit: 
+  multiplyAlphaColor: 0
+  endLabel: 
+  sprite: s32'kidan', 600
+  multiplyAlphaColor: 255
+  Unknown58: 1
+  Unknown202: 70000, 0
+  beginLabel: s32'Koware'
+  sprite: s32'null', 10
+  haltMomentum: 1
+  linkParticle: s32''
+  endState: 
+
+beginState: s32'kidan_2D'
+  upon: (IMMEDIATE)
+    normalAttack: 
+    callSubroutine: s32'cmnAtkLevel_2_AtkInit'
+    callSubroutine: s32'cmn5DKidan_AtkInit'
+    callSubroutine: s32'cmnKidan_Init'
+    damage1: 600
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 20000
+    hitAirPushbackY: 20000
+    Unknown1045: 4, s32'cmn_BomHit'
+    horizontalMomentum: 102
+    linkParticle: s32'cmn_kidan'
+    endUpon: 
+  sprite: s32'kidan', 1
+  hit: 
+  multiplyAlphaColor: 0
+  endLabel: 
+  sprite: s32'kidan', 600
+  multiplyAlphaColor: 255
+  Unknown58: 1
+  Unknown202: 70000, 0
+  beginLabel: s32'Koware'
+  sprite: s32'null', 10
+  haltMomentum: 1
+  linkParticle: s32''
+  endState: 
+
+beginState: s32'kidan_Air5D'
+  upon: (IMMEDIATE)
+    normalAttack: 
+    callSubroutine: s32'cmnAtkLevel_2_AtkInit'
+    callSubroutine: s32'cmn5DKidan_AtkInit'
+    callSubroutine: s32'cmnKidan_Init'
+    damage1: 600
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 20000
+    hitAirPushbackY: 20000
+    Unknown1045: 4, s32'cmn_BomHit'
+    horizontalMomentum: 102
+    linkParticle: s32'cmn_kidan'
+    upon: (HIT_OR_GUARD)
+      createObject: s32'cmn_kidan_end', (PLAYER)
+      endUpon: 
+    upon: 87
+      clearRegisteredUponCode: 87
+      createObject: s32'cmn_reversalkidan', (PLAYER)
+      storeValue: (VARIABLE), 52, (STATIC), 1
+      requestDestroy: (SELF)
+      linkParticle: s32''
+      endUpon: 
+    endUpon: 
+  sprite: s32'kidan', 1
+  hit: 
+  multiplyAlphaColor: 0
+  endLabel: 
+  sprite: s32'kidan', 600
+  multiplyAlphaColor: 255
+  Unknown58: 1
+  Unknown202: 70000, 0
+  beginLabel: s32'Koware'
+  sprite: s32'null', 10
+  haltMomentum: 1
+  linkParticle: s32''
+  endState: 
+
+beginState: s32'ymn263_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn263_speedline01'
+  endState: 
+
+beginState: s32'ymn263_Smoke1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: -20000
+    modifyPositionY: -5000
+    addDepth: -30000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 600
+  Unknown2283: 0, 180000
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn263_Smoke2'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: 200000
+    modifyPositionY: 5000
+    addDepth: 100000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 600
+  Unknown2283: 0, 180000
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn263_Smoke'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  createObject: s32'ymn263_Smoke1', (PLAYER)
+  createObject: s32'ymn263_Smoke2', (PLAYER)
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn204_Smoke1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: 80000
+    modifyPositionY: -5000
+    addDepth: -30000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 700
+  Unknown2286: 0, 300
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn204_Smoke2'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    modifyPositionX: -70000
+    modifyPositionY: -5000
+    addDepth: 10000
+    endUpon: 
+  sprite: s32'null', 15
+  Unknown2273: 0, 700
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn204_sSmoke1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: -150000
+    modifyPositionY: -5000
+    addDepth: 10000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 400
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn204_sSmoke2'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: 70000
+    modifyPositionY: -5000
+    addDepth: 10000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 400
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn204_Smoke3'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  createObject: s32'ymn204_sSmoke1', (PLAYER)
+  createObject: s32'ymn204_sSmoke2', (PLAYER)
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn204_Smoke5'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionY: -5000
+    addDepth: 10000
+    endUpon: 
+  sprite: s32'null', 15
+  Unknown2273: 0, 450
+  Unknown2283: 0, 180000
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn202_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    modifyPositionY: 279000
+    modifyPositionX: 150000
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn202_inpact01'
+  endState: 
+
+beginState: s32'ymn400_slash1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn400_slash01'
+  endState: 
+
+beginState: s32'ymn400_slash2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn400_slash02'
+  endState: 
+
+beginState: s32'ymn400_slash3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn400_slash02'
+  modifyPositionY: -50000
+  endState: 
+
+beginState: s32'ymn400_slash4'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn400_slash03'
+  endState: 
+
+beginState: s32'ymn400_slash5'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn400_slash04'
+  endState: 
+
+beginState: s32'ymn400_slash6'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn400_slash05'
+  endState: 
+
+beginState: s32'ymn400_slash7'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    modifyPositionX: 60000
+    modifyPositionY: -15000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2275: 0, 5000
+  Unknown449: s32'ymn400_slash03', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn400_slash8'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    modifyPositionX: 80000
+    modifyPositionY: -40000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2275: 0, 10000
+  Unknown449: s32'ymn400_slash04', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn_400_Smoke1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    modifyPositionX: -70000
+    modifyPositionY: -5000
+    addDepth: 10000
+    endUpon: 
+  sprite: s32'null', 15
+  createParticle: s32'bg_undersmoke00', (PLAYER)
+  Unknown2273: 0, 600
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn400_shadow1'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn400_shadow'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn403_punch1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch01'
+  modifyPositionY: 250000
+  endState: 
+
+beginState: s32'ymn403_punch1_2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch01'
+  modifyPositionY: 260000
+  setAngle: -20000
+  endState: 
+
+beginState: s32'ymn403_punch1_3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch01'
+  modifyPositionY: 250000
+  setAngle: 15500
+  endState: 
+
+beginState: s32'ymn403_punch2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch02'
+  modifyPositionY: 250000
+  endState: 
+
+beginState: s32'ymn403_punch2_2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch02'
+  modifyPositionY: 260000
+  setAngle: -20000
+  endState: 
+
+beginState: s32'ymn403_punch2_3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch02'
+  modifyPositionY: 250000
+  setAngle: 15500
+  endState: 
+
+beginState: s32'ymn403_punch3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch03'
+  modifyPositionY: 250000
+  endState: 
+
+beginState: s32'ymn403_punch3_2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch03'
+  modifyPositionY: 260000
+  setAngle: -20000
+  endState: 
+
+beginState: s32'ymn403_punch3_3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn403_punch03'
+  modifyPositionY: 250000
+  setAngle: 15500
+  endState: 
+
+beginState: s32'ymn404_slash1'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn404_slash01'
+  endState: 
+
+beginState: s32'ymn_404_Smoke1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown458: 2
+    modifyPositionX: -70000
+    modifyPositionY: -5000
+    addDepth: 50000
+    endUpon: 
+  sprite: s32'null', 30
+  createParticle: s32'bg_undersmoke00', (PLAYER)
+  Unknown2273: 0, 600
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn408_slash1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn408_slash01'
+  endState: 
+
+beginState: s32'ymn408_slash2'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn408_slash02'
+  endState: 
+
+beginState: s32'ymn408_slash3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn408_slash03'
+  endState: 
+
+beginState: s32'ymn_408_Smoke1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    modifyPositionX: 70000
+    modifyPositionY: -50000
+    addDepth: -30000
+    endUpon: 
+  sprite: s32'null', 15
+  createParticle: s32'bg_undersmoke00', (PLAYER)
+  Unknown2273: 0, 600
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn405_aura'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn405_aura01'
+    addDepth: 110000
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn405_aura_2'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn405_aura01'
+    addDepth: -90000
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn405_aura2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn405_aura02'
+  endState: 
+
+beginState: s32'ymn405_smoke1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'ymn405_smoke'
+  endState: 
+
+beginState: s32'ymn405_aura3'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn405_aura01'
+    addDepth: 140000
+    modifyPositionX: 10000
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn405_aura3_2'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn405_aura01'
+    addDepth: -120000
+    modifyPositionX: 10000
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn405_Wolf'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'ymn_405_WolfJizoku'
+    modifyPositionY: 210000
+    modifyPositionX: 120000
+    addDepth: 30000
+    setObjectSize: 1200
+    jumpToStateInObject: (SELF), s32'End'
+    endUpon: 
+  sprite: s32'null', 2147483647
+  beginLabel: s32'End'
+  sprite: s32'null', 40
+  Unknown1801: 1
+  Unknown295: 1
+  linkParticle: s32'ymn_405_WolfEnd'
+  Unknown456: 0
+  Unknown454: 0
+  Unknown457: 0
+  endState: 
+
+beginState: s32'Kamehameha_Core'
+  upon: (IMMEDIATE)
+    Unknown456: 3
+    Unknown454: 3
+    Unknown289: 300
+    linkParticle: s32'ymn409_core01'
+    Unknown632: 0, s32'ARC_BTL_YMN_Kmhmh_Fire', 100
+    jumpToStateInObject: (SELF), s32'end'
+    jumpToStateInObject: 47, s32'end'
+    upon: 35
+      Unknown454: 0
+      Unknown456: 0
+      Unknown295: 1
+      endUpon: 
+    upon: (CLASH)
+      clearRegisteredUponCode: (CLASH)
+      storeValue: (VARIABLE), 45, (STATIC), 0
+      triggerUponInObject: s32'Kamehameha_Atk', 29
+      checkCurrentStateName: 3, s32'Kamehameha'
+      if: (VARIABLE), (Result)
+        copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+        Unknown1798: 3, 25
+        endIf: 
+      storeValue: (VARIABLE), 47, (STATIC), 1
+      storeValue: (VARIABLE), 51, (STATIC), 1
+      upon: (CLASH)
+        modifyVar: (ADD), (VARIABLE), 47, (STATIC), 1
+        ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 47, (STATIC), 4
+          checkCurrentStateName: 3, s32'Kamehameha'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 24
+            endIf: 
+          endIf: 
+        else: 
+          checkCurrentStateName: 3, s32'Kamehameha'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 25
+            endIf: 
+          endElse: 
+        endUpon: 
+      endUpon: 
+    upon: (FRAME_STEP)
+      ifNot: (VARIABLE), 46
+        Unknown1804: '0x4B616D6568616D6568615F41746B00000000000000000000000000000000000017000000'
+        endIf: 
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 2
+  modifyVar: (ADD), (VARIABLE), 48, (STATIC), 1
+  Unknown2279: 2, 48, 2, 51
+  createObjectWithArg: s32'Kamehameha_Atk', (PLAYER)
+  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 45, (STATIC), 3
+    copyFromObjectVar: (PREVIOUS), (VARIABLE), 45, (SELF), (STATIC), (Angle)
+    endIf: 
+  sprite: s32'null', 2
+  endLabel: 
+  modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), 45, (STATIC), 5
+  beginLabel: s32'end'
+  sprite: s32'null', 1
+  clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+  clearRegisteredUponCode: (CLASH)
+  clearRegisteredUponCode: (AFTER_EXIT)
+  clearRegisteredUponCode: (FRAME_STEP)
+  storeValue: (VARIABLE), 49, (STATIC), 1
+  createObject: s32'Kamehameha_Atk', (PLAYER)
+  triggerUponInObject: s32'Kamehameha_Atk', 30
+  checkCurrentStateName: 3, s32'Kamehameha'
+  if: (VARIABLE), (Result)
+    Unknown1798: 3, 24
+    endIf: 
+  Unknown454: 0
+  Unknown456: 0
+  Unknown294: 1
+  sprite: s32'null', 13
+  deactivateObjectByName: s32'Kamehameha_Atk'
+  linkParticle: s32'ymn409_core02'
+  sprite: s32'null', 35
+  Unknown633: 0, 35
+  endState: 
+
+beginState: s32'Kamehameha_Atk'
+  upon: (IMMEDIATE)
+    specialAttack: 
+    callSubroutine: s32'cmnAtkLevel_3_AtkInit'
+    callSubroutine: s32'cmnSpecialShot_AtkInit'
+    damage1: 262
+    callSubroutine: s32'cmn_ShotHosei'
+    tensionGainOnConnect: 240
+    hitStop: 2
+    groundHitEffect: (AIR_STRONG)
+    airHitEffect: (AIR_STRONG)
+    hitAirPushbackX: 60000
+    hitAirPushbackY: 10000
+    Unknown1186: 1, 15000, 300000, 100, 0
+    wallBounceCount: 0
+    untechAmount: 25
+    Unknown1027: 50000000, -375000, 0, 0
+    Unknown716: 1
+    Unknown733: 1
+    Unknown734: 1
+    Unknown1192: 16, s32'ARC_BTL_CMN_Hit_BeamLoop_LP', 0
+    Unknown1193: 17, s32'ARC_BTL_CMN_Grd_BeamLoop_LP', 0
+    Unknown717: s32'ShakeYoko', 1000, 1, 20, 0
+    Unknown719: 1
+    upon: 30
+      hitAirPushbackX: 120000
+      Unknown1186: 0, 0, 0, 0, 0
+      wallBounceCount: 1
+      wallBounceXVelocityPercent: 0
+      conditionalunk2499: 3, 2, 24
+        hit: 
+        endIf: 
+      else: 
+        recoveryState: 
+        endElse: 
+      conditionalunk2500: 12, 2, 2, 47, 0, 4
+        recoveryState: 
+        endIf: 
+      endUpon: 
+    Unknown456: 2
+    Unknown454: 2
+    Unknown457: 2
+    Unknown453: 2
+    Unknown289: 60
+    Unknown1954: 1
+    Unknown58: 1
+    linkParticle: s32'ymn409_naka01'
+    upon: (ON_HIT_OR_BLOCK)
+      clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+      createObject: s32'Kamehameha_End', (PLAYER)
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      copyFromObjectVar: (PARENT), (VARIABLE), 46, (SELF), (STATIC), (Angle)
+      endUpon: 
+    upon: (ON_ATTACK_COLLISION_SOUSAI)
+      copyFromObjectVar: (PARENT), (VARIABLE), (ObjectParam1), (SELF), (VARIABLE), (ObjectParam1)
+      deactivateObjectById: (SELF)
+      Unknown1798: 2, 24
+      endUpon: 
+    upon: 29
+      storeValue: (VARIABLE), 45, (STATIC), 0
+      endUpon: 
+    upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE)
+      if: (VARIABLE), (ObjectParam2)
+        checkCurrentStateName: 3, s32'Kamehameha'
+        if: (VARIABLE), (Result)
+          copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+          endIf: 
+        endIf: 
+      endUpon: 
+    upon: (HIT_OR_GUARD_ANY)
+      if: (VARIABLE), 45
+        Unknown1798: 2, 23
+        endIf: 
+      endUpon: 
+    upon: (FRAME_STEP)
+      conditionalunk2498: 2, 2, 47
+        conditionalunk2499: 2, 2, 49
+          copyFromObjectVar: (SELF), (VARIABLE), (Result), (PARENT), (VARIABLE), (ObjectParam1)
+          ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (ObjectParam1), (VARIABLE), 0
+            deactivateObjectById: (SELF)
+            endIf: 
+          endIf: 
+        endIf: 
+      ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 400000
+        Unknown670: '0x02000000E80300000000000000000000'
+        endIf: 
+      copyFromObjectVar: (SELF), (VARIABLE), (Result), (ENEMY), (VARIABLE), (PlayerDamageOrGuard)
+      ifNot: (VARIABLE), (Result)
+        Unknown633: 16, 20
+        Unknown633: 17, 20
+        endIf: 
+      checkCurrentStateName: 3, s32'Kamehameha'
+      ifNot: (VARIABLE), (Result)
+        Unknown633: 16, 20
+        Unknown633: 17, 20
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      if: (VARIABLE), 46
+        storeValue: (VARIABLE), 46, (STATIC), 0
+        copyFromObjectVar: (PARENT), (VARIABLE), 46, (SELF), (STATIC), (Result)
+        endIf: 
+      Unknown2274: 0, 1000
+      Unknown2276: 0, 0
+      Unknown449: s32'ymn409_naka02', 100
+      Unknown633: 16, 20
+      Unknown633: 17, 20
+      endUpon: 
+    endUpon: 
+  sprite: s32'kamehameha0', 1
+  hit: 
+  Unknown202: 100000, 0
+  beginLabel: s32'loop'
+  sprite: s32'kamehameha0', 1
+  Unknown734: 0
+  sprite: s32'kamehameha0', 2
+  Unknown2301: 1200
+  sprite: s32'kamehameha0', 1
+  Unknown2301: 1000
+  endLabel: 
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 120
+  endState: 
+
+beginState: s32'Kamehameha_End'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown289: 60
+    Unknown2036: 2, 0
+    Unknown2488: '0x02000000190100000200000019010000'
+    Unknown58: 1
+    linkParticle: s32'ymn409_end01'
+    upon: (FRAME_STEP)
+      Unknown51: 2
+      if: (VARIABLE), (Result)
+        Unknown2488: '0x02000000190100000200000019010000'
+        Unknown2036: 2, 0
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2274: 0, 1000
+      Unknown2276: 0, 0
+      Unknown449: s32'ymn409_end02', 100
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 2
+  Unknown2301: 1000
+  sprite: s32'null', 2
+  Unknown2301: 1200
+  endLabel: 
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 120
+  endState: 
+
+beginState: s32'groundSmoke'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    modifyPositionX: 150000
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 10
+  createParticle: s32'bg_undersmoke00', (PLAYER)
+  endLabel: 
+  gotoLabel: s32'loop'
+  endState: 
+
+beginState: s32'Kamehameha_Tame'
+  upon: (IMMEDIATE)
+    upon: (FRAME_STEP)
+      checkCurrentStateName: 3, s32'CmnActMikiwameMove'
+      if: (VARIABLE), (Result)
+        deactivateObjectById: (SELF)
+        endIf: 
+      endUpon: 
+    Unknown458: 2
+    linkParticle: s32'ymn409_tame'
+    upon: 12
+      Unknown2036: 2, 0
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 2
+  characterSfx: s32'ARC_BTL_YMN_Kmhmh_Chrg'
+  setObjectSize: 250
+  sprite: s32'null', 5
+  setObjectSize: 300
+  sprite: s32'null', 1
+  setObjectSize: 400
+  addDepth: 20000
+  sprite: s32'null', 1
+  setObjectSize: 500
+  addDepth: 20000
+  sprite: s32'null', 2
+  setObjectSize: 650
+  addDepth: 20000
+  endState: 
+
+beginState: s32'kamehameha_shadow'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn_shadow'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'sokidan_AT'
+  upon: (IMMEDIATE)
+    overdriveAttack: 
+    callSubroutine: s32'cmnAtkLevel_4_AtkInit'
+    callSubroutine: s32'cmnUltimateShot_AtkInit'
+    damage1: 1300
+    minimalDamagePercent: 30
+    Unknown1095: 500
+    Unknown1143: 1
+    enemyHitstopAddition: 0, 7, 7
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 20000
+    hitAirPushbackY: 20000
+    pushbackX: 20
+    Unknown1954: 1
+    Unknown717: s32'ShakeYoko', 1500, 0, 15, 5
+    damageSoundEffect: s32'ARC_BTL_CMN_Hit_Kidan'
+    guardSoundEffect: s32'ARC_BTL_CMN_Guard_Beam'
+    horizontalMomentum: 110
+    verticalMomentum: 110
+    Unknown295: 1
+    linkParticle: s32'ymn430_sokidan02'
+    upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE)
+      callSubroutine: s32'cmnUltimate_CameraCombo'
+      modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
+      ifOperation: (IS_GREATER), (VARIABLE), 45, (STATIC), 1
+        damage1: 200
+        endIf: 
+      conditionalunk2498: 3, 2, 315
+        copyFromObjectVar: (PLAYER), (VARIABLE), 58, (SELF), (STATIC), (Angle)
+        endIf: 
+      else: 
+        copyFromObjectVar: (PLAYER), (VARIABLE), 58, (SELF), (STATIC), (CommonActionMark)
+        endElse: 
+      endUpon: 
+    upon: (AFTER_EXIT)
+      storeValue: (VARIABLE), 47, (STATIC), 1
+      Unknown58: 1
+      endUpon: 
+    numberOfHits: 1
+    destroyOnPlayerDamage: 1
+    Unknown2215: 1
+    upon: (ON_DESTROY)
+      checkCurrentStateName: 3, s32'Sokidan'
+      if: (VARIABLE), (Result)
+        triggerUponInObject: s32'Sokidan', 26
+        endIf: 
+      createObject: s32'cmn_kidan_end', (PLAYER)
+      deactivateObjectById: (SELF)
+      endUpon: 
+    upon: (CLASH)
+      setAngle: -135000
+      Unknown2036: 32, 103
+      modifyPositionX: 750000
+      modifyPositionY: 600000
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 10000
+      hitAirPushbackY: -50000
+      slidingKnockdownDuration: 25
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: (BEAM_CLASH)
+      setAngle: -90000
+      Unknown2036: 32, 103
+      Unknown1921: -10
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 5000
+      hitAirPushbackY: -50000
+      slidingKnockdownDuration: 25
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: 26
+      setAngle: -45000
+      Unknown2036: 32, 103
+      modifyPositionX: -750000
+      modifyPositionY: 600000
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 10000
+      hitAirPushbackY: -50000
+      slidingKnockdownDuration: 25
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: 27
+      setAngle: -180000
+      Unknown2036: 32, 103
+      Unknown1920: 102
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 10000
+      hitAirPushbackY: 25000
+      Unknown942: 
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: 29
+      setAngle: 0
+      Unknown2036: 32, 103
+      Unknown1920: -2
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 10000
+      hitAirPushbackY: 25000
+      Unknown942: 
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: 30
+      setAngle: -225000
+      Unknown2036: 32, 103
+      modifyPositionX: 750000
+      modifyPositionY: -600000
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 10000
+      hitAirPushbackY: 50000
+      Unknown942: 
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: 31
+      setAngle: -270000
+      Unknown2036: 32, 103
+      Unknown1921: 102
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 5000
+      hitAirPushbackY: 50000
+      Unknown942: 
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: 32
+      setAngle: -315000
+      Unknown2036: 32, 103
+      modifyPositionX: -750000
+      modifyPositionY: -600000
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      hitAirPushbackX: 10000
+      hitAirPushbackY: 50000
+      Unknown942: 
+      Unknown1051: 2
+      jumpToLabel: s32'atk'
+      endUpon: 
+    upon: (FRAME_STEP)
+      ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 0
+        if: (VARIABLE), 46
+          storeValue: (VARIABLE), 46, (STATIC), 0
+          createParticle: s32'bg_groundsmokeL', (PLAYER)
+          Unknown670: '0x00000000E80300000000000000000000'
+          endIf: 
+        endIf: 
+      conditionalunk2498: 3, 2, 265
+        Unknown1076: 1
+        endIf: 
+      else: 
+        Unknown1076: 0
+        endElse: 
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'atk'
+  sprite: s32'sokidan', 300
+  characterSfx: s32'ARC_BTL_YMN_Sokidan_Go'
+  Unknown202: 100000, 0
+  hit: 
+  endState: 
+
+beginState: s32'ymn430_Eff1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: 85000
+    modifyPositionY: 300000
+    addDepth: 45000
+    endUpon: 
+  sprite: s32'null', 18
+  linkParticle: s32'ymn430_sokidan01'
+  sprite: s32'null', 3
+  sprite: s32'null', 6
+  modifyPositionY: 60000
+  addDepth: -40000
+  sprite: s32'null', 9
+  modifyPositionY: 10000
+  addDepth: -40000
+  sprite: s32'null', 3
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn430_fing1'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn400_finger01'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn430_fing2'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn400_finger02'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn430_fing3'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn400_finger03'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn430_fing4'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn400_finger04'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn430_fing5'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn400_finger05'
+    Unknown454: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn430_Eff2'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown458: 2
+    upon: 12
+      Unknown2036: 2, 0
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'ymn430_sokidan_move'
+  addDepth: -125000
+  sprite: s32'null', 3
+  addDepth: 0
+  sprite: s32'null', 3
+  addDepth: 100000
+  sprite: s32'null', 3
+  addDepth: 120000
+  sprite: s32'null', 3
+  addDepth: 40000
+  sprite: s32'null', 3
+  addDepth: -20000
+  sprite: s32'null', 18
+  addDepth: -80000
+  sprite: s32'null', 2
+  sprite: s32'null', 2
+  addDepth: -80000
+  sprite: s32'null', 2
+  addDepth: -120000
+  endState: 
+
+beginState: s32'ymn430_Eff3'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    linkParticle: s32'ymn430_thunder01'
+    modifyPositionX: 85000
+    modifyPositionY: 300000
+    Unknown454: 2
+    Unknown2519: 1
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn430_fSmoke2_2'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown454: 2
+    Unknown457: 2
+    flipDirection: 
+    Unknown2519: 1
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 20
+  Unknown2283: 0, 180
+  Unknown2288: 0, 1500
+  Unknown449: s32'bg_CircleSmoke00', 100
+  sprite: s32'null', 20
+  Unknown2288: 0, 2000
+  Unknown449: s32'bg_CircleSmoke00', 100
+  gotoLabel: s32'loop'
+  endState: 
+
+beginState: s32'ymn430_wind1'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown457: 2
+    modifyPositionX: 85000
+    modifyPositionY: 300000
+    addDepth: 45000
+    Unknown2519: 1
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn430_wind01'
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn200_punch1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn200_punch01'
+  endState: 
+
+beginState: s32'ymn201_punch1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn201_punch01'
+  endState: 
+
+beginState: s32'ymn203_punch1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn203_punch01'
+  endState: 
+
+beginState: s32'ymn431_inp'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'ymn431_inpact01'
+  addDepth: 30000
+  endState: 
+
+beginState: s32'ymn431_aura'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn431_aura01'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn431_aura2'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'ymn431_aura02'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn431_aura3'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn431_aura03'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn431_aura5'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'ymn431_aura05'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn431_fsmoke'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown295: 1
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'bg_jump_default'
+  modifyPositionX: -250000
+  endState: 
+
+beginState: s32'ymn431_Smoke1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    modifyPositionX: -20000
+    modifyPositionY: -5000
+    addDepth: -30000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 600
+  Unknown2283: 0, 180000
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn431_Smoke2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    modifyPositionX: 200000
+    modifyPositionY: 5000
+    addDepth: 100000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 600
+  Unknown2283: 0, 180000
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn431_fSmoke2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  createObject: s32'ymn431_Smoke1', (PLAYER)
+  createObject: s32'ymn431_Smoke2', (PLAYER)
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn_431_sSmoke'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    modifyPositionX: -20000
+    modifyPositionY: -5000
+    addDepth: -30000
+    endUpon: 
+  sprite: s32'null', 30
+  Unknown2273: 0, 600
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'ymn431_punch4'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch04'
+  modifyPositionY: 250000
+  endState: 
+
+beginState: s32'ymn431_punch4_2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch04'
+  modifyPositionY: 260000
+  setAngle: -20000
+  endState: 
+
+beginState: s32'ymn431_punch4_3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch04'
+  modifyPositionY: 250000
+  setAngle: 15500
+  endState: 
+
+beginState: s32'ymn431_punch5'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch05'
+  modifyPositionY: 250000
+  modifyPositionX: 100000
+  endState: 
+
+beginState: s32'ymn431_punch5_2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch05'
+  modifyPositionY: 260000
+  modifyPositionX: 100000
+  setAngle: -20000
+  endState: 
+
+beginState: s32'ymn431_punch5_3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch05'
+  modifyPositionY: 250000
+  modifyPositionX: 100000
+  setAngle: 15500
+  endState: 
+
+beginState: s32'ymn431_punch6'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch06'
+  modifyPositionY: 250000
+  endState: 
+
+beginState: s32'ymn431_punch6_2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch06'
+  modifyPositionY: 260000
+  setAngle: -20000
+  endState: 
+
+beginState: s32'ymn431_punch6_3'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_punch06'
+  modifyPositionY: 250000
+  setAngle: 15500
+  endState: 
+
+beginState: s32'ymn431_slash1'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_slash01'
+  endState: 
+
+beginState: s32'ymn431_slash2'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_slash02'
+  endState: 
+
+beginState: s32'ymn431_slash3'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown458: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_slash03'
+  endState: 
+
+beginState: s32'groundSmoke_EXtame'
+  upon: (IMMEDIATE)
+    Unknown295: 1
+    Unknown454: 2
+    Unknown458: 2
+    Unknown289: 30
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 10
+  Unknown2273: 0, 600
+  Unknown449: s32'bg_undersmoke00', 100
+  endLabel: 
+  gotoLabel: s32'loop'
+  endState: 
+
+beginState: s32'ymn431_speedline'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn431_speedline01'
+  endState: 
+
+beginState: s32'ymn431_aura4'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'ymn431_aura04'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'ymn431_Wolf'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown454: 2
+    linkParticle: s32'ymn_405_WolfJizoku'
+    modifyPositionX: 150000
+    modifyPositionY: 250000
+    addDepth: 50000
+    setObjectSize: 1500
+    jumpToStateInObject: (SELF), s32'End'
+    endUpon: 
+  sprite: s32'null', 2147483647
+  characterSfx: s32'ARC_BTL_YMN_RFK_Sen'
+  beginLabel: s32'End'
+  sprite: s32'null', 40
+  Unknown1801: 1
+  Unknown295: 1
+  linkParticle: s32'ymn_405_WolfEnd'
+  Unknown456: 0
+  Unknown454: 0
+  Unknown457: 0
+  endState: 
+
+beginState: s32'ymn431_HandAura'
+  upon: (IMMEDIATE)
+    Unknown458: 2
+    Unknown457: 2
+    Unknown454: 2
+    Unknown295: 2
+    linkParticle: s32'ymn431_HandTameAura'
+    Unknown2189: 2, 4
+    setObjectSize: 1500
+    jumpToStateInObject: (SELF), s32'Move1'
+    jumpToStateInObject: (ATTACKER), s32'Move2'
+    endUpon: 
+  sprite: s32'null', 1000
+  modifyPositionX: -20000
+  beginLabel: s32'Move1'
+  sprite: s32'null', 1000
+  modifyPositionX: -20000
+  addDepth: 70000
+  beginLabel: s32'Move2'
+  sprite: s32'null', 10000
+  modifyPositionX: 60000
+  addDepth: 60000
+  endState: 
+
+beginState: s32'FinishCamera_NmlAtk2C'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cameraMotion: -46679, 211080, -43382, 6847, 3846, 0, 72, 0, 90, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_RFK_senpu_Camera'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cameraMotion: 69914, 430464, 37814, 1353, -806, 0, 54, 0, 90, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_Sokidan'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraShake: s32'ShakeTate', 1500, 3, 50, 10
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  Unknown2079: 32, -152353, 442351, 109291, 37, 3436, 0, 54, 0, 90, 30, 0, 0, 2
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'ymn610_Eff'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'ymn610_shine01'
+  endState: 
+
+beginState: s32'YMN804_NPN'
+  upon: (IMMEDIATE)
+    Unknown92: 0
+    setPositionY: 0
+    setDepth: 0
+    Unknown454: 2
+    Unknown2494: '0x4E504E00000000000000000000000000000000000000000000000000000000004E504E5F594D4E38303463730000000000000000000000000000000000000000'
+    Unknown457: 2
+    Unknown2189: 0, 5
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'YMN804_SBN'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkPawnWithAnimation: s32'SBN', s32'SBN_YMN804cs'
+    Unknown2189: 0, 5
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'YMN804_Manp01_01'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkPawnWithAnimation: s32'MNP', s32'MNP_YMN804cs_01'
+    Unknown2189: 0, 5
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'YMN804_SmokeR'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    physicsImpulseX: 30000
+    addDepth: 155000
+    modifyPositionY: -15000
+    endUpon: 
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, -20000
+  Unknown449: s32'bg_undersmoke00', 100
+  endState: 
+
+beginState: s32'YMN804_SmokeL'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    physicsImpulseX: 30000
+    addDepth: -155000
+    modifyPositionY: -15000
+    endUpon: 
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  sprite: s32'null', 7
+  Unknown2283: 0, 20000
+  Unknown449: s32'bg_undersmoke00', 100
+  endState: 
+
+beginState: s32'YMN804_syutyusen'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn_804_syutyusen'
+    endUpon: 
+  sprite: s32'null', 33
+  endState: 
+
+beginState: s32'YMN804_kmhmTame'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn_804_kamehameTame'
+    endUpon: 
+  sprite: s32'null', 3
+  modifyPositionY: -36000
+  modifyPositionX: 36000
+  addDepth: 20000
+  sprite: s32'null', 4
+  modifyPositionY: -10000
+  sprite: s32'null', 4
+  modifyPositionY: 2000
+  addDepth: 18000
+  modifyPositionX: 50000
+  setObjectSize: 1200
+  sprite: s32'null', 4
+  modifyPositionY: 26000
+  addDepth: 8000
+  modifyPositionX: 60000
+  sprite: s32'null', 4
+  modifyPositionX: 160000
+  addDepth: -110000
+  modifyPositionY: 40000
+  sprite: s32'null', 4
+  addDepth: 10000
+  modifyPositionY: -5000
+  setObjectSize: 1500
+  endState: 
+
+beginState: s32'YMN804_kmhmEff'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn_804_kamehame'
+    modifyPositionY: 330000
+    modifyPositionX: -2650000
+    Unknown232: -50000
+    endUpon: 
+  sprite: s32'null', 4
+  setObjectSize: 350
+  setAngle: 15000
+  sprite: s32'null', 4
+  modifyPositionX: 35000
+  sprite: s32'null', 4
+  modifyPositionX: 50000
+  sprite: s32'null', 4
+  modifyPositionX: 100000
+  sprite: s32'null', 4
+  modifyPositionX: 75000
+  sprite: s32'null', 4
+  modifyPositionX: 75000
+  Unknown232: -35000
+  sprite: s32'null', 4
+  modifyPositionX: 45000
+  Unknown232: -30000
+  setObjectSize: 450
+  sprite: s32'null', 4
+  modifyPositionX: 25000
+  setAngle: 10000
+  sprite: s32'null', 4
+  modifyPositionX: 45000
+  Unknown232: -25000
+  setAngle: 7500
+  sprite: s32'null', 4
+  modifyPositionX: 78000
+  addDepth: 10000
+  sprite: s32'null', 4
+  setObjectSize: 600
+  modifyPositionX: 300000
+  addDepth: 45000
+  modifyPositionY: -50000
+  setAngle: 2500
+  Unknown232: -5000
+  sprite: s32'null', 4
+  addDepth: -50000
+  modifyPositionX: 1000000
+  Unknown232: -1000
+  setAngle: 1250
+  sprite: s32'null', 4
+  modifyPositionX: 700000
+  setAngle: 625
+  addDepth: 75000
+  sprite: s32'null', 4
+  modifyPositionX: 700000
+  sprite: s32'null', 4
+  modifyPositionX: 500000
+  sprite: s32'null', 4
+  modifyPositionX: 500000
+  sprite: s32'null', 15
+  linkParticle: s32'ymn_804_kamehameEnd'
+  createObject: s32'YMN804_Bomb', (PLAYER)
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'YMN804_Bomb'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn_804_bomb'
+    setPositionY: 0
+    setObjectSize: 700
+    Unknown232: 90000
+    endUpon: 
+  sprite: s32'null', 88
+  sprite: s32'null', 200
+  linkParticle: s32'ymn_804_smoke'
+  createObject: s32'YMN803_crater', (PLAYER)
+  endState: 
+
+beginState: s32'YMN803_crater'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkParticle: s32'ymn_804_crater'
+    Unknown232: -90000
+    addDepth: -80000
+    modifyPositionX: 75000
+    setObjectSize: 1300
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'YMN803_Smoke'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    linkParticle: s32'ymn_804_scrsmoke'
+    endUpon: 
+  sprite: s32'null', 90
+  endState: 
+
+beginState: s32'DUMMYDUMMY'
+  sprite: s32'null', 1
+  endState: 
+

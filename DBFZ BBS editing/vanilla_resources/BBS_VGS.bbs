@@ -870,6 +870,7 @@ beginSubroutine: s32'RoundInit'
     endSubroutine: 
   beginSubroutine: s32'OnIdling'
     callSubroutine: s32'cmn_OnIdling'
+	storeValue: (VARIABLE), 80, (STATIC), 90
     endSubroutine: 
   beginSubroutine: s32'OnLanding'
     endSubroutine: 

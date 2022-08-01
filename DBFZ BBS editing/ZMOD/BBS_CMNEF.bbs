@@ -402,7 +402,7 @@ beginSubroutine: s32'cmn_SkillInit'
     disableCancelsIntoMove: 1
     Unknown1562: 
     Unknown1539: 20
-    endMove: 
+    endMove:  
   addMove: s32'CmnActGuardCancelAttack'
     moveType: (DEAD_ANGLE)
     characterState: (STANDING)
@@ -475,6 +475,7 @@ beginSubroutine: s32'cmn_SkillInit'
   addMove: s32'CmnActSparkingBurst'
     moveType: 45
     characterState: (NONE)
+	Unknown1433: 1
     moveInput: (INPUT_PRESS_L)
     moveInput: (INPUT_PRESS_M)
     moveInput: (INPUT_PRESS_H)
@@ -525,7 +526,8 @@ beginSubroutine: s32'cmn_RoundInit'
   Unknown1261: 8, 8, 8, 8, 8, 8
   Unknown1268: 0
   Unknown1305: 150
-  Unknown1306: 420
+  Unknown1306: 780
+  Unknown1263: 10000
   Unknown1270: 1000
   Unknown1293: 20000
   Unknown1271: 1000
@@ -1387,6 +1389,16 @@ beginSubroutine: s32'cmn_OnIdling'
         endIf: 
       endIf: 
     endIf: 
+	 checkLastStateName: s32'cmnSparkingBurst'
+		if: (VARIABLE), 0
+			setEventTrigger: (TIMER), 200
+			storeValue: (VARIABLE), (EmptyVanish), (STATIC), 0
+				upon: (TIMER)
+				storeValue: (VARIABLE), (EmptyVanish), (STATIC), 1
+				endUpon:
+		endIf:
+	
+
   callSubroutine: s32'cmn_SparkingBurst_PowerUp'
   endSubroutine: 
 
@@ -2364,7 +2376,7 @@ beginSubroutine: s32'cmn_InitHomingDash'
   airHitEffect: 27
   hitAirPushbackX: 3000
   hitAirPushbackY: 30000
-  blockstunAmount: 0
+  blockstunAmount: 5
   Unknown1190: 1
   Unknown1182: 1
   killType: 1
@@ -2392,9 +2404,6 @@ beginSubroutine: s32'cmn_InitHomingDash'
       faceOpponent: 
       resetGravity: 
       removeLandingRecovery: 
-      if: (VARIABLE), (IsSparking)
-        groundHitEffect: (NORMAL_UPPER)
-        endIf: 
       endIf: 
     ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 100
       modifyPositionY: 1
@@ -2408,26 +2417,10 @@ beginSubroutine: s32'cmn_InitHomingDash'
       enableSpecials: 1
       enableSpecialCancel: 1
       faceOpponent: 
-      if: (VARIABLE), (IsSparking)
-        conditionalunk2498: 32, 2, 31
-          Unknown111: 10
-          Unknown116: 25
-          addVelocityX: 5000
-          addVelocityY: 15000
-          endIf: 
-        else: 
-          Unknown111: 10
-          addVelocityX: 13000
-          Unknown116: 20
-          addVelocityY: 28000
-          endElse: 
-        endIf: 
-      else: 
-        Unknown111: 10
-        addVelocityX: 13000
-        Unknown116: 20
-        addVelocityY: 28000
-        endElse: 
+      Unknown111: 10
+      addVelocityX: 13000
+      Unknown116: 20
+      addVelocityY: 28000
       resetGravity: 
       endIf: 
     endUpon: 
@@ -3072,10 +3065,29 @@ beginSubroutine: s32'cmnActHajikiInit'
     setThrowInvulnerable: 0
     Unknown1846: 0
     endElse: 
+  checkLastStateName: s32'CmnActShotHajikiGuardCancel'
+  if: (VARIABLE), (Result)
+    setThrowInvulnerable: 1
+    setEventTrigger: (TIMER), 23
+    upon: (TIMER)
+      setThrowInvulnerable: 0
+      Unknown1846: 0
+      endUpon: 
+	darkenBackground: 1
+	tensionUsage: 20000
+	superFreeze: 6, 100, 15, 15
+	cmnSfx: s32'ARC_BTL_SYS_ActSkill_Normal'
+	enableWhiffCancel: 1
+  endIf:
+    endIf:
+  else: 
+    setThrowInvulnerable: 0
+    Unknown1846: 0
+    endElse: 
   upon: (FRAME_STEP)
     ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (FrameCount), (STATIC), 16
       addWhiffCancelOption: s32'CmnActShotHajiki'
-      endIf: 
+      endIf:
     if: (VARIABLE), 48
       Unknown2249: 0
       modifyVar: (ADD), (VARIABLE), 48, (STATIC), 1
@@ -3127,6 +3139,10 @@ beginSubroutine: s32'cmnActHajikiInit'
     Unknown1846: 1
     endUpon: 
   endSubroutine: 
+  
+beginSubroutine: s32'cmnActHajikiGuardCancelInit'
+jumpToState: s32'CmnActShotHajiki'
+ endSubroutine: 
 
 beginState: s32'cmnHajikiBack'
   upon: (IMMEDIATE)
@@ -3454,7 +3470,7 @@ beginSubroutine: s32'cmnNmlAtk5C_Init'
   addGatlingOption: s32'NmlAtk2C'
   addGatlingOption: s32'NmlAtk5D'
   if: (VARIABLE), (SmashRegular)
-    storeValue: (VARIABLE), (SmashRegular), (STATIC), 2
+    storeValue: (VARIABLE), (SmashRegular), (STATIC), 1
     endIf: 
   upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
     clearRegisteredUponCode: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
@@ -3908,14 +3924,6 @@ beginSubroutine: s32'cmnAir_F_NO_STOP_IDLING'
     whiffCrouch: 0
     ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (SpeedY), (STATIC), -5000
       whiffCrouch: 1
-      endIf: 
-    checkLastStateName: s32'CmnActHomingDash'
-    if: (VARIABLE), (Result)
-      whiffCrouch: 0
-      endIf: 
-    checkLastStateName: s32'MTN_AirHoming'
-    if: (VARIABLE), (Result)
-      whiffCrouch: 0
       endIf: 
     endUpon: 
   endSubroutine: 

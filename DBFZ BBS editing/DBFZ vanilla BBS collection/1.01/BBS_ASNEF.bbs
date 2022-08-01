@@ -1,0 +1,1779 @@
+beginState: s32'dmy'
+  sprite: s32'null', 1
+  endState: 
+
+beginState: s32'okasi'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'cmn_okasi'
+    endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'asn_okasi'
+  endState: 
+
+beginState: s32'202Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_202_punch00'
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'200Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_200_punch00'
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'203Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_203_Hummer00'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'bg_down_default'
+  upon: (IMMEDIATE)
+    linkParticle: s32'bg_down_default'
+    modifyPositionX: 210000
+    endUpon: 
+  sprite: s32'null', 60
+  endLabel: 
+  endState: 
+
+beginState: s32'203_Shock_Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_203_Shock'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'204Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_204_Shock'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'bg_dash_default'
+  upon: (IMMEDIATE)
+    linkParticle: s32'bg_dash_default'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    modifyPositionX: 100000
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'231Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_231_Hummer00'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'231_Smoke_Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'bg_asn231_Smoke'
+    modifyPositionX: 700000
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'asn_5CEff'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'asn_262EFF10'
+  endState: 
+
+beginState: s32'263Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_263_AirKick00'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'262Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_262_Shock'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'262Smoke_Eff'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    setAngle: 80000
+    modifyPositionY: 250000
+    modifyPositionX: 200000
+    endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'cmn_strike00'
+  endState: 
+
+beginState: s32'232Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_232_Shock'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'301Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_301_Barriar'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'301Eff_new'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_301_swing'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'asn_2CEff'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    setAngle: 62500
+    modifyPositionY: 350000
+    modifyPositionX: 125000
+    endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'cmn_strike00'
+  endState: 
+
+beginState: s32'205Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_205_Muzzle'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    setDepth: 200000
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'5D_shot'
+  upon: (IMMEDIATE)
+    normalAttack: 
+    callSubroutine: s32'cmnAtkLevel_2_AtkInit'
+    callSubroutine: s32'cmn5DKidan_AtkInit'
+    callSubroutine: s32'cmnKidan_Init'
+    damage1: 600
+    pushbackX: 150
+    untechAmount: 20
+    blockstunAmount: 20
+    Unknown1108: 0
+    Unknown1052: 750
+    Unknown1045: 4, s32'cmn_hit_l'
+    Unknown717: s32'ShakeTateYoko', 500, 0, 5, 0
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    disableHitstopForSelf: 0
+    enemyHitstopAddition: 5, 5, 5
+    hitAirPushbackX: 15000
+    hitAirPushbackY: 15000
+    Unknown1202: s32'ARC_BTL_CMN_Hit_Midle-A'
+    guardSoundEffect: s32''
+    guardSoundEffect: s32'ARC_BTL_CMN_Guard_Midle'
+    modifyPositionY: 10000
+    setDepth: 150000
+    horizontalMomentum: 102
+    Unknown202: 90000, 0
+    linkParticle: s32'asn_arm'
+    Unknown2221: 0
+    destroyOnEnemyDamage: 0
+    destroyOnEnemyGuard: 0
+    destroyOnHit: 0
+    upon: 87
+      clearRegisteredUponCode: 87
+      createObject: s32'cmn_reversal_mazzle', (PLAYER)
+      linkParticle: s32''
+      storeValue: (VARIABLE), 52, (STATIC), 1
+      requestDestroy: (SELF)
+      endUpon: 
+    upon: (HIT_OR_GUARD_ANY)
+      storeValue: (VARIABLE), 52, (STATIC), 1
+      endUpon: 
+    upon: (HIT_OR_GUARD)
+      Unknown2136: 0, 0, 0, 500, 0, 10, 30
+      endUpon: 
+    upon: (ON_ATTACK_COLLISION_MAIN_PLAYER)
+      clearRegisteredUponCode: (ON_ATTACK_COLLISION_MAIN_PLAYER)
+      clearRegisteredUponCode: 39
+      homingClear: 
+      Unknown109: 
+      Unknown114: 
+      haltMomentum: 1
+      upon: 77
+        ifNot: (VARIABLE), (CheckStop)
+          modifyVar: (ADD), (VARIABLE), 47, (STATIC), 1
+          ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 47, (STATIC), 5
+            clearRegisteredUponCode: 77
+            Unknown110: 
+            Unknown115: 
+            horizontalMomentum: 102
+            verticalMomentum: 102
+            endIf: 
+          endIf: 
+        endUpon: 
+      endUpon: 
+    upon: 49
+      Unknown2041: s32'5D_shot'
+      if: (VARIABLE), (Result)
+        clearRegisteredUponCode: 49
+        clearRegisteredUponCode: (FRAME_STEP)
+        clearRegisteredUponCode: (HIT_OR_GUARD_ANY)
+        endIf: 
+      endUpon: 
+    checkCurrentStateName: 3, s32'NmlAtk5D'
+    if: (VARIABLE), (Result)
+      copyFromObjectVar: (SELF), (VARIABLE), (Result), (PLAYER), (VARIABLE), 45
+      ifNot: (VARIABLE), (Result)
+        groundHitEffect: (AIR_FACE_UP)
+        airHitEffect: (AIR_FACE_UP)
+        hitAirPushbackX: 20000
+        hitAirPushbackY: 20000
+        endIf: 
+      endIf: 
+    endUpon: 
+  sprite: s32'kidan0', 1
+  homing: 2, 32, 100, 0, 0, 0, 250000, 0, 100000, 0, 2000
+  upon: 39
+    Unknown200: 0
+    ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (EnemyFrontDistance), (STATIC), 0
+      homingClear: 
+      endIf: 
+    endUpon: 
+  hit: 
+  cmnSfx: s32'ARC_BTL_CMN_kidan_Fire1'
+  sprite: s32'kidan', 19
+  sprite: s32'kidan', 20
+  homingClear: 
+  beginLabel: s32'Koware'
+  sprite: s32'null', 10
+  haltMomentum: 1
+  linkParticle: s32''
+  endState: 
+
+beginState: s32'kidan_smoke'
+  upon: (IMMEDIATE)
+    modifyPositionX: -27000
+    endUpon: 
+  sprite: s32'null', 1
+  createParticle: s32'bg_undersmoke00', (PLAYER)
+  endState: 
+
+beginState: s32'asn_reversalkidan'
+  upon: (IMMEDIATE)
+    Unknown476: '0x61736E5F61726D00000000000000000000000000000000000000000000000000'
+    haltMomentum: 1
+    Unknown289: 300
+    endUpon: 
+  sprite: s32'null', 2147483647
+  createObject: s32'cmn_reversal_mazzle', (PLAYER)
+  endState: 
+
+beginState: s32'jumpkidan'
+  upon: (IMMEDIATE)
+    normalAttack: 
+    callSubroutine: s32'cmnAtkLevel_2_AtkInit'
+    callSubroutine: s32'cmnAir5DKidan_AtkInit'
+    callSubroutine: s32'cmnKidan_Init'
+    damage1: 600
+    pushbackX: 150
+    untechAmount: 20
+    blockstunAmount: 20
+    Unknown1108: -30
+    Unknown1052: 750
+    Unknown1045: 4, s32'cmn_hit_l'
+    Unknown717: s32'ShakeTateYoko', 500, 0, 5, 0
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    disableHitstopForSelf: 0
+    enemyHitstopAddition: 5, 5, 5
+    hitAirPushbackX: 10000
+    hitAirPushbackY: 15000
+    Unknown1202: s32'ARC_BTL_CMN_Hit_Midle-A'
+    guardSoundEffect: s32''
+    guardSoundEffect: s32'ARC_BTL_CMN_Guard_Midle'
+    setAngle: -24000
+    setDepth: 80000
+    horizontalMomentum: 102
+    verticalMomentum: 102
+    linkParticle: s32'asn_arm'
+    Unknown2221: 0
+    destroyOnEnemyDamage: 0
+    destroyOnEnemyGuard: 0
+    destroyOnHit: 0
+    upon: 87
+      clearRegisteredUponCode: 87
+      createObject: s32'cmn_reversal_mazzle', (PLAYER)
+      linkParticle: s32''
+      storeValue: (VARIABLE), 52, (STATIC), 1
+      requestDestroy: (SELF)
+      endUpon: 
+    upon: (HIT_OR_GUARD_ANY)
+      storeValue: (VARIABLE), 52, (STATIC), 1
+      endUpon: 
+    upon: (HIT_OR_GUARD)
+      Unknown2136: 0, 0, 0, 500, 0, 10, 30
+      endUpon: 
+    upon: (ON_ATTACK_COLLISION_MAIN_PLAYER)
+      clearRegisteredUponCode: (ON_ATTACK_COLLISION_MAIN_PLAYER)
+      clearRegisteredUponCode: 39
+      homingClear: 
+      Unknown109: 
+      Unknown114: 
+      haltMomentum: 1
+      upon: 77
+        ifNot: (VARIABLE), (CheckStop)
+          modifyVar: (ADD), (VARIABLE), 47, (STATIC), 1
+          ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 47, (STATIC), 6
+            clearRegisteredUponCode: 77
+            Unknown110: 
+            Unknown115: 
+            horizontalMomentum: 102
+            verticalMomentum: 102
+            endIf: 
+          endIf: 
+        endUpon: 
+      endUpon: 
+    upon: (TOUCH_GROUND)
+      createParticle: s32'bg_groundsmokeS', (PLAYER_LAND)
+      Unknown670: '0x00000000E80300000000000000000000'
+      requestDestroy: (SELF)
+      homingClear: 
+      endUpon: 
+    upon: 49
+      Unknown2041: s32'jumpkidan'
+      if: (VARIABLE), (Result)
+        clearRegisteredUponCode: 49
+        clearRegisteredUponCode: (FRAME_STEP)
+        clearRegisteredUponCode: (HIT_OR_GUARD_ANY)
+        endIf: 
+      endUpon: 
+    checkCurrentStateName: 3, s32'NmlAtkAir5D'
+    if: (VARIABLE), (Result)
+      copyFromObjectVar: (SELF), (VARIABLE), (Result), (PLAYER), (VARIABLE), 45
+      ifNot: (VARIABLE), (Result)
+        setAngle: -38000
+        groundHitEffect: (AIR_FACE_UP)
+        airHitEffect: (AIR_FACE_UP)
+        hitAirPushbackX: 10000
+        hitAirPushbackY: 20000
+        endIf: 
+      endIf: 
+    endUpon: 
+  sprite: s32'kidan_nanamesita0', 1
+  multiplyAlphaColor: 0
+  cmnSfx: s32'ARC_BTL_CMN_kidan_Fire1'
+  sprite: s32'kidan_nanamesita0', 1
+  Unknown58: 1
+  multiplyAlphaColor: 255
+  Unknown202: 90000, 0
+  homing: 2, 32, 100, 0, 0, 0, 250000, 0, 100000, 0, 2000
+  upon: 39
+    Unknown200: 0
+    ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (EnemyFrontDistance), (STATIC), 0
+      homingClear: 
+      endIf: 
+    endUpon: 
+  hit: 
+  sprite: s32'kidan_nanamesita', 19
+  sprite: s32'kidan_nanamesita', 20
+  homingClear: 
+  endLabel: 
+  beginLabel: s32'Koware'
+  sprite: s32'null', 10
+  haltMomentum: 1
+  linkParticle: s32''
+  endState: 
+
+beginState: s32'400_Brake_Eff'
+  upon: (IMMEDIATE)
+    Unknown471: '0x62675F61736E3430315F746F7765725F736D6F6B650000000000000000000000'
+    Unknown294: 1
+    modifyPositionX: 200000
+    setObjectSize: 750
+    endUpon: 
+  sprite: s32'null', 60
+  endLabel: 
+  endState: 
+
+beginState: s32'400Eff_BG'
+  upon: (IMMEDIATE)
+    linkParticle: s32'bg_GroundBrakeEX'
+    Unknown456: 2
+    modifyPositionX: 260000
+    addDepth: 100000
+    endUpon: 
+  sprite: s32'null', 20
+  sprite: s32'null', 3
+  modifyPositionY: -7500
+  Unknown159: -10
+  sprite: s32'null', 3
+  modifyPositionY: -7500
+  sprite: s32'null', 3
+  modifyPositionY: -15000
+  sprite: s32'null', 3
+  modifyPositionY: -15000
+  sprite: s32'null', 3
+  modifyPositionY: -30000
+  sprite: s32'null', 3
+  modifyPositionY: -30000
+  sprite: s32'null', 3
+  modifyPositionY: -50000
+  endState: 
+
+beginState: s32'400B_Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_400B_Throw'
+    Unknown454: 2
+    Unknown456: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'401Eff_shockwave'
+  upon: (IMMEDIATE)
+    specialAttack: 
+    callSubroutine: s32'cmnAtkLevel_3_AtkInit'
+    callSubroutine: s32'cmnSpecialShot_AtkInit'
+    setProjectileDurability: 0
+    damage1: 300
+    Unknown1095: 0
+    tensionGainOnConnect: 0
+    hitAirPushbackX: 15000
+    hitAirPushbackY: 35000
+    blockstunAmount: 20
+    untechAmount: 40
+    hitStop: 12
+    enemyHitstopAddition: -4, -4, -4
+    pushbackX: 150
+    Unknown1045: 4, s32'cmn_hit_Sp3'
+    Unknown1027: 400000, -150000, 0, 0
+    Unknown717: s32'ShakeTateYoko', 2500, 0, 10, 5
+    airHitEffect: 12
+    groundHitEffect: 12
+    Unknown1045: 4, s32'cmn_BomHit'
+    Unknown458: 2
+    Unknown454: 0
+    upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
+      disableHitstopForSelf: 0
+      Unknown1966: 1
+      endUpon: 
+    endUpon: 
+  sprite: s32'shockwave', 2
+  createParticle: s32'bg_down_default', (PLAYER)
+  hit: 
+  endState: 
+
+beginState: s32'401_Brake_Eff'
+  upon: (IMMEDIATE)
+    Unknown471: '0x62675F61736E3430315F746F7765725F736D6F6B650000000000000000000000'
+    modifyPositionX: 400000
+    endUpon: 
+  sprite: s32'null', 60
+  endLabel: 
+  endState: 
+
+beginState: s32'401_Brake_b_Eff'
+  upon: (IMMEDIATE)
+    Unknown471: '0x62675F61736E3430315F746F7765725F736D6F6B650000000000000000000000'
+    Unknown294: 1
+    modifyPositionX: 400000
+    setObjectSize: 750
+    endUpon: 
+  sprite: s32'null', 60
+  endLabel: 
+  endState: 
+
+beginState: s32'401Eff_BG'
+  upon: (IMMEDIATE)
+    linkParticle: s32'bg_GroundBrakeEX'
+    Unknown454: 0
+    Unknown456: 0
+    modifyPositionX: 260000
+    addDepth: 100000
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'401A_Line_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkParticle: s32'asn_401_Line'
+    modifyPositionX: -150000
+    setAngle: 60000
+    Unknown289: 100
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'401B_Line_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkParticle: s32'asn_401_Line'
+    modifyPositionX: -200000
+    modifyPositionY: 200000
+    setAngle: 30000
+    Unknown289: 100
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'401C_Line_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkParticle: s32'asn_401_Line'
+    modifyPositionX: -200000
+    modifyPositionY: 200000
+    setAngle: 30000
+    Unknown289: 100
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'402_Smoke_Eff'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    setAngle: 80000
+    modifyPositionY: 250000
+    modifyPositionX: 200000
+    endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'cmn_strike00'
+  endState: 
+
+beginState: s32'402B_Line_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkParticle: s32'asn_401_Line'
+    modifyPositionY: 250000
+    modifyPositionX: -100000
+    Unknown289: 100
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'402C_Line_Eff'
+  upon: (IMMEDIATE)
+    Unknown454: 2
+    Unknown457: 2
+    linkParticle: s32'asn_401_Line'
+    modifyPositionY: 250000
+    modifyPositionX: -100000
+    Unknown289: 100
+    endUpon: 
+  sprite: s32'null', 2147483647
+  endState: 
+
+beginState: s32'HHS_core'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'asn_403_beam_core_00'
+    setAngle: -85000
+    Unknown2299: 500
+    jumpToStateInObject: (SELF), s32'end'
+    jumpToStateInObject: 47, s32'end'
+    endUpon: 
+  sprite: s32'null', 1
+  characterSfx: s32'ARC_BTL_ASN_HellsHeat_Fire'
+  createObject: s32'HHS_naka', (PLAYER)
+  createObject: s32'HHS_end', (PLAYER)
+  beginLabel: s32'loop'
+  sprite: s32'null', 1
+  createObject: s32'HHS_naka', (PLAYER)
+  endLabel: 
+  modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), 45, (STATIC), 10
+  beginLabel: s32'end'
+  sprite: s32'null', 20
+  haltMomentum: 1
+  clearRegisteredUponCode: (AFTER_EXIT)
+  clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+  linkParticle: s32'asn_403_beam_core_01'
+  triggerUponInObject: s32'HHS_naka', (ON_HIT_OR_BLOCK)
+  Unknown456: 0
+  Unknown454: 0
+  Unknown294: 1
+  endState: 
+
+beginState: s32'HHS_end'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown58: 1
+    linkParticle: s32'asn_403_beam_end00'
+    setAngle: -85000
+    Unknown2299: 500
+    Unknown202: 110000, 0
+    upon: (FRAME_STEP)
+      ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 0
+        clearRegisteredUponCode: (FRAME_STEP)
+        createObject: s32'HHS_explosion', (PLAYER_LAND)
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2274: 0, 500
+      Unknown2276: 0, 0
+      Unknown2275: 0, -85000
+      endUpon: 
+    upon: (AFTER_EXIT)
+      clearRegisteredUponCode: (FRAME_STEP)
+      jumpToLabel: s32'end'
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 120
+  endLabel: 
+  exitState: 
+  beginLabel: s32'end'
+  sprite: s32'null', 1
+  endState: 
+
+beginState: s32'HHS_naka'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown58: 1
+    linkParticle: s32'asn_403_beam_naka00'
+    setAngle: -85000
+    Unknown2299: 500
+    Unknown202: 110000, 0
+    upon: (ON_HIT_OR_BLOCK)
+      Unknown2274: 0, 500
+      Unknown2276: 0, 0
+      Unknown2275: 0, -85000
+      Unknown449: s32'asn_403_beam_naka01', 100
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 120
+  endState: 
+
+beginState: s32'HHL_core'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'asn_403_beam_core_00'
+    setAngle: -50000
+    Unknown2299: 500
+    jumpToStateInObject: (SELF), s32'end'
+    jumpToStateInObject: 47, s32'end'
+    endUpon: 
+  sprite: s32'null', 1
+  characterSfx: s32'ARC_BTL_ASN_HellsHeat_Fire'
+  createObject: s32'HHL_naka', (PLAYER)
+  conditionalunk2499: 2, 2, 263
+    Unknown2279: 0, 1, 0, 0
+    endIf: 
+  createObjectWithArg: s32'HHL_end', (PLAYER)
+  beginLabel: s32'loop'
+  sprite: s32'null', 1
+  createObject: s32'HHL_naka', (PLAYER)
+  endLabel: 
+  modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), 45, (STATIC), 10
+  beginLabel: s32'end'
+  sprite: s32'null', 20
+  haltMomentum: 1
+  clearRegisteredUponCode: (AFTER_EXIT)
+  clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+  linkParticle: s32'asn_403_beam_core_01'
+  triggerUponInObject: s32'HHL_naka', (ON_HIT_OR_BLOCK)
+  Unknown456: 0
+  Unknown454: 0
+  Unknown294: 1
+  endState: 
+
+beginState: s32'HHL_end'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown58: 1
+    linkParticle: s32'asn_403_beam_end00'
+    setAngle: -50000
+    Unknown2299: 500
+    Unknown202: 120000, 0
+    upon: (FRAME_STEP)
+      ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 0
+        clearRegisteredUponCode: (FRAME_STEP)
+        if: (VARIABLE), (ObjectParam1)
+          Unknown2279: 0, 1, 0, 0
+          endIf: 
+        createObjectWithArg: s32'HHL_explosion', (PLAYER_LAND)
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2274: 0, 500
+      Unknown2276: 0, 0
+      Unknown2275: 0, -50000
+      endUpon: 
+    upon: (AFTER_EXIT)
+      clearRegisteredUponCode: (AFTER_EXIT)
+      clearRegisteredUponCode: (FRAME_STEP)
+      jumpToLabel: s32'end'
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 120
+  endLabel: 
+  exitState: 
+  beginLabel: s32'end'
+  sprite: s32'null', 1
+  endState: 
+
+beginState: s32'HHL_naka'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown58: 1
+    linkParticle: s32'asn_403_beam_naka00'
+    setAngle: -50000
+    Unknown2299: 500
+    Unknown202: 110000, 0
+    upon: (ON_HIT_OR_BLOCK)
+      Unknown2274: 0, 500
+      Unknown2276: 0, 0
+      Unknown2275: 0, -50000
+      Unknown449: s32'asn_403_beam_naka01', 100
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 120
+  endState: 
+
+beginState: s32'403Eff_gunsmoke_01'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'asn_403_beam_GunSmoke'
+    setAngle: -85000
+    Unknown2299: 500
+    endUpon: 
+  sprite: s32'null', 160
+  endLabel: 
+  endState: 
+
+beginState: s32'403Eff_gunsmoke_02'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown454: 2
+    linkParticle: s32'asn_403_beam_GunSmoke'
+    setAngle: -50000
+    Unknown2299: 500
+    endUpon: 
+  sprite: s32'null', 120
+  endLabel: 
+  endState: 
+
+beginSubroutine: s32'HH_explosion_Default'
+  specialAttack: 
+  callSubroutine: s32'cmnAtkLevel_3_AtkInit'
+  callSubroutine: s32'cmnSpecialShot_AtkInit'
+  groundHitEffect: (NORMAL_LOWER)
+  hitstunAmount: 22
+  untechAmount: 20
+  Unknown1051: 0
+  pushbackX: 20
+  blockstunAmount: 20
+  tensionGainOnConnect: 1000
+  Unknown1954: 1
+  hitStop: 14
+  enemyHitstopAddition: 2, 2, 2
+  setWallCollision: 1
+  createParticle: s32'bg_stone00', (PLAYER_LAND)
+  createParticle: s32'bg_groundsmokeM', (PLAYER_LAND)
+  Unknown670: '0x01000000DC0500000000000000000000'
+  damageSoundEffect: s32'ARC_BTL_CMN_Hit_Beam'
+  guardSoundEffect: s32'ARC_BTL_CMN_Guard_Beam'
+  checkCurrentStateName: 2, s32'HHS_end'
+  if: (VARIABLE), (Result)
+    airHitEffect: (AIR_LAUNCH)
+    damage1: 1200
+    hitAirPushbackX: 8000
+    hitAirPushbackY: 45000
+    chipDamagePercent: 40
+    Unknown1027: 50000000, 0, 175000, 0
+    Unknown1108: -90
+    linkParticle: s32'asn_403_bomb1'
+    endIf: 
+  else: 
+    airHitEffect: (AIR_FACE_UP)
+    damage1: 1100
+    hitAirPushbackX: 18000
+    hitAirPushbackY: 40000
+    chipDamagePercent: 30
+    Unknown1027: 50000000, -250000, 200000, 0
+    Unknown1108: -60
+    linkParticle: s32'asn_403_bomb2'
+    if: (VARIABLE), (ObjectParam1)
+      callSubroutine: s32'cmn_AssistShotHosei'
+      damage1: 850
+      endIf: 
+    endElse: 
+  endSubroutine: 
+
+beginState: s32'HHL_explosion'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'HH_explosion_Default'
+    upon: 35
+      clearRegisteredUponCode: 35
+      storeValue: (VARIABLE), 45, (STATIC), 1
+      recoveryState: 
+      endUpon: 
+    endUpon: 
+  sprite: s32'explosion', 3
+  ifNot: (VARIABLE), 45
+    hit: 
+    endIf: 
+  cameraShake: s32'ShakeTate', 2000, 0, 20, 3
+  characterSfx: s32'ARC_BTL_ASN_HellsHeat_Hit'
+  sprite: s32'explosion', 12
+  Unknown1027: 50000000, -250000, 0, 0
+  sprite: s32'null', 60
+  clearRegisteredUponCode: 35
+  recoveryState: 
+  Unknown1058: 1
+  Unknown1801: 1
+  Unknown294: 1
+  endState: 
+
+beginState: s32'HHS_explosion'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'HH_explosion_Default'
+    upon: 35
+      clearRegisteredUponCode: 35
+      storeValue: (VARIABLE), 45, (STATIC), 1
+      recoveryState: 
+      endUpon: 
+    endUpon: 
+  sprite: s32'explosion', 3
+  ifNot: (VARIABLE), 45
+    hit: 
+    endIf: 
+  cameraShake: s32'ShakeTate', 2000, 0, 20, 3
+  characterSfx: s32'ARC_BTL_ASN_HellsHeat_Hit'
+  sprite: s32'explosion', 12
+  Unknown1027: 50000000, 0, 0, 0
+  sprite: s32'null', 60
+  clearRegisteredUponCode: 35
+  recoveryState: 
+  Unknown1058: 1
+  Unknown1801: 1
+  Unknown294: 1
+  endState: 
+
+beginState: s32'hellsflash_Core'
+  upon: (IMMEDIATE)
+    Unknown456: 3
+    Unknown454: 3
+    setAngle: -60000
+    Unknown289: 300
+    linkParticle: s32'asn_430_beam_core_00'
+    jumpToStateInObject: (SELF), s32'end'
+    jumpToStateInObject: 47, s32'end'
+    upon: 35
+      Unknown456: 0
+      Unknown454: 0
+      Unknown295: 1
+      endUpon: 
+    upon: (CLASH)
+      clearRegisteredUponCode: (CLASH)
+      storeValue: (VARIABLE), 45, (STATIC), -2
+      triggerUponInObject: s32'hellsflash_Atk', 29
+      checkCurrentStateName: 3, s32'HellsFlash'
+      if: (VARIABLE), (Result)
+        copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+        Unknown1798: 3, 25
+        endIf: 
+      checkCurrentStateName: 3, s32'AirHellsFlash'
+      if: (VARIABLE), (Result)
+        copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+        Unknown1798: 3, 25
+        endIf: 
+      storeValue: (VARIABLE), 47, (STATIC), 1
+      storeValue: (VARIABLE), 51, (STATIC), 1
+      upon: (CLASH)
+        modifyVar: (ADD), (VARIABLE), 47, (STATIC), 1
+        ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 47, (STATIC), 8
+          checkCurrentStateName: 3, s32'HellsFlash'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 24
+            endIf: 
+          checkCurrentStateName: 3, s32'AirHellsFlash'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 24
+            endIf: 
+          endIf: 
+        else: 
+          checkCurrentStateName: 3, s32'HellsFlash'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 25
+            endIf: 
+          checkCurrentStateName: 3, s32'AirHellsFlash'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 25
+            endIf: 
+          endElse: 
+        endUpon: 
+      endUpon: 
+    upon: (FRAME_STEP)
+      ifNot: (VARIABLE), 46
+        Unknown1804: '0x68656C6C73666C6173685F41746B00000000000000000000000000000000000017000000'
+        endIf: 
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 2
+  modifyVar: (ADD), (VARIABLE), 48, (STATIC), 1
+  Unknown2279: 2, 48, 2, 51
+  createObjectWithArg: s32'hellsflash_Atk', (PLAYER)
+  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 45, (STATIC), 6
+    copyFromObjectVar: (PREVIOUS), (VARIABLE), 45, (SELF), (STATIC), (Angle)
+    endIf: 
+  ifNot: (VARIABLE), 50
+    storeValue: (VARIABLE), 50, (STATIC), 1
+    copyFromObjectVar: (PREVIOUS), (VARIABLE), 50, (SELF), (STATIC), (Angle)
+    endIf: 
+  sprite: s32'null', 2
+  endLabel: 
+  modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), 45, (STATIC), 10
+  beginLabel: s32'end'
+  sprite: s32'null', 1
+  clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+  clearRegisteredUponCode: (CLASH)
+  clearRegisteredUponCode: (AFTER_EXIT)
+  clearRegisteredUponCode: (FRAME_STEP)
+  storeValue: (VARIABLE), 49, (STATIC), 1
+  createObject: s32'hellsflash_Atk', (PLAYER)
+  triggerUponInObject: s32'hellsflash_Atk', 30
+  checkCurrentStateName: 3, s32'HellsFlash'
+  if: (VARIABLE), (Result)
+    Unknown1798: 3, 24
+    endIf: 
+  checkCurrentStateName: 3, s32'AirHellsFlash'
+  if: (VARIABLE), (Result)
+    Unknown1798: 3, 24
+    endIf: 
+  Unknown456: 0
+  Unknown454: 0
+  Unknown294: 1
+  sprite: s32'null', 1
+  deactivateObjectByName: s32'hellsflash_Atk'
+  sprite: s32'null', 13
+  linkParticle: s32'asn_430_beam_core_01'
+  sprite: s32'null', 35
+  endState: 
+
+beginState: s32'hellsflash_Atk'
+  upon: (IMMEDIATE)
+    overdriveAttack: 
+    callSubroutine: s32'cmnAtkLevel_4_AtkInit'
+    callSubroutine: s32'cmnUltimateShot_AtkInit'
+    damage1: 322
+    minimalDamagePercent: 31
+    hitStop: 2
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 0
+    hitAirPushbackY: 3000
+    untechAmount: 20
+    Unknown1027: 50000000, -125000, 0, 0
+    checkCurrentStateName: 3, s32'AirHellsFlash'
+    if: (VARIABLE), (Result)
+      Unknown1027: 50000000, -100000, 0, 0
+      endIf: 
+    Unknown733: 1
+    Unknown734: 1
+    Unknown1192: 16, s32'ARC_BTL_CMN_Hit_BeamLoop_LP', 0
+    Unknown1193: 17, s32'ARC_BTL_CMN_Grd_BeamLoop_LP', 0
+    Unknown1191: 1
+    Unknown717: s32'ShakeTate', 1200, 0, 20, 3
+    blockstunAmount: 20
+    Unknown1185: '0x0100000000000000102700006400000005000000'
+    Unknown1186: 1, 50000, 5000, 100, 0
+    Unknown1108: -45
+    upon: 30
+      groundHitEffect: 12
+      airHitEffect: 12
+      hitAirPushbackX: 25000
+      hitAirPushbackY: 50000
+      untechAmount: 35
+      Unknown717: s32'ShakeTate', 1500, 0, 20, 3
+      Unknown1185: '0x0000000000000000102700006400000005000000'
+      Unknown1186: 0, 50000, 5000, 100, 0
+      pushbackX: 150
+      Unknown2266: s32'hellsflash3'
+      conditionalunk2499: 3, 2, 24
+        hit: 
+        endIf: 
+      else: 
+        recoveryState: 
+        endElse: 
+      conditionalunk2500: 12, 2, 2, 47, 0, 8
+        recoveryState: 
+        endIf: 
+      endUpon: 
+    Unknown456: 2
+    Unknown454: 2
+    Unknown457: 2
+    Unknown453: 2
+    Unknown289: 60
+    Unknown1954: 1
+    Unknown58: 1
+    linkParticle: s32'asn_430_beam_naka00'
+    upon: (ON_HIT_OR_BLOCK)
+      clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+      createObject: s32'hellsflash_End', (PLAYER)
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      copyFromObjectVar: (PARENT), (VARIABLE), 46, (SELF), (STATIC), (Angle)
+      endUpon: 
+    upon: (ON_ATTACK_COLLISION_SOUSAI)
+      copyFromObjectVar: (PARENT), (VARIABLE), (ObjectParam1), (SELF), (VARIABLE), (ObjectParam1)
+      deactivateObjectById: (SELF)
+      Unknown1798: 2, 24
+      endUpon: 
+    upon: 29
+      storeValue: (VARIABLE), 45, (STATIC), 0
+      endUpon: 
+    upon: (HIT_OR_GUARD_ANY)
+      if: (VARIABLE), 45
+        Unknown1798: 2, 23
+        endIf: 
+      endUpon: 
+    upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE)
+      if: (VARIABLE), (ObjectParam2)
+        checkCurrentStateName: 3, s32'HellsFlash'
+        if: (VARIABLE), (Result)
+          copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+          endIf: 
+        checkCurrentStateName: 3, s32'AirHellsFlash'
+        if: (VARIABLE), (Result)
+          copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+          endIf: 
+        endIf: 
+      callSubroutine: s32'cmnUltimate_CameraCombo'
+      endUpon: 
+    upon: (FRAME_STEP)
+      conditionalunk2498: 2, 2, 47
+        conditionalunk2499: 2, 2, 49
+          copyFromObjectVar: (SELF), (VARIABLE), (Result), (PARENT), (VARIABLE), (ObjectParam1)
+          ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (ObjectParam1), (VARIABLE), 0
+            deactivateObjectById: (SELF)
+            endIf: 
+          endIf: 
+        endIf: 
+      ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 0
+        if: (VARIABLE), 50
+          clearRegisteredUponCode: (FRAME_STEP)
+          createParticle: s32'bg_groundsmokeS', (PLAYER_LAND)
+          Unknown2277: 1
+          Unknown449: s32'bg_groundsmokeS', 123
+          Unknown670: '0x01000000E80300000000000000000000'
+          endIf: 
+        endIf: 
+      copyFromObjectVar: (SELF), (VARIABLE), (Result), (ENEMY), (VARIABLE), (PlayerDamageOrGuard)
+      ifNot: (VARIABLE), (Result)
+        Unknown633: 16, 20
+        Unknown633: 17, 20
+        endIf: 
+      checkCurrentStateName: 3, s32'HellsFlash'
+      ifNot: (VARIABLE), (Result)
+        checkCurrentStateName: 3, s32'AirHellsFlash'
+        ifNot: (VARIABLE), (Result)
+          Unknown633: 16, 20
+          Unknown633: 17, 20
+          endIf: 
+        endIf: 
+      conditionalunk2498: 3, 2, 32
+        conditionalunk2498: 32, 2, 32
+          Unknown1079: 1
+          endIf: 
+        else: 
+          Unknown1079: 0
+          endElse: 
+        endIf: 
+      conditionalunk2499: 3, 2, 32
+        conditionalunk2499: 32, 2, 32
+          Unknown1079: 1
+          endIf: 
+        else: 
+          Unknown1079: 0
+          endElse: 
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      if: (VARIABLE), 46
+        storeValue: (VARIABLE), 46, (STATIC), 0
+        copyFromObjectVar: (PARENT), (VARIABLE), 46, (SELF), (STATIC), (Result)
+        endIf: 
+      Unknown2274: 0, 1000
+      Unknown2276: 0, 0
+      Unknown449: s32'asn_430_beam_naka02', 100
+      endUpon: 
+    endUpon: 
+  sprite: s32'hellsflash1', 1
+  hit: 
+  Unknown202: 100000, 0
+  sprite: s32'hellsflash1', 1
+  Unknown734: 0
+  sprite: s32'hellsflash1', 2
+  damage1: 220
+  Unknown1191: 0
+  Unknown2301: 1200
+  sprite: s32'hellsflash2', 2
+  Unknown2301: 1000
+  beginLabel: s32'loop'
+  sprite: s32'hellsflash2', 2
+  Unknown2301: 1200
+  sprite: s32'hellsflash2', 2
+  Unknown2301: 1000
+  endLabel: 
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 120
+  endState: 
+
+beginState: s32'hellsflash_End'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown289: 60
+    Unknown2036: 2, 0
+    Unknown58: 1
+    linkParticle: s32'asn_430_beam_end00'
+    upon: (FRAME_STEP)
+      Unknown51: 2
+      if: (VARIABLE), (Result)
+        Unknown2488: '0x02000000190100000200000019010000'
+        Unknown2036: 2, 0
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2274: 0, 1000
+      Unknown2276: 0, 0
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 2
+  Unknown2301: 1000
+  sprite: s32'null', 2
+  Unknown2301: 1200
+  endLabel: 
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 120
+  endState: 
+
+beginState: s32'hellsflash_shadow'
+  upon: (IMMEDIATE)
+    Unknown457: 2
+    Unknown454: 2
+    setAngle: -60000
+    Unknown289: 300
+    jumpToStateInObject: (SELF), s32'end'
+    endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'cmn_shadowLine_loop'
+  endLabel: 
+  beginLabel: s32'end'
+  sprite: s32'null', 1
+  endLabel: 
+  endState: 
+
+beginState: s32'430Eff_Charge'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_430_charge'
+    Unknown454: 0
+    Unknown456: 0
+    Unknown457: 2
+    Unknown294: 1
+    upon: 12
+      copyFromObjectVar: (SELF), (VARIABLE), (PosZ), (PARENT), (VARIABLE), (PosZ)
+      endUpon: 
+    ifNot: (VARIABLE), (ObjectParam1)
+      ifNot: (VARIABLE), (ObjectParam2)
+        modifyPositionX: 6000
+        modifyPositionY: 0
+        characterSfx: s32'ARC_BTL_ASN_HellsFlash_Chrg'
+        endIf: 
+      endIf: 
+    if: (VARIABLE), (ObjectParam1)
+      modifyPositionX: -17000
+      modifyPositionY: -21000
+      characterSfx: s32'ARC_BTL_ASN_HellsFlash_Chrg'
+      endIf: 
+    if: (VARIABLE), (ObjectParam2)
+      setAngle: 5000
+      setObjectSize: 1100
+      modifyPositionX: -87500
+      endIf: 
+    endUpon: 
+  sprite: s32'null', 60
+  endLabel: 
+  endState: 
+
+beginState: s32'hellsflash_Lv3_Core'
+  upon: (IMMEDIATE)
+    Unknown456: 3
+    Unknown454: 3
+    setAngle: -60000
+    Unknown289: 300
+    linkParticle: s32'asn_431_beam_core_00'
+    jumpToStateInObject: (SELF), s32'end'
+    jumpToStateInObject: 47, s32'end'
+    upon: 35
+      Unknown454: 0
+      endUpon: 
+    upon: (CLASH)
+      clearRegisteredUponCode: (CLASH)
+      storeValue: (VARIABLE), 45, (STATIC), 0
+      triggerUponInObject: s32'hellsflash_Lv3_Atk', 29
+      checkCurrentStateName: 3, s32'HellsFlash_Lv3_Exe'
+      if: (VARIABLE), (Result)
+        copyFromObjectVar: (PLAYER), (VARIABLE), 45, (SELF), (STATIC), (Result)
+        endIf: 
+      storeValue: (VARIABLE), 47, (STATIC), 1
+      upon: (CLASH)
+        modifyVar: (ADD), (VARIABLE), 47, (STATIC), 1
+        ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 47, (STATIC), 32
+          checkCurrentStateName: 3, s32'HellsFlash_Lv3_Exe'
+          if: (VARIABLE), (Result)
+            Unknown1798: 3, 24
+            endIf: 
+          endIf: 
+        endUpon: 
+      endUpon: 
+    upon: (FRAME_STEP)
+      ifNot: (VARIABLE), 46
+        Unknown1804: '0x68656C6C73666C6173685F4C76335F41746B000000000000000000000000000017000000'
+        endIf: 
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 2
+  createObject: s32'hellsflash_Lv3_Atk', (PLAYER)
+  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 45, (STATIC), 13
+    applyTo: (PREVIOUS)
+      damage1: 0
+      endApply: 
+    endIf: 
+  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 45, (STATIC), 38
+    copyFromObjectVar: (PREVIOUS), (VARIABLE), 45, (SELF), (STATIC), (Angle)
+    endIf: 
+  sprite: s32'null', 2
+  endLabel: 
+  modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), 45, (STATIC), 40
+  beginLabel: s32'end'
+  sprite: s32'null', 1
+  clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+  clearRegisteredUponCode: (CLASH)
+  clearRegisteredUponCode: (AFTER_EXIT)
+  clearRegisteredUponCode: (FRAME_STEP)
+  createObject: s32'hellsflash_Lv3_Atk', (PLAYER)
+  applyTo: (PREVIOUS)
+    damage1: 0
+    endApply: 
+  triggerUponInObject: s32'hellsflash_Lv3_Atk', 30
+  checkCurrentStateName: 3, s32'HellsFlash_Lv3_Exe'
+  if: (VARIABLE), (Result)
+    Unknown1798: 3, 24
+    endIf: 
+  Unknown456: 0
+  Unknown294: 1
+  sprite: s32'null', 13
+  deactivateObjectByName: s32'hellsflash_Lv3_Atk'
+  linkParticle: s32'asn_431_beam_core_01'
+  sprite: s32'null', 35
+  endState: 
+
+beginState: s32'hellsflash_Lv3_Atk'
+  upon: (IMMEDIATE)
+    overdriveAttack: 
+    callSubroutine: s32'cmnAtkLevel_4_AtkInit'
+    callSubroutine: s32'cmnUltimateShot_AtkInit'
+    damage1: 314
+    minimalDamagePercent: 26
+    hitStop: 2
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 0
+    hitAirPushbackY: 3000
+    untechAmount: 130
+    disableOpponentRecovery: 0
+    Unknown1027: 50000000, -350000, 0, 0
+    Unknown1079: 1
+    Unknown1192: 16, s32'ARC_BTL_CMN_Hit_BeamLoop_LP', 0
+    Unknown1193: 17, s32'ARC_BTL_CMN_Grd_BeamLoop_LP', 0
+    Unknown1191: 1
+    Unknown1045: 4, s32''
+    Unknown1198: 1, 0
+    Unknown1078: 0
+    Unknown945: 1
+    Unknown1064: s32'hellsflash_Lv3_Atk'
+    upon: 30
+      hitAirPushbackX: 5000
+      hitAirPushbackY: 5000
+      Unknown1191: 8
+      Unknown477: 0, 0, 0, 50000000
+      Unknown1064: s32'HellsFlash_Lv3_Exe'
+      endUpon: 
+    Unknown456: 2
+    Unknown454: 2
+    Unknown457: 2
+    Unknown453: 2
+    Unknown289: 60
+    Unknown1954: 1
+    Unknown58: 1
+    linkParticle: s32'asn_431_beam_naka00'
+    upon: (ON_HIT_OR_BLOCK)
+      clearRegisteredUponCode: (ON_HIT_OR_BLOCK)
+      createObject: s32'hellsflash_Lv3_End', (PLAYER)
+      storeValue: (VARIABLE), 46, (STATIC), 1
+      copyFromObjectVar: (PARENT), (VARIABLE), 46, (SELF), (STATIC), (Angle)
+      upon: (ON_ATTACK_COLLISION_SOUSAI)
+        deactivateObjectById: (SELF)
+        Unknown1798: 2, 24
+        endUpon: 
+      endUpon: 
+    upon: 29
+      storeValue: (VARIABLE), 45, (STATIC), 0
+      endUpon: 
+    upon: (HIT_OR_GUARD_ANY)
+      if: (VARIABLE), 45
+        Unknown1798: 2, 23
+        endIf: 
+      endUpon: 
+    upon: (FRAME_STEP)
+      ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosY), (STATIC), 0
+        clearRegisteredUponCode: (FRAME_STEP)
+        Unknown2277: 1
+        Unknown670: '0x03000000740E00000000000000000000'
+        endIf: 
+      copyFromObjectVar: (SELF), (VARIABLE), (Result), (ENEMY), (VARIABLE), (PlayerDamageOrGuard)
+      ifNot: (VARIABLE), (Result)
+        Unknown633: 16, 20
+        Unknown633: 17, 20
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      if: (VARIABLE), 46
+        storeValue: (VARIABLE), 46, (STATIC), 0
+        copyFromObjectVar: (PARENT), (VARIABLE), 46, (SELF), (STATIC), (Result)
+        endIf: 
+      Unknown2274: 0, 1000
+      Unknown2276: 0, 0
+      Unknown449: s32'asn_431_beam_naka01', 100
+      endUpon: 
+    endUpon: 
+  sprite: s32'hellsflashLv30', 2
+  hit: 
+  Unknown202: 90000, 0
+  sprite: s32'hellsflashLv31', 2
+  Unknown2301: 1200
+  sprite: s32'hellsflashLv32', 2
+  Unknown2301: 1000
+  beginLabel: s32'loop'
+  sprite: s32'hellsflashLv32', 2
+  Unknown2301: 1200
+  sprite: s32'hellsflashLv32', 2
+  Unknown2301: 1000
+  endLabel: 
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 120
+  endState: 
+
+beginState: s32'hellsflash_Lv3_End'
+  upon: (IMMEDIATE)
+    Unknown456: 2
+    Unknown457: 2
+    Unknown289: 60
+    Unknown2036: 2, 0
+    Unknown58: 1
+    linkParticle: s32'asn_431_beam_end00'
+    upon: (FRAME_STEP)
+      Unknown51: 2
+      if: (VARIABLE), (Result)
+        Unknown2488: '0x02000000190100000200000019010000'
+        Unknown2036: 2, 0
+        endIf: 
+      endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2274: 0, 1000
+      Unknown2276: 0, 0
+      endUpon: 
+    endUpon: 
+  beginLabel: s32'loop'
+  sprite: s32'null', 2
+  Unknown2301: 1000
+  sprite: s32'null', 2
+  Unknown2301: 1200
+  endLabel: 
+  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 120
+  endState: 
+
+beginState: s32'hellsflash_Lv3_LandBreak'
+  upon: (IMMEDIATE)
+    upon: (FRAME_STEP)
+      Unknown670: '0x03000000E80300000000000000000000'
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 25
+  if: (VARIABLE), (ObjectParam1)
+    faceRight: 
+    setPositionX: -3150000
+    endIf: 
+  else: 
+    faceLeft: 
+    setPositionX: 3150000
+    endElse: 
+  physicsImpulseX: 250000
+  endState: 
+
+beginState: s32'431_fade'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_DestructionFinish2_Start'
+    Unknown454: 0
+    Unknown457: 2
+    Unknown294: 1
+    upon: (FRAME_STEP)
+      ifNot: (VARIABLE), (IN_BATTLE)
+        clearRegisteredUponCode: (FRAME_STEP)
+        linkParticle: s32''
+        endIf: 
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 210
+  endLabel: 
+  endState: 
+
+beginState: s32'431_fade_Iwanasi'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_DestructionFinish_Iwanasi'
+    Unknown454: 0
+    Unknown457: 2
+    Unknown294: 1
+    displayModel: 0
+    upon: (FRAME_STEP)
+      ifNot: (VARIABLE), (IN_BATTLE)
+        clearRegisteredUponCode: (FRAME_STEP)
+        displayModel: 1
+        endIf: 
+      endUpon: 
+    endUpon: 
+  sprite: s32'null', 210
+  endLabel: 
+  endState: 
+
+beginState: s32'431_bomb00'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_431_bomb00'
+    Unknown454: 0
+    Unknown457: 2
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 60
+  endLabel: 
+  endState: 
+
+beginState: s32'431_bomb01'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_431_bomb01'
+    Unknown454: 0
+    Unknown457: 2
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 100
+  endLabel: 
+  endState: 
+
+beginState: s32'431_smoke'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_431_smoke'
+    Unknown454: 0
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 240
+  endLabel: 
+  endState: 
+
+beginState: s32'431 beam00'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_431_RiseBeam00'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 110
+  endLabel: 
+  endState: 
+
+beginState: s32'431 beam01'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_431_RiseBeam01'
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 110
+  endLabel: 
+  endState: 
+
+beginState: s32'Lastpower_EndAtk'
+  upon: (IMMEDIATE)
+    overdriveAttack: 
+    callSubroutine: s32'cmnAtkLevel_4_AtkInit'
+    callSubroutine: s32'cmnUltimateShot_AtkInit'
+    damage1: 500000
+    Unknown910: 100
+    killType: 1
+    tensionGainOnConnect: 0
+    hitStop: 0
+    Unknown1018: 1
+    dontAddComboCount: 1
+    allowHitting: (ALL)
+    Unknown1037: 1
+    Unknown1206: 1
+    Unknown1179: 1
+    Unknown1064: s32'Lastpower_EndAtk_EndAtk'
+    Unknown456: 2
+    Unknown454: 2
+    Unknown457: 2
+    Unknown449: s32'asn_432_bomb', 100
+    endUpon: 
+  sprite: s32'lastpower', 2
+  hit: 
+  endState: 
+
+beginState: s32'Lastpower_EndAtk_EndAtk'
+  upon: (IMMEDIATE)
+    overdriveAttack: 
+    callSubroutine: s32'cmnAtkLevel_4_AtkInit'
+    callSubroutine: s32'cmnUltimateShot_AtkInit'
+    damage1: 0
+    Unknown910: 100
+    killType: 1
+    tensionGainOnConnect: 0
+    hitStop: 0
+    airHitEffect: 29
+    groundHitEffect: 29
+    hitAirPushbackX: 50000
+    hitAirPushbackY: 50000
+    wallBounceCount: 0
+    wallBounceXVelocityPercent: 0
+    untechAmount: 60
+    disableOpponentRecovery: 0
+    Unknown1018: 1
+    disableHitsparks: 1
+    dontAddComboCount: 1
+    allowHitting: (ALL)
+    Unknown1037: 1
+    Unknown1206: 1
+    Unknown1179: 1
+    Unknown1064: s32'CmnNeutral'
+    Unknown456: 2
+    Unknown454: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'lastpower', 2
+  hit: 
+  endState: 
+
+beginState: s32'432Eff_Shuchu'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_432_Shuchu'
+    Unknown454: 2
+    Unknown456: 2
+    Unknown457: 2
+    endUpon: 
+  sprite: s32'null', 30
+  endLabel: 
+  endState: 
+
+beginState: s32'432Eff_tameLight'
+  upon: (IMMEDIATE)
+    linkParticle: s32'asn_432_tame_Light'
+    endUpon: 
+  sprite: s32'null', 90
+  endLabel: 
+  endState: 
+
+beginState: s32'432Eff_bomb'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    createParticle: s32'asn_432_bomb02', (PLAYER)
+    endUpon: 
+  sprite: s32'null', 120
+  endLabel: 
+  endState: 
+
+beginState: s32'FinishCamera_NmlAtk2C'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraMotion: -96335, 346206, 10732, 3823, 5101, 0, 54, 0, 90, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_NmlAtkAir2C'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraMotion: -189049, 240435, 328722, -5944, 7528, 1000, 54, 0, 90, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_DynamiteDriverA'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraMotion: 101400, 431951, 98864, 19, -156, 0, 54, 0, 150, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_DynamiteDriverC'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraMotion: 114449, 412194, 203243, -3145, -824, 0, 54, 0, 150, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_FlyingPowerBom'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraMotion: -122355, 340154, 294094, -5348, 6181, -1000, 54, 0, 120, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'FinishCamera_HellsFlash'
+  upon: (IMMEDIATE)
+    Unknown294: 1
+    Unknown1801: 1
+    resetCamera: 
+    Unknown2082: 
+    endUpon: 
+  sprite: s32'null', 60
+  createObject: s32'cmn_syutyusen', (ENEMY_CENTER)
+  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+  cmnSfx: s32'ARC_BTL_CMN_Hit_XLarge'
+  cameraMotion: -22410, 580211, 179496, -1585, 2322, 0, 54, 0, 120, 30, 1
+  sprite: s32'null', 30
+  deactivateObjectByName: s32'cmn_syutyusen'
+  endState: 
+
+beginState: s32'600Eff_Stone'
+  upon: (IMMEDIATE)
+    Unknown471: '0x62675F61736E5F36303063735F30300000000000000000000000000000000000'
+    Unknown457: 2
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 180
+  endLabel: 
+  endState: 
+
+beginState: s32'600Eff_wind'
+  upon: (IMMEDIATE)
+    Unknown471: '0x62675F61736E5F36303063735F30310000000000000000000000000000000000'
+    Unknown457: 2
+    Unknown294: 1
+    endUpon: 
+  sprite: s32'null', 120
+  endLabel: 
+  endState: 
+
+beginState: s32'DUMMYDUMMY'
+  sprite: s32'null', 1
+  endState: 
+

@@ -903,6 +903,7 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'RC_Brenda'
   registerMove: s32'RC_Taikuu'
   registerMove: s32'CmnActShotHajiki'
+  registerMove: s32'CmnActShotHajikiGuardCancel'
   grabbedFrames: 0, s32'vdn050_00'
   grabbedFrames: 1, s32'vdn050_01'
   grabbedFrames: 2, s32'vdn050_02'
@@ -1567,11 +1568,18 @@ beginState: s32'CmnActResultWin'
   endState: 
 
 beginState: s32'AssistAttack'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'Vrush_1_Init'
+upon: (IMMEDIATE)
+    callSubroutine: s32'cmnAssistAttackInit'
+	callSubroutine: s32'D_Call_Init'
+    callSubroutine: s32'cmn_AssistHosei'
+    upon: (BEFORE_EXIT)
+      Unknown1304: 
+      endUpon: 
     endUpon: 
   sprite: s32'vdn022_05', 1
   sprite: s32'vdn022_05', 1
+  storeValue: (VARIABLE), 51, (STATIC), 500000
+  callSubroutine: s32'cmnAssist_Pos'
   beginLabel: s32'downloop'
   sprite: s32'vdn022_05', 3
   sprite: s32'vdn022_06', 3
@@ -1580,60 +1588,31 @@ beginState: s32'AssistAttack'
   gotoIfOperation: s32'downloop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 600
   gotoLabel: s32'end'
   beginLabel: s32'landing'
-  sprite: s32'vdn400_00', 1
-  sprite: s32'vdn400_01', 1
-  sprite: s32'vdn400_02', 2
-  sprite: s32'vdn400_03', 2
-  physicsImpulseX: 30000
-  createObject: s32'vdn400_Shock_Eff', (PLAYER_LAND)
-  Unknown1303: 500
-  characterSfx: s32'ARC_BTL_VDN_VRush_JmpKck_AB'
-  sprite: s32'vdn400_04', 1
-  modifyPositionX: 40000
-  sprite: s32'vdn400_05', 1
-  sprite: s32'vdn400_06', 1
-  physicsImpulseY: 4000
-  jumpToStateInObject: (PARENT), s32'landing_act'
-  sprite: s32'vdn400_07', 2
-  sprite: s32'vdn400_08', 2
-  hit: 
-  physicsImpulseX: 75000
-  horizontalMomentum: 90
-  Unknown250: 340000
-  createObject: s32'vdn400_all_Eff', (PLAYER)
-  createObject: s32'vdn400_Kick_Eff', (PLAYER)
-  sprite: s32'vdn400_09', 2
-  sprite: s32'vdn400_10', 2
-  beginLabel: s32'stop'
-  sprite: s32'vdn400_11', 2
-  clearRegisteredUponCode: (ON_ATTACK_COLLISION_MAIN_PLAYER)
-  recoveryState: 
-  Unknown111: 30
-  horizontalMomentum: 100
-  Unknown116: 30
-  Unknown250: -1
-  sprite: s32'vdn400_12', 3
-  sprite: s32'vdn400_13', 3
-  setPositionY: 40000
-  resetGravity: 
-  sprite: s32'vdn400_14', 3
-  sprite: s32'vdn400_15', 3
-  sprite: s32'vdn022_02', 2
-  sprite: s32'vdn022_03', 2
-  sprite: s32'vdn022_04', 2
-  beginLabel: s32'loop'
-  sprite: s32'vdn022_05', 3
-  sprite: s32'vdn022_06', 3
-  sprite: s32'vdn022_07', 3
-  endLabel: 
-  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), (LoopCount), (STATIC), 100
-  exitState: 
-  beginLabel: s32'landing_act'
-  sprite: s32'vdn037_01', 3
-  Unknown1304: 
-  sprite: s32'vdn037_00', 3
+  sprite: s32'vdn205_00', 3
+  Unknown1698: 6
+  Unknown1700: 4
+  sprite: s32'vdn205_01', 3
+  sprite: s32'vdn205_02', 3
+  randomVoiceLine2: s16'vxxx106', 100, s16'vxxx107', 100, s16'vxxx109', 100, s16'', 0
+  sprite: s32'vdn205_03', 3
+  createObject: s32'Gsn_Punch', 0
+  Unknown43: 4, 1
+  characterSfx: s32'ARC_BTL_VDN_Saiyaman_Pishi'
+  sprite: s32'vdn205_04', 2
+  sprite: s32'vdn205_04', 1
+  enableVanish: 1
+  sprite: s32'vdn205_05', 3
+  sprite: s32'vdn205_06', 3
+  sprite: s32'vdn205_07', 3
+  sprite: s32'vdn205_08', 3
+  sprite: s32'vdn205_05', 3
+  sprite: s32'vdn205_09', 3
+  sprite: s32'vdn205_10', 3
+  sprite: s32'vdn205_11', 3
+  sprite: s32'vdn205_12', 3
   beginLabel: s32'end'
   haltMomentum: 1
+  Unknown1304: 
   goto: s32'air_end', 2, 30
   sprite: s32'vdn000_00', 3
   sprite: s32'vdn010_00', 4
@@ -1648,6 +1627,7 @@ beginState: s32'AssistAttack'
   sprite: s32'vdn038_04', 3
   endLabel: 
   endState: 
+  
 
 beginState: s32'AssistAttack2'
   upon: (IMMEDIATE)
@@ -2003,6 +1983,69 @@ beginState: s32'ChangeEnterAttackUltimate2'
   beginState: s32'CmnActShotHajiki'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnActHajikiInit'
+    checkLastStateName: s32'CmnActShotHajiki'
+    ifNot: (VARIABLE), (Result)
+      storeValue: (VARIABLE), 56, (STATIC), 0
+      endIf: 
+    endUpon: 
+  goto: s32'rep', 2, 56
+  sprite: s32'vdn301_00', 1
+  sprite: s32'vdn301_01', 1
+  sprite: s32'vdn301_02', 2
+  sprite: s32'vdn301_03', 2
+  Unknown625: s16'vxxx124', 100, s16'vxxx125', 100, s16'', 0, s16'', 0
+  sprite: s32'vdn301_04', 2
+  sprite: s32'vdn301_05', 2
+  sprite: s32'vdn301_06', 2
+  sprite: s32'vdn301_07', 2
+  sprite: s32'vdn301_08', 2
+  storeValue: (VARIABLE), 51, (STATIC), 1
+  sprite: s32'vdn301_09', 2
+  sprite: s32'vdn301_10', 2
+  endLabel: 
+  gotoLabel: s32'hajiki'
+  beginLabel: s32'rep'
+  sprite: s32'vdn301_08', 2
+  Unknown1698: 6
+  Unknown1700: 4
+  storeValue: (VARIABLE), 51, (STATIC), 1
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  endLabel: 
+  beginLabel: s32'hajiki'
+  sprite: s32'vdn301_08', 2
+  Unknown1698: 6
+  Unknown1700: 4
+  storeValue: (VARIABLE), 56, (STATIC), 1
+  ifNot: (VARIABLE), 51
+
+    endIf: 
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 2
+  sprite: s32'vdn301_10', 1
+  Unknown1698: 5
+  Unknown1700: 0
+  sprite: s32'vdn301_10', 1
+  sprite: s32'vdn301_10', 1
+  sprite: s32'vdn301_10', 1
+  sprite: s32'vdn301_10', 1
+  storeValue: (VARIABLE), 56, (STATIC), 0
+  endState: 
+  
+beginState: s32'CmnActShotHajikiGuardCancel'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'cmnActHajikiGuardCancelInit'
     checkLastStateName: s32'CmnActShotHajiki'
     ifNot: (VARIABLE), (Result)
       storeValue: (VARIABLE), 56, (STATIC), 0
@@ -3274,12 +3317,12 @@ beginState: s32'NmlAtk2D'
   sprite: s32'vdn205_04', 2
   sprite: s32'vdn205_04', 1
   enableVanish: 1
-  sprite: s32'vdn205_05', 3
-  sprite: s32'vdn205_06', 3
-  sprite: s32'vdn205_09', 3
-  sprite: s32'vdn205_10', 3
-  sprite: s32'vdn205_11', 3
-  sprite: s32'vdn205_12', 3
+  sprite: s32'vdn205_05', 2
+  sprite: s32'vdn205_06', 2
+  sprite: s32'vdn205_09', 1
+  sprite: s32'vdn205_10', 1
+  sprite: s32'vdn205_11', 1
+  sprite: s32'vdn205_12', 1
   endState: 
 
 beginState: s32'NmlAtk5D_Miss'

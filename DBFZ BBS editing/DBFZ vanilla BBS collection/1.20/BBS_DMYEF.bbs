@@ -1,0 +1,7 @@
+beginState: s32'dmy'
+  endState: 
+
+beginState: s32'DUMMYDUMMY'
+  sprite: s32'null', 1
+  endState: 
+

@@ -696,6 +696,7 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'CmnFAirDash'
   registerMove: s32'BRendaChainSpecial'
   registerMove: s32'CmnActShotHajiki'
+  registerMove: s32'CmnActShotHajikiGuardCancel'
   registerMove: s32'NmlAtk5D'
   registerMove: s32'NmlAtk2D'
   registerMove: s32'NmlAtk5C'
@@ -1100,10 +1101,25 @@ beginSubroutine: s32'OnIdling'
 	  if: (VARIABLE), (IsSparking)
 		Unknown913: 200, 11, 0
 	  endIf:
-	  callSubroutine: s32'cmn_RoundInit'
+	  walkFSpeed: 9800
+	  walkBSpeed: 8200
+	  initDashFSpeed: 29000
+	  bDashXSpeed: 47000
+	  bDashYSpeed: 0
+	  bDashGravity: 0
+	  forwardJumpDistance: 14500
+	  backwardJumpDistance: 13000
+	  jumpHeight: 39000
+	  initGravity: 2000
+	  forwardSuperJumpDistance: 15500
+	  backwardSuperJumpDistance: 13000
+	  superJumpHeight: 53000
+	  superJumpGravity: 2000
+	  fDashAccelSpeed: 900
+	  airdashFSpeed: 36000
 	  airDashCount: 1
 	  doubleJumpCount: 1
-	  endIf:
+  endIf:
   endSubroutine: 
 
 beginSubroutine: s32'JumpDown_Type'
@@ -2075,6 +2091,10 @@ beginState: s32'CmnActShotHajiki'
   Unknown1700: 0
   sprite: s32'gks301_09', 3
   sprite: s32'gks301_10', 3
+  endState: 
+  
+beginState: s32'CmnActShotHajikiGuardCancel'
+  callSubroutine: s32'cmnActHajikiGuardCancelInit'
   endState: 
 
 beginState: s32'CmnActGuardCancelAttack'

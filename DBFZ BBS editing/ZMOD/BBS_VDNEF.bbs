@@ -863,6 +863,10 @@ beginState: s32'Gsn_Punch'
     Unknown1072: 1
     Unknown1027: 250000, -250000, 250000, -250000
     Unknown1182: 1
+	checkCurrentStateName: 3, s32'AssistAttack'
+		if: (VARIABLE), (Result)
+		callSubroutine: s32'cmn_AssistHosei'
+		endIf: 
     upon: (ON_ATTACK_COLLISION_MAIN_PLAYER)
       Unknown111: 30
       storeValue: (VARIABLE), 48, (STATIC), 1
@@ -1027,7 +1031,7 @@ beginState: s32'Gsn_Kidan'
         endIf: 
       endUpon: 
     endUpon: 
-  sprite: s32'gsn233_00', 14
+  sprite: s32'gsn233_00', 4
   displayModel: 0
   enableSuperArmor: 1
   sprite: s32'gsn233_00', 1
@@ -1176,6 +1180,7 @@ beginState: s32'Gsn_Kidan'
   characterSfx: s32'ARC_BTL_VDN_Saiyaman_TLP'
   callSubroutine: s32'gsn_end'
   endState: 
+  
 
 beginState: s32'Gsn_Kidan_Shot'
   upon: (IMMEDIATE)

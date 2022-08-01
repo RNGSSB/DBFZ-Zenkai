@@ -4169,13 +4169,13 @@ beginSubroutine: s32'RoundInit'
 beginState: s32'InterceptKick_B'
     upon: (IMMEDIATE)
       callSubroutine: s32'cmnAtkLevel_2_AtkInit'
-      damage1: 900
+      damage1: 1000
       callSubroutine: s32'cmn_AirAtkHosei'
       groundHitEffect: (AIR_FACE_UP)
       airHitEffect: (AIR_FACE_UP)
       hitAirPushbackX: 20000
       hitAirPushbackY: -90000
-      untechAmount: 30
+      untechAmount: 40
       blockstunAmount: 13
       Unknown1027: 50000000, 0, 0, 0
       guardType: (ANY)
@@ -4192,7 +4192,7 @@ beginState: s32'InterceptKick_B'
           hitAirPushbackX: 25000
           groundBounceCount: 1
           groundBounceYVelocityPercent: 100
-          groundBounceYVelocity: 25000
+          groundBounceYVelocity: 35000
         endUpon: 
       Unknown2169: 0
       jumpToStateInObject: (PARENT), s32'landing'
@@ -4231,6 +4231,7 @@ beginState: s32'InterceptKick_B'
     beginLabel: s32'landing'
     sprite: s32'vgs402_08', 1
     deactivateObjectByName: s32'VGS_402Eff'
+	createObject: s32'VGS_202Eff', (FRONT_2_BODY)
     createParticle: s32'bg_groundsmokeM', (FRONT_2_BODY)
     Unknown670: '0x00000000E80300000000000000000000'
     haltMomentum: 1
@@ -4248,13 +4249,14 @@ beginState: s32'InterceptKick_B'
 beginState: s32'InterceptKick_C'
     upon: (IMMEDIATE)
       callSubroutine: s32'cmnAtkLevel_2_AtkInit'
-      damage1: 900
+      damage1: 1200
       callSubroutine: s32'cmn_AirAtkHosei'
       groundHitEffect: (AIR_FACE_UP)
       airHitEffect: (AIR_FACE_UP)
       hitAirPushbackX: 20000
       hitAirPushbackY: -90000
-      untechAmount: 30
+      untechAmount: 50
+	  setProration: 90
       blockstunAmount: 13
       Unknown1027: 50000000, 0, 0, 0
       guardType: (ANY)
@@ -4271,7 +4273,7 @@ beginState: s32'InterceptKick_C'
           hitAirPushbackX: 25000
           groundBounceCount: 1
           groundBounceYVelocityPercent: 100
-          groundBounceYVelocity: 25000
+          groundBounceYVelocity: 45000
         endUpon: 
       Unknown2169: 0
       jumpToStateInObject: (PARENT), s32'landing'
@@ -4312,6 +4314,7 @@ beginState: s32'InterceptKick_C'
     sprite: s32'vgs402_08', 1
     deactivateObjectByName: s32'VGS_402Eff'
     createParticle: s32'bg_groundsmokeM', (FRONT_2_BODY)
+	createObject: s32'VGS_202Eff', (FRONT_2_BODY)
     Unknown670: '0x00000000E80300000000000000000000'
     haltMomentum: 1
     physicsImpulseX: 27000
@@ -4876,7 +4879,7 @@ beginState: s32'InterceptKick_C'
     sprite: s32'vgs202_00', 5
     sprite: s32'vgs202_01', 5
     sprite: s32'vgs202_02', 5
-    sprite: s32'vgs202_03', 3
+    sprite: s32'vgs202_03', 5
     physicsImpulseX: 30000
     cmnSfx: s32'ARC_BTL_CMN_Furi_Hook'
     Unknown658: 100, 1, 0
@@ -4906,8 +4909,6 @@ beginState: s32'InterceptKick_C'
       groundHitEffect: (AIR_FACE_DOWN)
       killType: 0
       Unknown1202: s32'ARC_BTL_CMN_Hit_kidan'
-      callSubroutine: s32'cmnNmlAtk5A3rd_Init'
-      enableSpecialCancel: 1
       endUpon: 
     sprite: s32'vgs202_06', 3
     Unknown1698: 6
@@ -4945,6 +4946,12 @@ beginState: s32'InterceptKick_C'
     createObject: s32'VGS_202Eff', 0
     callSubroutine: s32'cmnRendaChain_Clear_Idling'
     hit: 
+	upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
+    clearRegisteredUponCode: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
+    enableVanish: 1
+    enableSparkCancel: 1
+    Unknown1354: 1
+    endUpon: 
     cmnSfx: s32'ARC_BTL_CMN_Kdn_Fire_L'
     sprite: s32'vgs202_10', 3
     recoveryState: 
