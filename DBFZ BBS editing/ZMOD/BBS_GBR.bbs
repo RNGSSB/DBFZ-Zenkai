@@ -1839,7 +1839,12 @@ beginState: s32'ChangeEnterAttackUltimate1'
   beginLabel: s32'landing'
   sprite: s32'gbr010_00', 3
   Unknown2177: 0, 100
-  jumpToState: s32'Sinretsuenbuzan'
+  if: (VARIABLE), (DmgAtkAngle)
+    jumpToState: s32'Sinretsuenbuzan'
+    endIf: 
+  else: 
+    jumpToState: s32'AirTwinpowerBall'
+    endIf: 
   endLabel: 
   endState: 
 
@@ -2473,7 +2478,7 @@ beginState: s32'NmlAtk2A'
   sprite: s32'gbr230_02', 1
   Unknown621: 0, -1
   Unknown637: s32'FuriShort', 0, 100
-  guardType: (LOW)
+  guardType: (ANY)
   sprite: s32'gbr230_03', 3
   callSubroutine: s32'cmnRendaChain_Clear_Idling'
   hit: 

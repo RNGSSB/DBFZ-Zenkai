@@ -495,22 +495,6 @@ beginSubroutine: s32'RoundInit'
     Unknown1539: 40
     Unknown1562: 
     endMove: 
-  addMove: s32'MeteoSmash'
-    moveType: (OVERDRIVE)
-    characterState: (STANDING)
-    moveInput: (INPUT_214)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: (INPUT_PRESS_M)
-    addMoveFlag: (THREE)
-    addMoveFlag: 151
-    Unknown1525: -1700, -200, 1700, 200
-    Unknown1559: 
-    Unknown1575: 
-    cpuBigDamage: 
-    Unknown1538: 70
-    Unknown1539: 60
-    Unknown1540: 900
-    endMove: 
   addMove: s32'MeteoSmash_CD'
     moveType: (OVERDRIVE)
     characterState: (STANDING)
@@ -530,13 +514,9 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'SSJ3Install'
 	moveType: (OVERDRIVE)
     characterState: (STANDING)
-	moveInput: (INPUT_ANY_DOWNDOWN)
-	moveInput: (INPUT_PRESS_H)
-	moveInput: (INPUT_PRESS_KI)
-	moveInput: (INPUT_BOOLEAN_OR)
-	moveInput: (INPUT_ANY_DOWNDOWN)
+	moveInput: (INPUT_214)
 	moveInput: (INPUT_PRESS_L)
-    moveInput: (INPUT_PRESS_M)
+      moveInput: (INPUT_PRESS_M)
 	addMoveFlag: (VARIABLE_3_FALSE)
 	addMoveFlag: (THREE)
 	endMove:
@@ -747,7 +727,6 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'S_AirKamehameha_Naname'
   registerMove: s32'S_Kamehameha_Warp'
   registerMove: s32'S_AirKamehameha_Warp'
-  registerMove: s32'MeteoSmash'
   registerMove: s32'MeteoSmash_CD'
   registerMove: s32'SSJ3Install'
   registerMove: s32'SSJ3End'
@@ -1033,7 +1012,7 @@ beginSubroutine: s32'OnIdling'
 	if: (VARIABLE), 263
               modifyVar: (ADD), (VARIABLE), 5, (STATIC), 1
         endIf: 
-	ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 5, (STATIC), 900
+	ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 5, (STATIC), 1260
 		Unknown2033: 3, s32'CmnActStand'
 		if: (VARIABLE), 0
 				  storeValue: (VARIABLE), 5, (STATIC), 0 
@@ -1087,8 +1066,6 @@ beginSubroutine: s32'OnIdling'
 	  storeValue: (VARIABLE), 79, (STATIC), 120
 	  Unknown913: 80, 11, 0
 	  endElse:
-	  airdashFSpeed: 46000
-	  airDashBackVelocity: 42000
 	  walkFSpeed: 10800
 	  walkBSpeed: 9200
 	  initDashFSpeed: 39000
@@ -2063,7 +2040,7 @@ beginState: s32'ChangeEnterAttackUltimate2'
     jumpToState: s32'S_Kamehameha'
     endIf: 
   else: 
-    jumpToState: s32'MeteoSmash'
+    jumpToState: s32'MeteoSmash_CD'
     endElse: 
   endLabel: 
   endState: 
@@ -5942,428 +5919,6 @@ beginState: s32'S_AirKamehameha_Warp'
   sprite: s32'gks401_19', 3
   endState: 
 
-beginState: s32'MeteoSmash'
-  upon: (IMMEDIATE)
-    Unknown1668: 20, 1
-    callSubroutine: s32'cmnAtkLevel_4_AtkInit'
-    damage1: 1600
-    minimalDamagePercent: 100
-    hitstunAmount: 80
-    untechAmount: 80
-    hitStop: 15
-    groundHitEffect: (AIR_FACE_UP)
-    Unknown1103: 0
-    killType: 1
-    Unknown736: 1
-    Unknown735: 1
-    Unknown1179: 0
-    openMouth: 4
-    damageSoundEffect: s32'ARC_BTL_CMN_Hit_Large-A'
-    upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
-      clearRegisteredUponCode: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
-      damage1: 500
-      minimalDamagePercent: 20
-      Unknown1064: s32'MeteoSmash'
-      Unknown1149: 10
-      attackPushboxOff: 1
-      Unknown1073: 1
-      groundHitEffect: 17
-      airHitEffect: 17
-      killType: 1
-      Unknown305: 
-      Unknown717: s32'ShakeYoko', 600, 0, 20, 5
-      Unknown1067: 4, 150000, 150000
-      if: (VARIABLE), (Direction)
-        ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), -2500000
-          storeValue: (VARIABLE), (PosXRaw), (STATIC), -2500000
-          endIf: 
-        endIf: 
-      else: 
-        ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), 2500000
-          storeValue: (VARIABLE), (PosXRaw), (STATIC), 2500000
-          endIf: 
-        endElse: 
-      Unknown255: 1
-      cameraMotion: -123952, 255730, 62855, 2131, 6930, 0, 54, 1, 25, 10, 1
-      jumpToLabel: s32'exe'
-      endUpon: 
-    upon: 36
-      ifNot: (VARIABLE), (IN_BATTLE)
-        recoveryState: 
-        endIf: 
-      endUpon: 
-    upon: (RECEIVE_ATTACK)
-      Unknown633: 16, 20
-      Unknown633: 17, 20
-      Unknown633: 18, 20
-      endUpon: 
-    upon: (BEFORE_EXIT)
-	  ifNot: (VARIABLE), 3
-      resetDefaultMeshSet: 
-      changeDefaultMeshSet:
-      endIf:	  
-      Unknown633: 16, 20
-      Unknown633: 17, 20
-      Unknown633: 18, 20
-      endUpon: 
-    tensionUsage: 30000
-    endUpon: 
-  sprite: s32'gks440_00', 4
-  enableSuperArmor: 1
-  haltMomentum: 1
-  Unknown1698: 6
-  Unknown1700: 2
-  sprite: s32'gks440_01', 4
-  sprite: s32'gks440_02', 1
-  superFreeze: 4, 119, 103, 103
-  upon: (SUPERFREEZE)
-    clearRegisteredUponCode: (SUPERFREEZE)
-    darkenBackground: 1
-    Unknown2318: 1
-    callSubroutine: s32'cmn3gaugeWLDSTP'
-    endUpon: 
-  sprite: s32'gks440_02', 5
-  cameraMotion: 25758, 253868, 48271, 1622, -1081, 0, 54, 120, 35, 0, 1
-  cameraShake: s32'ShakeTateYoko', 800, 20, 30, 0
-  Unknown632: 0, s32'ARC_BTL_GKS_SprKameha_Jinari', 100
-  sprite: s32'gks440_03', 20
-  sprite: s32'gks440_04', 6
-  sprite: s32'gks440_05', 2
-  Unknown624: s16'vxxx214', 100, s16'', 0, s16'', 0, s16'', 0
-  sprite: s32'gks440_06', 3
-  cameraMotion: 22010, 217837, 53950, 1622, -1081, 0, 54, 3, 3, 0, 1
-  cameraShake: s32'ShakeTate', 2000, 0, 30, 0
-  setDefaultMeshSet: s32'SS3'
-  changeDefaultMeshSet: 
-  cmnSfx: s32'ARC_BTL_CMN_Charge_StartDemo'
-  createObject: s32'groundSmoke_EXtame', (PLAYER)
-  applyTo: (PREVIOUS)
-    modifyPositionX: -400000
-    endApply: 
-  createObject: s32'groundSmoke_EXtame', (PLAYER)
-  applyTo: (PREVIOUS)
-    flipDirection: 
-    modifyPositionX: -200000
-    endApply: 
-  createObject: s32'Meteo_rock', (PLAYER)
-  createObject: s32'gks_431_E_Light', (PLAYER)
-  sprite: s32'gks440_07', 3
-  Unknown2136: 0, 0, 0, 1000, 0, 50, 30
-  createObject: s32'Meteo_aura', (PLAYER)
-  cameraMotion: 28936, 284443, 43451, 1622, -1081, 0, 54, 2, 3, 0, 1
-  sprite: s32'gks440_08', 3
-  cameraMotion: 25758, 253868, 48271, 1622, -1081, 0, 54, 1, 42, 10, 1
-  sprite: s32'gks440_08', 3
-  Unknown631: 18, s32'ARC_BTL_CMN_Charge_Loop_LP', 100
-  sprite: s32'gks440_07', 3
-  sprite: s32'gks440_08', 3
-  sprite: s32'gks440_08', 3
-  sprite: s32'gks440_07', 3
-  sprite: s32'gks440_08', 3
-  sprite: s32'gks440_07', 3
-  sprite: s32'gks440_07', 3
-  sprite: s32'gks440_08', 3
-  sprite: s32'gks440_07', 3
-  sprite: s32'gks440_08', 3
-  sprite: s32'gks440_07', 3
-  sprite: s32'gks440_08', 3
-  deactivateObjectByName: s32'groundSmoke_EXtame'
-  Unknown633: 0, 30
-  sprite: s32'gks440_09', 3
-  sprite: s32'gks440_10', 1
-  createParticle: s32'cmn_Warp', (CENTER)
-  triggerUponInObject: s32'Meteo_aura', (BEAM_CLASH)
-  Unknown633: 18, 20
-  cmnSfx: s32'ARC_BTL_CMN_TLP_Short'
-  deactivateObjectByName: s32'gks_431_E_Light'
-  sprite: s32'gks440_10', 10
-  displayModel: 0
-  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (EnemyDistanceX), (STATIC), 600000
-    storeValue: (VARIABLE), 47, (STATIC), 1
-    endIf: 
-  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (EnemyDistanceX), (STATIC), 1000000
-    storeValue: (VARIABLE), 47, (STATIC), 0
-    storeValue: (VARIABLE), 48, (STATIC), 1
-    endIf: 
-  sprite: s32'null', 4
-  Unknown26: 7, 2, 47
-  Unknown26: 10, 2, 48
-  moveTo: (ENEMY), 123, -150000, 0, 3
-  if: (VARIABLE), 47
-    moveTo: (ENEMY), 123, -150000, 0, 6
-    endIf: 
-  if: (VARIABLE), 48
-    moveTo: (ENEMY), 123, -150000, 0, 9
-    endIf: 
-  Unknown2323: -1
-  ignorePushback: 1
-  setNoCollision: 0
-  sprite: s32'gks441_03', 1
-  Unknown1698: 6
-  Unknown1700: 1
-  triggerUponInObject: s32'Meteo_aura', (CLASH)
-  createParticle: s32'cmn_Warp', (CENTER)
-  displayModel: 1
-  setNoCollision: 1
-  faceOpponent: 
-  haltMomentum: 1
-  Unknown631: 18, s32'ARC_BTL_CMN_Charge_Loop_LP', 100
-  sprite: s32'gks441_04', 2
-  sprite: s32'gks441_05', 3
-  physicsImpulseX: 60000
-  Unknown665: 104, 1, 0
-  cmnSfx: s32'ARC_BTL_CMN_Furi_Hiji'
-  sprite: s32'gks441_06', 2
-  hit: 
-  triggerUponInObject: s32'Meteo_aura', (ON_HIT_OR_BLOCK)
-  sprite: s32'gks441_07', 2
-  sprite: s32'gks441_08', 2
-  horizontalMomentum: 70
-  sprite: s32'gks441_09', 3
-  triggerUponInObject: s32'Meteo_aura', (CLASH)
-  Unknown735: 0
-  enableSuperArmor: 0
-  sprite: s32'gks441_10', 4
-  recoveryState: 
-  Unknown658: 100, 1, 1
-  Unknown633: 18, 20
-  sprite: s32'gks441_11', 3
-  sprite: s32'gks441_12', 2
-  sprite: s32'gks441_13', 2
-  sprite: s32'gks441_14', 2
-  sprite: s32'gks441_15', 2
-  sprite: s32'gks441_16', 2
-  sprite: s32'gks441_17', 2
-  sprite: s32'gks441_18', 2
-  endLabel: 
-  exitState: 
-  beginLabel: s32'exe'
-  sprite: s32'gks443_00', 2
-  Unknown1698: 6
-  Unknown1700: 2
-  cameraMotion: 294831, 356563, 276388, -3239, -6099, 0, 54, 1, 60, 1, 1
-  physicsImpulseX: 0
-  Unknown624: s16'vxxx216', 100, s16'vxxx217', 100, s16'', 0, s16'', 0
-  sprite: s32'gks443_01', 2
-  sprite: s32'gks443_02', 2
-  sprite: s32'gks443_03', 2
-  sprite: s32'gks443_04', 2
-  sprite: s32'gks443_05', 2
-  cmnSfx: s32'ARC_BTL_CMN_Furi_Hook'
-  sprite: s32'gks443_06', 2
-  Unknown717: s32'ShakeTate', 700, 0, 20, 15
-  hit: 
-  damage1: 420
-  groundHitEffect: 16
-  airHitEffect: 16
-  Unknown1149: 26
-  Unknown1067: 4, 180000, 100000
-  attackPushboxOff: 0
-  hitAirPushbackX: 20000
-  hitAirPushbackY: 120000
-  Unknown1202: s32'ARC_BTL_CMN_Hit_XLarge'
-  triggerUponInObject: s32'Meteo_aura', (ON_HIT_OR_BLOCK)
-  sprite: s32'gks443_07', 4
-  triggerUponInObject: s32'Meteo_aura', (CLASH)
-  sprite: s32'gks443_08', 2
-  triggerUponInObject: s32'Meteo_aura', (BEAM_CLASH)
-  deactivateObjectByName: s32'Meteo_auraGround'
-  createParticle: s32'cmn_Warp', (CENTER)
-  displayModel: 0
-  setNoCollision: 0
-  applyTo: (ENEMY)
-    Unknown109: 
-    Unknown114: 
-    haltMomentum: 1
-    setGravity: 1
-    modifyPositionY: 750000
-    endApply: 
-  Unknown633: 18, 20
-  cmnSfx: s32'ARC_BTL_CMN_TLP_Start'
-  sprite: s32'gks442_01', 5
-  sprite: s32'gks442_01', 1
-  moveTo: (ENEMY), 100, -400000, 900000, 1
-  cameraMotion: -8391, 431166, -49428, 3291, -1537, 0, 54, 1, 80, 1, 1
-  sprite: s32'gks442_01', 1
-  haltMomentum: 1
-  sprite: s32'gks442_02', 3
-  triggerUponInObject: s32'Meteo_aura', (CLASH)
-  createParticle: s32'cmn_Warp', (CENTER)
-  faceOpponent: 
-  setNoCollision: 1
-  displayModel: 1
-  Unknown631: 18, s32'ARC_BTL_CMN_Charge_Loop_LP', 100
-  sprite: s32'gks442_02', 2
-  sprite: s32'gks442_03', 5
-  applyTo: (ENEMY)
-    Unknown110: 
-    Unknown115: 
-    resetGravity: 
-    endApply: 
-  sprite: s32'gks442_04', 2
-  Unknown1700: 2
-  cmnSfx: s32'ARC_BTL_CMN_Furi_FuriOroshi'
-  sprite: s32'gks442_05', 2
-  hit: 
-  Unknown1064: s32'M_Kamehameha_Atk'
-  attackLevel: 3
-  damage1: 637
-  minimalDamagePercent: 25
-  airHitEffect: (AIR_FACE_UP)
-  hitAirPushbackX: 20000
-  hitAirPushbackY: -50000
-  Unknown1067: 4, 180000, 10000
-  Unknown717: s32'ShakeTate', 1000, 0, 30, 5
-  Unknown1202: s32'ARC_BTL_CMN_Hit_XLarge'
-  createObject: s32'cmn_Windpressure_Tate', (PLAYER)
-  triggerUponInObject: s32'Meteo_aura', (ON_HIT_OR_BLOCK)
-  sprite: s32'gks442_06', 3
-  triggerUponInObject: s32'Meteo_aura', (CLASH)
-  sprite: s32'gks442_07', 3
-  recoveryState: 
-  sprite: s32'gks442_08', 3
-  triggerUponInObject: s32'Meteo_aura', (BEAM_CLASH)
-  createParticle: s32'cmn_Warp', (CENTER)
-  displayModel: 0
-  setNoCollision: 0
-  Unknown633: 18, 20
-  cmnSfx: s32'ARC_BTL_CMN_TLP_Start'
-  sprite: s32'gks442_09', 6
-  Unknown1700: 1
-  sprite: s32'gks442_09', 8
-  applyTo: (ENEMY)
-    Unknown109: 
-    Unknown114: 
-    haltMomentum: 1
-    setGravity: 1
-    endApply: 
-  sprite: s32'gks442_09', 1
-  moveTo: (ENEMY), 100, -600000, -1100000, 1
-  cameraMotion: -25488, 523331, 70657, 977, 796, 0, 54, 1, 50, 1, 1
-  sprite: s32'gks402_04', 4
-  haltMomentum: 1
-  createParticle: s32'cmn_Warp', (CENTER)
-  faceOpponent: 
-  setNoCollision: 1
-  sprite: s32'gks402_05', 3
-  displayModel: 1
-  triggerUponInObject: s32'Meteo_aura', (CLASH)
-  exPointFReset: (PLAYER), -130000, 280000
-  createObject: s32'M_Kamehameha_Tame', (EX_POINT_F)
-  Unknown43: 4, 1
-  applyTo: (ENEMY)
-    Unknown110: 
-    Unknown115: 
-    resetGravity: 
-    horizontalMomentum: 93
-    verticalMomentum: 93
-    modifyPositionX: 150000
-    endApply: 
-  Unknown631: 18, s32'ARC_BTL_CMN_Charge_Loop_LP', 100
-  characterSfx: s32'ARC_BTL_GKS_SpKame_Charge'
-  sprite: s32'gks402_06', 3
-  sprite: s32'gks402_07', 3
-  sprite: s32'gks402_08', 3
-  sprite: s32'gks402_06', 3
-  sprite: s32'gks402_07', 3
-  triggerUponInObject: s32'Meteo_aura', (BEAM_CLASH)
-  Unknown633: 18, 120
-  sprite: s32'gks402_08', 99
-  clearRegisteredUponCode: (SUPERFREEZE)
-  superFreeze: 4, 119, 100, 100
-  Unknown2189: 2, 4
-  resetCamera: 
-  playAnimation: s32'gks436cs', 0
-  playCameraAnimation: s32'gks436cs', 23, 0, 5
-  upon: (FRAME_STEP)
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 0
-      deactivateObjectByName: s32'M_Kamehameha_Tame'
-      createObject: s32'Meteo_TameSphere', (PLAYER)
-      endIf: 
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 39
-      triggerUponInObject: s32'Meteo_TameSphere', (ON_HIT_OR_BLOCK)
-      endIf: 
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 60
-      triggerUponInObject: s32'Meteo_aura', 26
-      endIf: 
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 83
-      triggerUponInObject: s32'Meteo_TameSphere', (CLASH)
-      endIf: 
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 87
-      triggerUponInObject: s32'Meteo_TameSphere', (BEAM_CLASH)
-      endIf: 
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 91
-      triggerUponInObject: s32'Meteo_TameSphere', 26
-      endIf: 
-    ifOperation: (IS_EQUAL), (VARIABLE), (FrameCount), (STATIC), 93
-      cameraMotion: -338375, 310130, 105489, 454, 10581, 0, 54, 10, 50, 60, 1
-      cameraShake: s32'ShakeTateYoko', 1000, 0, 120, 30
-      endIf: 
-    endUpon: 
-  sprite: s32'gks402_12', 3
-  Unknown2136: -1000000, 0, 0, 1000, 0, 100, 30
-  Unknown477: 500000, 150000, 0, 10000
-  Unknown632: 2, s32'ARC_BTL_GKS_SpKame_Fire', 100
-  deactivateObjectByName: s32'Meteo_TameSphere'
-  createObject: s32'M_Kamehameha_Core', 0
-  createObject: s32'kamehameha_shadow', 1
-  createObject: s32'kamehameha_shadow', 2
-  createObject: s32'kamehameha_shadow', 3
-  createObject: s32'kamehameha_shadow', 4
-  createObject: s32'cmn_bigSmokeEff', (PLAYER)
-  triggerUponInObject: s32'Meteo_aura', (ON_HIT_OR_BLOCK)
-  Unknown255: 0
-  jumpToStateInObject: (ATTACKER), s32'end'
-  beginLabel: s32'loop'
-  sprite: s32'gks402_13', 2
-  Unknown1700: 4
-  sprite: s32'gks402_14', 2
-  sprite: s32'gks402_15', 2
-  endLabel: 
-  modifyVar: (ADD), (VARIABLE), 45, (STATIC), 1
-  gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), (VARIABLE), 45, (STATIC), 24
-  beginLabel: s32'end'
-  sprite: s32'gks402_13', 3
-  enableSuperArmor: 0
-  clearRegisteredUponCode: (CLASH)
-  triggerUponInObject: s32'M_Kamehameha_Core', (ON_HIT_OR_BLOCK)
-  triggerUponInObject: s32'Meteo_aura', 27
-  deactivateObjectByName: s32'kamehameha_shadow'
-  Unknown633: 16, 60
-  Unknown633: 17, 60
-  sprite: s32'gks402_14', 3
-  sprite: s32'gks402_15', 3
-  sprite: s32'gks402_13', 3
-  sprite: s32'gks402_14', 3
-  sprite: s32'gks402_15', 3
-  sprite: s32'gks402_13', 3
-  sprite: s32'gks402_14', 3
-  sprite: s32'gks402_15', 3
-  sprite: s32'gks402_13', 3
-  sprite: s32'gks402_14', 3
-  sprite: s32'gks402_15', 3
-  createObject: s32'SSJ3_kaijoEff', (PLAYER)
-  ifNot: (VARIABLE), 3
-  resetDefaultMeshSet: 
-  changeDefaultMeshSet:
-  endIf:
-  sprite: s32'gks402_16', 3
-  sprite: s32'gks402_17', 3
-  sprite: s32'gks402_18', 3
-  resetGravity: 
-  sprite: s32'gks402_19', 3
-  beginLabel: s32'fall'
-  sprite: s32'gks022_02', 2
-  sprite: s32'gks022_03', 2
-  sprite: s32'gks022_04', 2
-  beginLabel: s32'fall_loop'
-  sprite: s32'gks022_05', 3
-  sprite: s32'gks022_06', 3
-  sprite: s32'gks022_07', 3
-  endLabel: 
-  gotoLabel: s32'fall_loop'
-  endState: 
-
 beginState: s32'MeteoSmash_CD'
   upon: (IMMEDIATE)
     Unknown1668: 20, 1
@@ -6790,26 +6345,58 @@ beginState: s32'SSJ3Install'
   storeValue: (VARIABLE), 3, (STATIC), 1
   haltMomentum: 1
   endUpon:
-  superFreeze: 4, 119, 0, 51
-    upon: (SUPERFREEZE)
-    clearRegisteredUponCode: (SUPERFREEZE)
-    darkenBackground: 1
-    endUpon: 
   sprite: s32'gks440_00', 4
+  enableSuperArmor: 1
+  haltMomentum: 1
+  Unknown1698: 6
+  Unknown1700: 2
   sprite: s32'gks440_01', 4
   sprite: s32'gks440_02', 1
+  superFreeze: 4, 119, 103, 103
+  upon: (SUPERFREEZE)
+    clearRegisteredUponCode: (SUPERFREEZE)
+    darkenBackground: 1
+    Unknown2318: 1
+    callSubroutine: s32'cmn3gaugeWLDSTP'
+    endUpon: 
   sprite: s32'gks440_02', 5
+  cameraMotion: 25758, 253868, 48271, 1622, -1081, 0, 54, 120, 35, 0, 1
+  cameraShake: s32'ShakeTateYoko', 800, 20, 30, 0
+  Unknown632: 0, s32'ARC_BTL_GKS_SprKameha_Jinari', 100
   sprite: s32'gks440_03', 20
   sprite: s32'gks440_04', 6
   sprite: s32'gks440_05', 2
+  voiceLine: s16'vxxx214'
   sprite: s32'gks440_06', 3
+  cameraMotion: 22010, 217837, 53950, 1622, -1081, 0, 54, 3, 3, 0, 1
   cameraShake: s32'ShakeTate', 2000, 0, 30, 0
   cmnSfx: s32'ARC_BTL_CMN_Charge_StartDemo'
+  createObject: s32'groundSmoke_EXtame', (PLAYER)
   setDefaultMeshSet: s32'SS3'
   changeDefaultMeshSet: 
+  createObject: s32'Meteo_rock', (PLAYER)
+  createObject: s32'gks_431_E_Light', (PLAYER)
   sprite: s32'gks440_07', 3
+  Unknown2136: 0, 0, 0, 1000, 0, 50, 30
   createObject: s32'Meteo_aura', (PLAYER)
+  cameraMotion: 28936, 284443, 43451, 1622, -1081, 0, 54, 2, 3, 0, 1
+  sprite: s32'gks440_08', 3
+  cameraMotion: 25758, 253868, 48271, 1622, -1081, 0, 54, 1, 42, 10, 1
+  sprite: s32'gks440_08', 3
+  Unknown631: 18, s32'ARC_BTL_CMN_Charge_Loop_LP', 100
   sprite: s32'gks440_07', 3
+  sprite: s32'gks440_08', 3
+  sprite: s32'gks440_08', 3
+  sprite: s32'gks440_07', 3
+  sprite: s32'gks440_08', 3
+  sprite: s32'gks440_07', 3
+  sprite: s32'gks440_07', 3
+  sprite: s32'gks440_08', 3
+  sprite: s32'gks440_07', 3
+  sprite: s32'gks440_08', 3
+  sprite: s32'gks440_07', 3
+  sprite: s32'gks440_08', 3
+  deactivateObjectByName: s32'groundSmoke_EXtame'
   endState: 
   
 beginState: s32'SSJ3End'
