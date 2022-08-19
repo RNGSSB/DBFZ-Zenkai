@@ -2417,7 +2417,7 @@ beginState: s32'NmlAtk2B'
       endUpon: 
     endUpon: 
   sprite: s32'top231_00', 3
-  sprite: s32'top231_01', 1
+  sprite: s32'top231_01', 3
   sprite: s32'keep', 3
   Unknown637: s32'FuriShort', 0, 100
   sprite: s32'top231_02', 2
