@@ -926,6 +926,8 @@ beginSubroutine: s32'OnIdling'
     storeValue: (VARIABLE), 5, (STATIC), 0
     endIf: 
   if: (VARIABLE), 53
+    setDefaultMeshSet: s32'ESR'
+    changeDefaultMeshSet:
     if: (VARIABLE), (IsSparking)
       Unknown912: 135, 13, 1
       if: (VARIABLE), (CmnCharaReg7)

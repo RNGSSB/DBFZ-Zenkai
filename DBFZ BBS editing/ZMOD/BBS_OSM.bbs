@@ -6329,9 +6329,9 @@ beginState: s32'RFFlash'
   upon: (IMMEDIATE)
     Unknown1058: 1
     endUpon: 
-  sprite: s32'osm405_00', 2
+  sprite: s32'osm405_00', 1
   sprite: s32'osm405_01', 2
-  sprite: s32'osm405_02', 5
+  sprite: s32'osm405_02', 2
   haltMomentum: 1
   physicsImpulseY: 2000
   landingRecovery: 5, 1
@@ -6344,8 +6344,8 @@ beginState: s32'RFFlash'
   sprite: s32'osm405_04', 2
   createObject: s32'osm405_HandAura_Eff', 0
   createObject: s32'osm405_HandAura2_Eff', 1
-  sprite: s32'osm405_05', 2
-  sprite: s32'osm405_06', 4
+  sprite: s32'osm405_05', 1
+  sprite: s32'osm405_06', 2
   haltMomentum: 1
   sprite: s32'osm405_07', 2
   sprite: s32'osm405_08', 2
