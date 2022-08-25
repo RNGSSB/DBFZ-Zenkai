@@ -2764,6 +2764,9 @@ beginState: s32'NmlAtk5D'
     addGatlingOption: s32'NmlAtk5C'
     addGatlingOption: s32'NmlAtk2C'
     addGatlingOption: s32'NmlAtk2D'
+    addWhiffCancelOption: s32'Gekisinkyaku_A'
+    addWhiffCancelOption: s32'Gekisinkyaku_B'
+    addWhiffCancelOption: s32'Gekisinkyaku_C'
 	addGatlingOption: s32'NmlAtk5A3rdSolo'
     upon: (FRAME_STEP)
       if: (VARIABLE), 52
