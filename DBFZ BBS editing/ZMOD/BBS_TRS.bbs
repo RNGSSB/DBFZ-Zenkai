@@ -956,6 +956,7 @@ beginSubroutine: s32'OnGuard'
 
 beginSubroutine: s32'OnIdling'
   callSubroutine: s32'cmn_OnIdling'
+  swapMeshSet: s32'Normal'
   ifNot: (VARIABLE), (IsMainPlayerSelf)
     storeValue: (VARIABLE), 3, (STATIC), 0
     endIf: 

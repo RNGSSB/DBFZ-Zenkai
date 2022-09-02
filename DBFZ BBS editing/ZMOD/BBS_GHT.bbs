@@ -5920,12 +5920,27 @@ beginState: s32'SSJ2Install'
   storeValue: (VARIABLE), 3, (STATIC), 1
   haltMomentum: 1
   endUpon:
+  sprite: s32'ght430_00', 4
   enableSuperArmor: 1
   haltMomentum: 1
+  Unknown1698: 6
+  Unknown1700: 2
+  sprite: s32'ght430_01', 4
+  sprite: s32'ght430_02', 1
   superFreeze: 4, 119, 103, 103
+  Unknown1670: 
+  Unknown2202: 2, 47, 0, 0, 0, 1
+  swapMeshSet: s32'Super'
+  upon: (BEFORE_EXIT)
+    Unknown633: 0, 30
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 2147483647
   upon: (SUPERFREEZE)
     clearRegisteredUponCode: (SUPERFREEZE)
     darkenBackground: 1
+    Unknown2318: 1
+    callSubroutine: s32'cmn3gaugeWLDSTP'
     endUpon: 
   playAnimation: s32'ght600cs', 0
   playCameraAnimation: s32'ght600cs', 23, 0, -1
@@ -5997,9 +6012,13 @@ beginState: s32'SSJ2Install'
       Unknown2243: s32'!prev', -2147483618
       Unknown1922: 1
       Unknown1707: 60
+      endIf: 
+    endUpon: 
+  endLabel: 
+  exitState: 
   endState: 
 
-beginState: s32'SS23End'
+beginState: s32'SSJ2End'
 upon: (IMMEDIATE)
 Unknown34: 7, s32'CmnActFDownLoop'
 storeValue: (VARIABLE), 3, (STATIC), 0 
