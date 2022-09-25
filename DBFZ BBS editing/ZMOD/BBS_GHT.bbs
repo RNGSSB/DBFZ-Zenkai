@@ -5927,7 +5927,7 @@ beginState: s32'SSJ2Install'
   Unknown1700: 2
   sprite: s32'ght430_01', 4
   sprite: s32'ght430_02', 1
-  superFreeze: 3, 119, 88, 88
+  superFreeze: 4, 250, 240, 240
     Unknown1670: 
     Unknown2202: 2, 47, 0, 0, 0, 1
     swapMeshSet: s32'Super'
@@ -5995,7 +5995,7 @@ beginState: s32'SSJ2Install'
       changeDefaultMeshSet: 
       endIf: 
     ifOnFrame: 0, 247
-    cameraMotion: -108234, 174573, -3152, 5148, 7417, 0, 72, 1, 25, 10, 1
+    cameraMotion: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
       Unknown2243: s32'!prev', -2147483618
       Unknown1922: 1
       Unknown1707: 60
