@@ -927,6 +927,7 @@ beginSubroutine: s32'RoundInit'
 
 beginSubroutine: s32'OnIdling'
   callSubroutine: s32'cmn_OnIdling'
+  airDashCount: 2
   if: (VARIABLE), (IsNeutral)
     storeValue: (VARIABLE), 53, (STATIC), 0
     storeValue: (VARIABLE), 54, (STATIC), 0
