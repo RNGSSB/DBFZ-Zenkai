@@ -3232,15 +3232,9 @@ beginSubroutine: s32'cmnNmlAtk6B_AtkInit'
   guardType: (HIGH)
   Unknown1143: 1
   hitstunAmount: 18
-  untechAmount: 40
-  groundBounceCount: 1
-  groundBounceYVelocityPercent: 100
-  groundBounceYVelocity: 25000
-  hitAirPushbackY: -90000
-  groundHitEffect: (AIR_FACE_UP)
+  untechAmount: 23
   damageSoundEffect: s32'ARC_BTL_CMN_Hit_Midle-A'
   guardSoundEffect: s32'ARC_BTL_CMN_Guard_Midle'
-  chipDamagePercent: 5
   ifOperation: (IS_EQUAL), (VARIABLE), (CmnCharaReg2), (STATIC), 24
     groundCounterHitEffect: (AIR_NORMAL)
     airCounterHitEffect: (AIR_NORMAL)

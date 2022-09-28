@@ -109,17 +109,6 @@ beginSubroutine: s32'RoundInit'
     Unknown1559: 
     Unknown1558: 
     endMove: 
-  addMove: s32'NmlAtk3A'
-    moveType: (NORMAL)
-    characterState: (STANDING)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: (INPUT_3)
-    maxChainIntoSelf: 1
-    addMoveFlag: (VARIABLE_3_TRUE)
-    Unknown1525: -350, -330, 200, 160
-    Unknown1559: 
-    Unknown1558: 
-    endMove: 
   addMove: s32'NmlAtk2A'
     moveType: (NORMAL)
     characterState: (CROUCHING)
@@ -284,7 +273,7 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'JetUpper_A'
     moveType: (SPECIAL)
     characterState: (STANDING)
-    moveInput: (INPUT_236)
+    moveInput: (INPUT_623)
     moveInput: (INPUT_PRESS_L)
     addMoveFlag: (VARIABLE_4_FALSE)
     Unknown1525: -150, -520, 130, 360
@@ -294,7 +283,7 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'JetUpper_B'
     moveType: (SPECIAL)
     characterState: (STANDING)
-    moveInput: (INPUT_236)
+    moveInput: (INPUT_623)
     moveInput: (INPUT_PRESS_M)
     moveInput: (INPUT_BOOLEAN_OR)
     moveInput: (INPUT_236)
@@ -307,7 +296,7 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'JetUpper_C'
     moveType: 41
     characterState: (STANDING)
-    moveInput: (INPUT_236)
+    moveInput: (INPUT_623)
     moveInput: (INPUT_PRESS_H)
     addMoveFlag: (HALF)
     addMoveFlag: (VARIABLE_4_FALSE)
@@ -315,6 +304,17 @@ beginSubroutine: s32'RoundInit'
     Unknown1575: 
     Unknown1538: 80
     Unknown1539: 60
+    endMove: 
+addMove: s32'MachinePunch_A'
+    moveType: (SPECIAL)
+    characterState: (STANDING)
+    moveInput: (INPUT_236)
+    moveInput: (INPUT_PRESS_L)
+    maxChainIntoSelf: 1
+   addMoveFlag: (VARIABLE_5_FALSE)
+    Unknown1525: -350, -330, 200, 160
+    Unknown1559: 
+    Unknown1558: 
     endMove: 
   addMove: s32'Bakuretsu_A'
     moveType: (SPECIAL)
@@ -708,7 +708,6 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'NmlAtk5A4th_Release'
   registerMove: s32'NmlAtk5A5th_Release'
   registerMove: s32'NmlAtk2A'
-  registerMove: s32'NmlAtk3A'
   registerMove: s32'NmlAtkAir5D'
   registerMove: s32'NmlAtkAir2D'
   registerMove: s32'NmlAtkAir5C'
@@ -726,7 +725,8 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'Ultimate_C'
   registerMove: s32'Bakuretsu_A'
   registerMove: s32'Bakuretsu_B'
-  registerMove: s32'Bakuretsu_C'
+  registerMove: s32'Bakuretsu_C' 
+  registerMove: s32'MachinePunch_A'
   registerMove: s32'AirUltimate_A'
   registerMove: s32'AirUltimate_B'
   registerMove: s32'AirUltimate_C'
@@ -2779,7 +2779,7 @@ beginSubroutine: s32'Potential_LvMAX'
       addGatlingOption: s32'NmlAtk2B'
       addGatlingOption: s32'NmlAtk2C'
       addGatlingOption: s32'NmlAtk2D'
-      addGatlingOption: s32'NmlAtk3A'
+      
       addGatlingOption: s32'NmlAtk3C'
       endIf: 
     ifOperation: (IS_EQUAL), (VARIABLE), 51, (STATIC), 2
@@ -2798,7 +2798,7 @@ beginState: s32'NmlAtk5A'
     callSubroutine: s32'cmnNmlAtk5A_AtkInit'
     callSubroutine: s32'cmnNmlAtk5A_Init'
     Unknown1143: 0
-    addGatlingOption: s32'NmlAtk3A'
+    
     addGatlingOption: s32'NmlAtk3C'
     addGatlingOption: s32'NmlAtk2D'
     removeGatlingOption: s32'NmlAtk5A'
@@ -2987,7 +2987,7 @@ beginState: s32'NmlAtk5A3rd'
 
 beginSubroutine: s32'Release5ARenda_Init'
   Unknown1655: 1
-  addGatlingOption: s32'NmlAtk3A'
+  
   addGatlingOption: s32'NmlAtk5B'
   addGatlingOption: s32'NmlAtk2B'
   addGatlingOption: s32'NmlAtk6B'
@@ -3005,7 +3005,7 @@ beginState: s32'NmlAtk5A2nd_Release'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNmlAtk5B_AtkInit'
     callSubroutine: s32'Release5ARenda_Init'
-    addGatlingOption: s32'NmlAtk3A'
+    
     removeGatlingOption: s32'NmlAtk5B'
     damage1: 450
     cancel_whiff_: s32'NmlAtk5A3rd_Release'
@@ -3182,7 +3182,7 @@ beginState: s32'NmlAtk2A'
     damage2: 1
     setProration: 90
     damage1: 500
-    addGatlingOption: s32'NmlAtk3A'
+    
     addGatlingOption: s32'NmlAtk3C'
     addGatlingOption: s32'NmlAtk2D'
     removeGatlingOption: s32'NmlAtk2A'
@@ -3206,7 +3206,7 @@ beginState: s32'NmlAtk2A'
   sprite: s32'ghu230_08', 3
   endState: 
 
-beginState: s32'NmlAtk3A'
+beginState: s32'MachinePunch_A'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnAtkLevel_2_AtkInit'
     damage1: 80
@@ -3216,18 +3216,7 @@ beginState: s32'NmlAtk3A'
     hitAirPushbackX: 7000
     hitAirPushbackY: 9000
     pushbackX: 30
-    addGatlingOption: s32'NmlAtk5B'
-    addGatlingOption: s32'NmlAtk2B'
-    addGatlingOption: s32'NmlAtk6B'
-    addGatlingOption: s32'NmlAtk5C'
-    addGatlingOption: s32'NmlAtk3C'
-    addGatlingOption: s32'NmlAtk2C'
-    addGatlingOption: s32'NmlAtk5D'
-    addGatlingOption: s32'NmlAtk2D'
     Unknown1655: 1
-    if: (VARIABLE), (IsSparking)
-      enableJumpCancel: 1
-      endIf: 
     storeValue: (VARIABLE), 51, (STATIC), 1
     callSubroutine: s32'Potential_LvMAX'
     endUpon: 
@@ -3315,7 +3304,7 @@ beginState: s32'NmlAtk5B'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNmlAtk5B_AtkInit'
     callSubroutine: s32'cmnNmlAtk5B_Init'
-    addGatlingOption: s32'NmlAtk3A'
+    
     addGatlingOption: s32'NmlAtk3C'
     addGatlingOption: s32'NmlAtk2D'
     storeValue: (VARIABLE), 51, (STATIC), 1
@@ -3640,7 +3629,6 @@ beginState: s32'NmlAtk5D'
     whiffCancelOptionBufferTime: s32'NmlAtk2B', 15
     whiffCancelOptionBufferTime: s32'NmlAtk2C', 15
     whiffCancelOptionBufferTime: s32'NmlAtk2D', 15
-    whiffCancelOptionBufferTime: s32'NmlAtk3A', 15
     whiffCancelOptionBufferTime: s32'NmlAtk3C', 15
     upon: (FRAME_STEP)
       if: (VARIABLE), 52
@@ -3679,7 +3667,6 @@ beginState: s32'NmlAtk5D'
       whiffCancelOptionBufferTime: s32'NmlAtk2C', 15
       whiffCancelOptionBufferTime: s32'NmlAtk2D', 15
       whiffCancelOptionBufferTime: s32'NmlAtk6B', 15
-      whiffCancelOptionBufferTime: s32'NmlAtk3A', 15
       whiffCancelOptionBufferTime: s32'NmlAtk3C', 15
       endIf: 
     endUpon: 
@@ -3724,7 +3711,6 @@ beginState: s32'NmlAtk2D'
       whiffCancelOptionBufferTime: s32'NmlAtk2B', 8
       whiffCancelOptionBufferTime: s32'NmlAtk2C', 8
       whiffCancelOptionBufferTime: s32'NmlAtk6B', 8
-      whiffCancelOptionBufferTime: s32'NmlAtk3A', 8
       whiffCancelOptionBufferTime: s32'NmlAtk3C', 8
       endIf: 
     jumpToStateInObject: (PARENT), s32'landing'
