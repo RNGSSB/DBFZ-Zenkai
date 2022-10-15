@@ -109,6 +109,17 @@ beginSubroutine: s32'RoundInit'
     Unknown1559: 
     Unknown1558: 
     endMove: 
+  addMove: s32'NmlAtk3A'
+    moveType: (NORMAL)
+    characterState: (STANDING)
+    moveInput: (INPUT_PRESS_L)
+    moveInput: (INPUT_3)
+    maxChainIntoSelf: 1
+    addMoveFlag: (VARIABLE_3_TRUE)
+    Unknown1525: -350, -330, 200, 160
+    Unknown1559: 
+    Unknown1558: 
+    endMove: 
   addMove: s32'NmlAtk2A'
     moveType: (NORMAL)
     characterState: (CROUCHING)
@@ -273,7 +284,7 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'JetUpper_A'
     moveType: (SPECIAL)
     characterState: (STANDING)
-    moveInput: (INPUT_623)
+    moveInput: (INPUT_236)
     moveInput: (INPUT_PRESS_L)
     addMoveFlag: (VARIABLE_4_FALSE)
     Unknown1525: -150, -520, 130, 360
@@ -283,7 +294,7 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'JetUpper_B'
     moveType: (SPECIAL)
     characterState: (STANDING)
-    moveInput: (INPUT_623)
+    moveInput: (INPUT_236)
     moveInput: (INPUT_PRESS_M)
     moveInput: (INPUT_BOOLEAN_OR)
     moveInput: (INPUT_236)
@@ -296,7 +307,7 @@ beginSubroutine: s32'RoundInit'
   addMove: s32'JetUpper_C'
     moveType: 41
     characterState: (STANDING)
-    moveInput: (INPUT_623)
+    moveInput: (INPUT_236)
     moveInput: (INPUT_PRESS_H)
     addMoveFlag: (HALF)
     addMoveFlag: (VARIABLE_4_FALSE)
@@ -304,17 +315,6 @@ beginSubroutine: s32'RoundInit'
     Unknown1575: 
     Unknown1538: 80
     Unknown1539: 60
-    endMove: 
-addMove: s32'MachinePunch_A'
-    moveType: (SPECIAL)
-    characterState: (STANDING)
-    moveInput: (INPUT_236)
-    moveInput: (INPUT_PRESS_L)
-    maxChainIntoSelf: 1
-   addMoveFlag: (VARIABLE_5_FALSE)
-    Unknown1525: -350, -330, 200, 160
-    Unknown1559: 
-    Unknown1558: 
     endMove: 
   addMove: s32'Bakuretsu_A'
     moveType: (SPECIAL)
@@ -430,6 +430,43 @@ addMove: s32'MachinePunch_A'
     Unknown1582: 
     Unknown1558: 
     Unknown1539: 40
+    endMove: 
+  addMove: s32'Stomp_L'
+    moveType: (SPECIAL)
+    characterState: (STANDING)
+    moveInput: (INPUT_ANY_DOWNDOWN)
+    moveInput: (INPUT_PRESS_L)
+    Unknown1525: -360, -200, 360, 200
+    cpuIsLow: 
+    Unknown1561: 
+    Unknown1558: 
+    Unknown1539: 30
+    endMove: 
+  addMove: s32'Stomp_M'
+    moveType: (SPECIAL)
+    characterState: (STANDING)
+    moveInput: (INPUT_ANY_DOWNDOWN)
+    moveInput: (INPUT_PRESS_M)
+    moveInput: (INPUT_BOOLEAN_OR)
+    moveInput: (INPUT_ANY_DOWNDOWN)
+    moveInput: (INPUT_PRESS_H)
+    Unknown1525: -360, -200, 360, 200
+    cpuIsLow: 
+    Unknown1561: 
+    Unknown1558: 
+    Unknown1539: 30
+    endMove: 
+  addMove: s32'Stomp_H'
+    moveType: 41
+    characterState: (STANDING)
+    moveInput: (INPUT_ANY_DOWNDOWN)
+    moveInput: (INPUT_PRESS_H)
+    addMoveFlag: (HALF)
+    Unknown1525: -360, -200, 360, 200
+    cpuIsLow: 
+    Unknown1561: 
+    Unknown1558: 
+    Unknown1539: 60
     endMove: 
   addMove: s32'Masenko'
     moveType: (SPECIAL)
@@ -708,6 +745,7 @@ addMove: s32'MachinePunch_A'
   registerMove: s32'NmlAtk5A4th_Release'
   registerMove: s32'NmlAtk5A5th_Release'
   registerMove: s32'NmlAtk2A'
+  registerMove: s32'NmlAtk3A'
   registerMove: s32'NmlAtkAir5D'
   registerMove: s32'NmlAtkAir2D'
   registerMove: s32'NmlAtkAir5C'
@@ -725,11 +763,13 @@ addMove: s32'MachinePunch_A'
   registerMove: s32'Ultimate_C'
   registerMove: s32'Bakuretsu_A'
   registerMove: s32'Bakuretsu_B'
-  registerMove: s32'Bakuretsu_C' 
-  registerMove: s32'MachinePunch_A'
+  registerMove: s32'Bakuretsu_C'
   registerMove: s32'AirUltimate_A'
   registerMove: s32'AirUltimate_B'
   registerMove: s32'AirUltimate_C'
+  registerMove: s32'Stomp_L'
+  registerMove: s32'Stomp_M'
+  registerMove: s32'Stomp_H'
   registerMove: s32'Masenko'
   registerMove: s32'CmnActRushStart'
   registerMove: s32'Rush_B'
@@ -2779,7 +2819,7 @@ beginSubroutine: s32'Potential_LvMAX'
       addGatlingOption: s32'NmlAtk2B'
       addGatlingOption: s32'NmlAtk2C'
       addGatlingOption: s32'NmlAtk2D'
-      
+      addGatlingOption: s32'NmlAtk3A'
       addGatlingOption: s32'NmlAtk3C'
       endIf: 
     ifOperation: (IS_EQUAL), (VARIABLE), 51, (STATIC), 2
@@ -2798,7 +2838,7 @@ beginState: s32'NmlAtk5A'
     callSubroutine: s32'cmnNmlAtk5A_AtkInit'
     callSubroutine: s32'cmnNmlAtk5A_Init'
     Unknown1143: 0
-    
+    addGatlingOption: s32'NmlAtk3A'
     addGatlingOption: s32'NmlAtk3C'
     addGatlingOption: s32'NmlAtk2D'
     removeGatlingOption: s32'NmlAtk5A'
@@ -2987,7 +3027,7 @@ beginState: s32'NmlAtk5A3rd'
 
 beginSubroutine: s32'Release5ARenda_Init'
   Unknown1655: 1
-  
+  addGatlingOption: s32'NmlAtk3A'
   addGatlingOption: s32'NmlAtk5B'
   addGatlingOption: s32'NmlAtk2B'
   addGatlingOption: s32'NmlAtk6B'
@@ -3005,7 +3045,7 @@ beginState: s32'NmlAtk5A2nd_Release'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNmlAtk5B_AtkInit'
     callSubroutine: s32'Release5ARenda_Init'
-    
+    addGatlingOption: s32'NmlAtk3A'
     removeGatlingOption: s32'NmlAtk5B'
     damage1: 450
     cancel_whiff_: s32'NmlAtk5A3rd_Release'
@@ -3182,7 +3222,7 @@ beginState: s32'NmlAtk2A'
     damage2: 1
     setProration: 90
     damage1: 500
-    
+    addGatlingOption: s32'NmlAtk3A'
     addGatlingOption: s32'NmlAtk3C'
     addGatlingOption: s32'NmlAtk2D'
     removeGatlingOption: s32'NmlAtk2A'
@@ -3206,7 +3246,7 @@ beginState: s32'NmlAtk2A'
   sprite: s32'ghu230_08', 3
   endState: 
 
-beginState: s32'MachinePunch_A'
+beginState: s32'NmlAtk3A'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnAtkLevel_2_AtkInit'
     damage1: 80
@@ -3216,7 +3256,18 @@ beginState: s32'MachinePunch_A'
     hitAirPushbackX: 7000
     hitAirPushbackY: 9000
     pushbackX: 30
+    addGatlingOption: s32'NmlAtk5B'
+    addGatlingOption: s32'NmlAtk2B'
+    addGatlingOption: s32'NmlAtk6B'
+    addGatlingOption: s32'NmlAtk5C'
+    addGatlingOption: s32'NmlAtk3C'
+    addGatlingOption: s32'NmlAtk2C'
+    addGatlingOption: s32'NmlAtk5D'
+    addGatlingOption: s32'NmlAtk2D'
     Unknown1655: 1
+    if: (VARIABLE), (IsSparking)
+      enableJumpCancel: 1
+      endIf: 
     storeValue: (VARIABLE), 51, (STATIC), 1
     callSubroutine: s32'Potential_LvMAX'
     endUpon: 
@@ -3304,7 +3355,7 @@ beginState: s32'NmlAtk5B'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNmlAtk5B_AtkInit'
     callSubroutine: s32'cmnNmlAtk5B_Init'
-    
+    addGatlingOption: s32'NmlAtk3A'
     addGatlingOption: s32'NmlAtk3C'
     addGatlingOption: s32'NmlAtk2D'
     storeValue: (VARIABLE), 51, (STATIC), 1
@@ -3629,6 +3680,7 @@ beginState: s32'NmlAtk5D'
     whiffCancelOptionBufferTime: s32'NmlAtk2B', 15
     whiffCancelOptionBufferTime: s32'NmlAtk2C', 15
     whiffCancelOptionBufferTime: s32'NmlAtk2D', 15
+    whiffCancelOptionBufferTime: s32'NmlAtk3A', 15
     whiffCancelOptionBufferTime: s32'NmlAtk3C', 15
     upon: (FRAME_STEP)
       if: (VARIABLE), 52
@@ -3667,6 +3719,7 @@ beginState: s32'NmlAtk5D'
       whiffCancelOptionBufferTime: s32'NmlAtk2C', 15
       whiffCancelOptionBufferTime: s32'NmlAtk2D', 15
       whiffCancelOptionBufferTime: s32'NmlAtk6B', 15
+      whiffCancelOptionBufferTime: s32'NmlAtk3A', 15
       whiffCancelOptionBufferTime: s32'NmlAtk3C', 15
       endIf: 
     endUpon: 
@@ -3711,6 +3764,7 @@ beginState: s32'NmlAtk2D'
       whiffCancelOptionBufferTime: s32'NmlAtk2B', 8
       whiffCancelOptionBufferTime: s32'NmlAtk2C', 8
       whiffCancelOptionBufferTime: s32'NmlAtk6B', 8
+      whiffCancelOptionBufferTime: s32'NmlAtk3A', 8
       whiffCancelOptionBufferTime: s32'NmlAtk3C', 8
       endIf: 
     jumpToStateInObject: (PARENT), s32'landing'
@@ -6292,6 +6346,189 @@ beginState: s32'AirUltimate_C'
   Unknown26: 2, 2, 3
   endState: 
 
+beginSubroutine: s32'Stomp_Init'
+  hitOTG: 1
+  callSubroutine: s32'cmnAtkLevel_3_AtkInit'
+  setProration: 90
+  damage1: 600
+  groundHitEffect: (AIR_FACE_UP)
+  airHitEffect: (AIR_FACE_UP)
+  untechAmount: 22
+  hitAirPushbackX: 10000
+  hitAirPushbackY: -90000
+  groundBounceCount: 1
+  groundBounceYVelocityPercent: 100
+  groundBounceYVelocity: 16000
+  guardType: (LOW)
+  noHitstunScaling: 1
+  Unknown1051: 0
+  Unknown1095: 1000
+  Unknown110: 
+  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (SpeedX), (STATIC), 80000
+    physicsImpulseX: 80000
+    endIf: 
+  horizontalMomentum: 80
+  ifOperation: (IS_EQUAL), (VARIABLE), 45, (STATIC), 10
+    damage1: 700
+    endIf: 
+  ifOperation: (IS_EQUAL), (VARIABLE), 45, (STATIC), 20
+    damage1: 800
+    callSubroutine: s32'cmnSpecialAttackExInit'
+    endIf: 
+  if: (VARIABLE), 4
+    Unknown963: 121
+    endIf: 
+  ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 45, (STATIC), 10
+    upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
+      clearRegisteredUponCode: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
+      if: (VARIABLE), (IN_BATTLE)
+        if: (VARIABLE), (IsMainPlayerSelf)
+          ifNot: (VARIABLE), (SmashRegular)
+            storeValue: (VARIABLE), (SmashRegular), (STATIC), 1
+            storeValue: (VARIABLE), (CameraComboOnce3), (STATIC), 1
+            cameraMotion: -82720, 400212, 266426, -3937, 2993, 0, 54, 1, 20, 15, 1
+            hitStop: 0
+            upon: (ON_PLAYER_AFTER_EXECUTE_DAMAGE)
+              clearRegisteredUponCode: (ON_PLAYER_AFTER_EXECUTE_DAMAGE)
+              Unknown69: 0
+                superFreeze: 0, 100, 20, 20
+                endIf: 
+              endUpon: 
+            if: (VARIABLE), (Direction)
+              ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), -2900000
+                storeValue: (VARIABLE), (PosXRaw), (STATIC), -2900000
+                endIf: 
+              endIf: 
+            else: 
+              ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), 2900000
+                storeValue: (VARIABLE), (PosXRaw), (STATIC), 2900000
+                endIf: 
+              endElse: 
+            removeLandingRecovery: 
+            groundBounceYVelocity: 18000
+            wallBounceCount: 1
+            wallBounceInCornerOnly: 1
+            wallBounceXVelocityPercent: 0
+            Unknown937: 14
+            untechAmount: 60
+            hitStop: 0
+            enemyHitstopAddition: 0, 0, 0
+            Unknown1067: 4, 200000, 10000
+            Unknown2121: s32'FinishCamera_MDH'
+            ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 45, (STATIC), 20
+              hitAirPushbackX: 5000
+              Unknown937: 14
+              groundBounceYVelocity: 40000
+              endIf: 
+            endIf: 
+          endIf: 
+        endIf: 
+      endUpon: 
+    endIf: 
+  endSubroutine: 
+
+beginState: s32'Stomp_L'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'Stomp_Init'
+    endUpon: 
+  sprite: s32'ghu200_00', 1
+  sprite: s32'ghu200_00', 1
+  sprite: s32'ghu200_00', 1
+  sprite: s32'ghu200_01', 1
+  sprite: s32'ghu200_01', 1
+  sprite: s32'ghu200_01', 1
+  sprite: s32'ghu200_02', 2
+  cmnSfx: s32'ARC_BTL_CMN_Furi_Hiji'
+  Unknown618: s16'vxxx208', 100, s16'vxxx612', 100, s16'vxxx210', 0, s16'', 0
+  sprite: s32'ghu200_02', 1
+  sprite: s32'ghu200_02', 1
+  sprite: s32'ghu200_03', 1
+  hit: 
+  addPositionX: 50000
+  haltMomentum: 1
+  sprite: s32'ghu200_03', 1
+  sprite: s32'ghu200_03', 1
+  sprite: s32'ghu200_04', 2
+  sprite: s32'ghu200_04', 4
+  sprite: s32'ghu200_04', 2
+
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  endState: 
+
+beginState: s32'Stomp_M'
+  upon: (IMMEDIATE)
+    storeValue: (VARIABLE), 45, (STATIC), 10
+    callSubroutine: s32'Stomp_Init'
+    endUpon: 
+  sprite: s32'ghu200_00', 2
+  Unknown1698: 5
+  Unknown1700: 1
+  sprite: s32'ghu200_00', 2
+  sprite: s32'ghu200_00', 2
+  sprite: s32'ghu200_01', 2
+  sprite: s32'ghu200_01', 2
+  sprite: s32'ghu200_01', 2
+  sprite: s32'ghu200_02', 2
+  cmnSfx: s32'ARC_BTL_CMN_Furi_Hiji'
+  sprite: s32'ghu200_02', 2
+  Unknown618: s16'vxxx208', 100, s16'vxxx612', 100, s16'vxxx210', 0, s16'', 0
+  sprite: s32'ghu200_02', 1
+  sprite: s32'ghu200_03', 1
+  hit: 
+  addPositionX: 50000
+  haltMomentum: 1
+  sprite: s32'ghu200_03', 1
+  sprite: s32'ghu200_03', 1
+  sprite: s32'ghu200_04', 2
+  sprite: s32'ghu200_04', 4
+  sprite: s32'ghu200_04', 2
+
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  endState: 
+
+beginState: s32'Stomp_H'
+  upon: (IMMEDIATE)
+    storeValue: (VARIABLE), 45, (STATIC), 20
+    callSubroutine: s32'Stomp_Init'
+    endUpon: 
+  sprite: s32'ghu200_00', 1
+  Unknown1698: 6
+  Unknown1700: 1
+  sprite: s32'ghu200_00', 1
+  sprite: s32'ghu200_00', 1
+  sprite: s32'ghu200_01', 1
+  sprite: s32'ghu200_01', 1
+  sprite: s32'ghu200_01', 1
+  sprite: s32'ghu200_02', 2
+  cmnSfx: s32'ARC_BTL_CMN_Furi_Hiji'
+  Unknown618: s16'vxxx208', 100, s16'vxxx612', 100, s16'vxxx210', 0, s16'', 0
+  sprite: s32'ghu200_02', 1
+  sprite: s32'ghu200_02', 1
+  sprite: s32'ghu200_03', 1
+  hit: 
+  addPositionX: 50000
+  haltMomentum: 1
+  sprite: s32'ghu200_03', 1
+  sprite: s32'ghu200_03', 1
+  sprite: s32'ghu200_04', 2
+  sprite: s32'ghu200_04', 4
+  sprite: s32'ghu200_04', 2
+
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_05', 2
+  sprite: s32'ghu200_06', 2
+  sprite: s32'ghu200_06', 2
+  endState: 
+
 beginState: s32'Masenko'
   upon: (IMMEDIATE)
     Unknown1058: 1
@@ -6527,7 +6764,7 @@ beginState: s32'Potential_AB'
   callSubroutine: s32'Potential_LevelUp'
   cameraShake: s32'ShakeTate', 3000, 1, 30, 5
   setDefaultMeshSet: s32'Super'
-  changeDefaultMeshSet:
+  changeDefaultMeshSet: 
   sprite: s32'ghu430_17', 2
   sprite: s32'ghu430_18', 2
   enableSuperArmor: 0
@@ -6716,9 +6953,13 @@ beginState: s32'Potential_CD'
   callSubroutine: s32'Potential_LevelUp'
   ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), 3, (STATIC), 5
     cameraShake: s32'ShakeTate', 3000, 1, 30, 1
+    setDefaultMeshSet: s32'Super'
+    changeDefaultMeshSet: 
     endIf: 
   else: 
     cameraShake: s32'ShakeTate', 4000, 1, 30, 1
+    setDefaultMeshSet: s32'Super'
+    changeDefaultMeshSet: 
     endElse: 
   sprite: s32'ghu430_16', 2
   clearRegisteredUponCode: (FRAME_STEP)
@@ -6754,7 +6995,7 @@ beginState: s32'UltimateKamehameha'
   upon: (IMMEDIATE)
     Unknown1668: 20, 1
     tensionUsage: 30000
-    upon: (BEFORE_EXIT) 
+    upon: (BEFORE_EXIT)
       Unknown633: 0, 20
       Unknown633: 1, 20
       Unknown633: 16, 20
@@ -6926,7 +7167,7 @@ else:
 sprite: s32'ghu431_19', 2
 sprite: s32'ghu431_20', 2
 ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), 47, (STATIC), 1
-  createObject: s32'431Eff', (PLAYER) 
+  createObject: s32'431Eff', (PLAYER)
   Unknown633: 0, 30
   endIf: 
 
@@ -7060,6 +7301,7 @@ beginSubroutine: s32'U_Kamehameha_Cutscene01'
         ifNot: (VARIABLE), 51
           Unknown63: s16'gtl'
           ifNot: (VARIABLE), (Result)
+            changeDefaultMeshSet: 
             endIf: 
           endIf: 
         endIf: 
