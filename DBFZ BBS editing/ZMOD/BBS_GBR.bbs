@@ -58,17 +58,6 @@ beginSubroutine: s32'RoundInit'
     Unknown1583: 
     Unknown1538: 120
     endMove: 
-  addMove: s32'NmlAtk5A3rdSolo'
-    moveType: (NORMAL)
-    characterState: (STANDING)
-    moveInput: (INPUT_PRESS_H)
-	moveInput: (INPUT_3)
-    maxChainIntoSelf: 1
-    Unknown1525: -360, -250, 380, 190
-    Unknown1559: 
-    Unknown1583: 
-    Unknown1538: 120
-    endMove: 
   addMove: s32'NmlAtk2A'
     moveType: (NORMAL)
     characterState: (CROUCHING)
@@ -312,6 +301,37 @@ beginSubroutine: s32'RoundInit'
     characterState: (STANDING)
     moveInput: (INPUT_214)
     moveInput: (INPUT_PRESS_H)
+    addMoveFlag: (HALF)
+    Unknown1560: 
+    Unknown1558: 
+    endMove: 
+  addMove: s32'Syunkanidou_A_Air'
+    moveType: (SPECIAL)
+    characterState: (JUMPING)
+    moveInput: (INPUT_22)
+    moveInput: (INPUT_PRESS_L)
+	addMoveFlag: (VARIABLE_3_FALSE)
+    Unknown1560: 
+    Unknown1558: 
+    endMove: 
+  addMove: s32'Syunkanidou_B_Air'
+    moveType: (SPECIAL)
+    characterState: (JUMPING)
+    moveInput: (INPUT_22)
+    moveInput: (INPUT_PRESS_M)
+    moveInput: (INPUT_BOOLEAN_OR)
+    moveInput: (INPUT_22)
+    moveInput: (INPUT_PRESS_H)
+	addMoveFlag: (VARIABLE_3_FALSE)
+    Unknown1560: 
+    Unknown1558: 
+    endMove: 
+  addMove: s32'Syunkanidou_C_Air'
+    moveType: 41
+    characterState: (JUMPING)
+    moveInput: (INPUT_22)
+    moveInput: (INPUT_PRESS_H)
+	addMoveFlag: (VARIABLE_3_FALSE)
     addMoveFlag: (HALF)
     Unknown1560: 
     Unknown1558: 
@@ -588,6 +608,9 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'Syunkanidou_A'
   registerMove: s32'Syunkanidou_B'
   registerMove: s32'Syunkanidou_C'
+  registerMove: s32'Syunkanidou_A_Air'
+  registerMove: s32'Syunkanidou_B_Air'
+  registerMove: s32'Syunkanidou_C_Air'
   registerMove: s32'Gekisinkyaku_A'
   registerMove: s32'Gekisinkyaku_B'
   registerMove: s32'Gekisinkyaku_C'
@@ -887,6 +910,19 @@ beginSubroutine: s32'RoundInit'
   resetMaterialSet: 
   changeDefaultMeshSet: 
   endSubroutine: 
+
+beginSubroutine: s32'OnLanding'
+  storeValue: (VARIABLE), 3, (STATIC), 0
+  endSubroutine: 
+
+beginSubroutine: s32'OnDamage'
+  storeValue: (VARIABLE), 3, (STATIC), 0
+  endSubroutine: 
+
+beginSubroutine: s32'OnGuard'
+  storeValue: (VARIABLE), 3, (STATIC), 0
+  endSubroutine: 
+
 
 beginSubroutine: s32'OnIdling'
   callSubroutine: s32'cmn_OnIdling'
@@ -2252,7 +2288,7 @@ beginState: s32'NmlAtk5A'
     callSubroutine: s32'cmnNmlAtk5A_AtkInit'
     callSubroutine: s32'cmnNmlAtk5A_Init'
     addGatlingOption: s32'NmlAtk2D'
-	addGatlingOption: s32'NmlAtk5A3rdSolo'
+	
     endUpon: 
   sprite: s32'gbr200_00', 1
   Unknown1700: 2
@@ -2278,7 +2314,7 @@ beginState: s32'NmlAtk5A2nd'
     callSubroutine: s32'cmnNmlAtk5A2nd_AtkInit'
     callSubroutine: s32'cmnNmlAtk5A2nd_Init'
     addGatlingOption: s32'NmlAtk2D'
-	addGatlingOption: s32'NmlAtk5A3rdSolo'
+	
     upon: (ON_ATTACK_HIT_PLAYER_GUARD)
       Unknown111: 70
       endUpon: 
@@ -2366,107 +2402,13 @@ beginState: s32'NmlAtk5A3rd'
   sprite: s32'gbr202_12', 3
   sprite: s32'gbr202_13', 3
   endState:
- 
-beginState: s32'NmlAtk5A3rdSolo'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'cmnNmlAtk5A3rd_AtkInit'
-    damageSoundEffect: s32'ARC_BTL_GBR_Sword_Hit'
-    guardSoundEffect: s32'ARC_BTL_GBR_Sword_Guard'
-    Unknown1045: 4, s32'cmn_slash_s_tate'
-	chipDamagePercent: 20
-    upon: (ON_ATTACK_HIT_PLAYER_GUARD)
-      Unknown111: 50
-      endUpon: 
-    upon: 49
-      Unknown2041: s32'CameraCombo_5A3rd'
-      if: (VARIABLE), (Result)
-        Unknown1067: 4, 350000, 100000
-        cameraMotion: -120872, 346431, 51163, 1826, 4954, 0, 54, 1, 25, 10, 1
-        if: (VARIABLE), (Direction)
-          ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), -2700000
-            storeValue: (VARIABLE), (PosXRaw), (STATIC), -2700000
-            endIf: 
-          endIf: 
-        else: 
-          ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), 2700000
-            storeValue: (VARIABLE), (PosXRaw), (STATIC), 2700000
-            endIf: 
-          endElse: 
-        endIf: 
-      endUpon: 
-    endUpon: 
- upon: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
-    clearRegisteredUponCode: (ON_ATTACK_HIT_MAIN_PLAYER_DAMAGE_PRE_CTRL)
-    if: (VARIABLE), (IN_BATTLE)
-      if: (VARIABLE), (IsMainPlayerSelf)
-        ifNot: (VARIABLE), (SmashRegular)
-          storeValue: (VARIABLE), (SmashRegular), (STATIC), 1
-          storeValue: (VARIABLE), (CameraComboOnce3), (STATIC), 1
-          endIf: 
-        uiBattleText: (Smash!)
-        hitStop: 0
-        upon: (ON_PLAYER_AFTER_EXECUTE_DAMAGE)
-          clearRegisteredUponCode: (ON_PLAYER_AFTER_EXECUTE_DAMAGE)
-          Unknown69: 0
-            superFreeze: 0, 100, 25, 25
-            cameraShake: s32'ShakeTateYoko', 1000, 0, 18, 1
-            endIf: 
-          endUpon: 
-        if: (VARIABLE), (Direction)
-          ifOperation: (IS_LESSER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), -2900000
-            storeValue: (VARIABLE), (PosXRaw), (STATIC), -2900000
-            endIf: 
-          endIf: 
-        else: 
-          ifOperation: (IS_GREATER_OR_EQUAL), (VARIABLE), (PosXRaw), (STATIC), 2900000
-            storeValue: (VARIABLE), (PosXRaw), (STATIC), 2900000
-            endIf: 
-          endElse: 
-        Unknown2040: 23, s32'CameraCombo_5A3rd', 0
-        endIf: 
-      endIf: 
-    endUpon: 
-  if: (VARIABLE), (IsSparking)
-    enableJumpCancel: 1
-    addGatlingOption: s32'CmnFAirDash'
-    addGatlingOption: s32'CmnActFAirDash2Button'
-    endIf: 
-  sprite: s32'gbr202_00', 3
-  Unknown1182: 1
-  Unknown1698: 6
-  Unknown1700: 4
-  sprite: s32'gbr202_01', 3
-  sprite: s32'gbr202_02', 3
-  Unknown621: 2, -1
-  sprite: s32'gbr202_03', 2
-  physicsImpulseX: 100000
-  Unknown665: 104, 1, 0
-  characterSfx: s32'ARC_BTL_GBR_Sword_Furi'
-  sprite: s32'gbr202_04', 2
-  horizontalMomentum: 70
-  sprite: s32'gbr202_05', 3
-  dashStopEffect: 127, 1, 1
-  callSubroutine: s32'cmnRendaChain_Clear_Idling'
-  createObject: s32'gbr_202_zangeki_eff01', (PLAYER)
-  Unknown1182: 1
-  hit: 
-  sprite: s32'gbr202_06', 3
-  sprite: s32'gbr202_09', 3
-  Unknown1182: 0
-  recoveryState: 
-  sprite: s32'gbr202_10', 4
-  sprite: s32'gbr202_11', 6
-  Unknown1700: 1
-  sprite: s32'gbr202_12', 6
-  sprite: s32'gbr202_13', 6
-  endState:
 
 beginState: s32'NmlAtk2A'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNmlAtk2A_AtkInit'
     callSubroutine: s32'cmnNmlAtk2A_Init'
     addGatlingOption: s32'NmlAtk2D'
-	addGatlingOption: s32'NmlAtk5A3rdSolo'
+	
     checkLastStateName: s32'NmlAtk2A'
     ifNot: (VARIABLE), (Result)
       storeValue: (VARIABLE), 53, (STATIC), 0
@@ -2516,7 +2458,7 @@ beginState: s32'NmlAtk5B'
     callSubroutine: s32'cmnNmlAtk5B_AtkInit'
     callSubroutine: s32'cmnNmlAtk5B_Init'
     addGatlingOption: s32'NmlAtk2D'
-	addGatlingOption: s32'NmlAtk5A3rdSolo'
+	
     upon: (ON_ATTACK_HIT_PLAYER_GUARD)
       Unknown111: 50
       endUpon: 
@@ -2553,7 +2495,7 @@ beginState: s32'NmlAtk2B'
     callSubroutine: s32'cmnNmlAtk2B_AtkInit'
     callSubroutine: s32'cmnNmlAtk2B_Init'
     addGatlingOption: s32'NmlAtk2D'
-	addGatlingOption: s32'NmlAtk5A3rdSolo'
+	
     if: (VARIABLE), (MediumAutocombo)
       Unknown1675: s32'BRendaChainSpecial'
       endIf: 
@@ -2767,7 +2709,7 @@ beginState: s32'NmlAtk5D'
     addWhiffCancelOption: s32'Gekisinkyaku_A'
     addWhiffCancelOption: s32'Gekisinkyaku_B'
     addWhiffCancelOption: s32'Gekisinkyaku_C'
-	addGatlingOption: s32'NmlAtk5A3rdSolo'
+	
     upon: (FRAME_STEP)
       if: (VARIABLE), 52
         enableSpecialCancel: 1
@@ -3806,6 +3748,133 @@ beginState: s32'Syunkanidou_C'
     Unknown1058: 1
     Unknown2486: 1
     endUpon: 
+  sprite: s32'gbr401_00', 2
+  Unknown1700: 2
+  callSubroutine: s32'cmnSpecialAttackExInit'
+  sprite: s32'gbr401_01', 2
+  sprite: s32'gbr401_02', 2
+  characterSfx: s32'ARC_BTL_GBR_Syunkan_Bishi'
+  voiceLine: s16'vxxx200'
+  sprite: s32'gbr401_03', 2
+  sprite: s32'gbr401_04', 2
+  sprite: s32'gbr401_05', 2
+  sprite: s32'gbr401_03', 2
+  sprite: s32'gbr401_05', 7
+  createParticle: s32'gbr_warp01', (CENTER)
+  characterSfx: s32'ARC_BTL_GBR_Syunkan_TLP'
+  multiplyAlphaColor: 0
+  enableSuperArmor: 1
+  Unknown1975: 200000
+  Unknown2323: -1
+  ignorePushback: 1
+  setNoCollision: 0
+  moveTo2: 32, 100, 250000, 150000, 7
+  sprite: s32'gbr022_02', 3
+  Unknown1700: 4
+  createParticle: s32'gbr_warp01', (CENTER)
+  Unknown262: 0
+  setNoCollision: 1
+  faceOpponent: 
+  enableSuperArmor: 0
+  multiplyAlphaColor: 255
+  moveTo2: 32, 100, 0, 150000, 1
+  haltMomentum: 1
+  physicsImpulseY: 15000
+  resetGravity: 
+  endState: 
+  
+beginState: s32'Syunkanidou_A_Air'
+  upon: (IMMEDIATE)
+    Unknown1058: 1
+    Unknown2486: 1
+	storeValue: (VARIABLE), 3, (STATIC), 1
+    endUpon: 
+if: (VARIABLE), (EnemyInHitstun)
+    superFreeze: 0, 100, 0, 28
+    endIf: 
+haltMomentum: 1
+  sprite: s32'gbr401_00', 2
+  Unknown1700: 2
+  sprite: s32'gbr401_01', 2
+  sprite: s32'gbr401_02', 2
+  characterSfx: s32'ARC_BTL_GBR_Syunkan_Bishi'
+  voiceLine: s16'vxxx200'
+  sprite: s32'gbr401_03', 3
+  sprite: s32'gbr401_04', 3
+  sprite: s32'gbr401_05', 3
+  sprite: s32'gbr401_03', 3
+  sprite: s32'gbr401_03', 7
+  createParticle: s32'gbr_warp01', (CENTER)
+  characterSfx: s32'ARC_BTL_GBR_Syunkan_TLP'
+  multiplyAlphaColor: 0
+  enableSuperArmor: 1
+  Unknown1975: -70000
+  Unknown262: 1
+  moveTo2: 32, 100, -300000, 150000, 7
+  sprite: s32'gbr022_02', 3
+  Unknown1700: 4
+  createParticle: s32'gbr_warp01', (CENTER)
+  Unknown262: 0
+  enableSuperArmor: 0
+  multiplyAlphaColor: 255
+  moveTo2: 32, 100, -300000, 150000, 1
+  haltMomentum: 1
+  physicsImpulseX: 5000
+  physicsImpulseY: 15000
+  resetGravity: 
+  endState: 
+
+beginState: s32'Syunkanidou_B_Air'
+  upon: (IMMEDIATE)
+    Unknown1058: 1
+    Unknown2486: 1
+	storeValue: (VARIABLE), 3, (STATIC), 1
+    endUpon: 
+if: (VARIABLE), (EnemyInHitstun)
+    superFreeze: 0, 100, 0, 24
+    endIf: 
+haltMomentum: 1
+  sprite: s32'gbr401_00', 2
+  Unknown1700: 2
+  sprite: s32'gbr401_01', 2
+  sprite: s32'gbr401_02', 2
+  characterSfx: s32'ARC_BTL_GBR_Syunkan_Bishi'
+  voiceLine: s16'vxxx200'
+  sprite: s32'gbr401_03', 2
+  sprite: s32'gbr401_04', 2
+  sprite: s32'gbr401_05', 2
+  sprite: s32'gbr401_03', 2
+  sprite: s32'gbr401_03', 7
+  createParticle: s32'gbr_warp01', (CENTER)
+  characterSfx: s32'ARC_BTL_GBR_Syunkan_TLP'
+  multiplyAlphaColor: 0
+  enableSuperArmor: 1
+  Unknown1975: -70000
+  Unknown262: 1
+  moveTo2: 32, 100, -800000, 300000, 7
+  sprite: s32'gbr022_02', 3
+  Unknown1700: 4
+  createParticle: s32'gbr_warp01', (CENTER)
+  Unknown262: 0
+  enableSuperArmor: 0
+  multiplyAlphaColor: 255
+  moveTo2: 32, 100, -800000, 300000, 1
+  haltMomentum: 1
+  physicsImpulseX: 5000
+  physicsImpulseY: 15000
+  resetGravity: 
+  endState: 
+
+beginState: s32'Syunkanidou_C_Air'
+  upon: (IMMEDIATE)
+    Unknown1058: 1
+    Unknown2486: 1
+	storeValue: (VARIABLE), 3, (STATIC), 1
+    endUpon: 
+if: (VARIABLE), (EnemyInHitstun)
+    superFreeze: 0, 100, 0, 24
+    endIf: 
+haltMomentum: 1
   sprite: s32'gbr401_00', 2
   Unknown1700: 2
   callSubroutine: s32'cmnSpecialAttackExInit'
