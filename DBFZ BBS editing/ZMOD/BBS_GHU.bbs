@@ -436,6 +436,7 @@ beginSubroutine: s32'RoundInit'
     characterState: (STANDING)
     moveInput: (INPUT_ANY_DOWNDOWN)
     moveInput: (INPUT_PRESS_L)
+    addMoveFlag: (VARIABLE_3_TRUE)
     Unknown1525: -360, -200, 360, 200
     cpuIsLow: 
     Unknown1561: 
@@ -450,6 +451,7 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_BOOLEAN_OR)
     moveInput: (INPUT_ANY_DOWNDOWN)
     moveInput: (INPUT_PRESS_H)
+    addMoveFlag: (VARIABLE_3_TRUE)
     Unknown1525: -360, -200, 360, 200
     cpuIsLow: 
     Unknown1561: 
@@ -461,6 +463,7 @@ beginSubroutine: s32'RoundInit'
     characterState: (STANDING)
     moveInput: (INPUT_ANY_DOWNDOWN)
     moveInput: (INPUT_PRESS_H)
+    addMoveFlag: (VARIABLE_3_TRUE)
     addMoveFlag: (HALF)
     Unknown1525: -360, -200, 360, 200
     cpuIsLow: 
