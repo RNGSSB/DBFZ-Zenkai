@@ -3221,7 +3221,7 @@ beginState: s32'NmlAtkAir5D'
 
 beginState: s32'Electric'
   upon: (IMMEDIATE)
-    callSubroutine: s32'cmnNmlAtk5B_AtkInit'
+    callSubroutine: s32'cmnNmlAtk5A2nd_AtkInit'
     damage1: 1000
 	untechAmount: 40
     pushbackX: 50
@@ -3235,26 +3235,19 @@ beginState: s32'Electric'
     blockstunAmount: 19
     chipDamagePercent: 30  
   sprite: s32'htn201_00', 2
-  Unknown1698: 5
-  Unknown1700: 4
   sprite: s32'htn201_00', 2
-  Unknown1709: 0
   sprite: s32'htn201_01', 2
   sprite: s32'htn201_01', 3
   sprite: s32'htn201_01', 2
   sprite: s32'htn201_01', 2
-  Unknown621: 1, -1
   sprite: s32'htn201_02', 2
   sprite: s32'htn201_02', 3
   sprite: s32'htn201_02', 5
   sprite: s32'htn201_03', 3
   physicsImpulseX: 35000
-  Unknown665: 104, 1, 0
   sprite: s32'htn201_03', 3
   horizontalMomentum: 50
   dashStopEffect: 104, 1, 1
-  Unknown670: '0x00000000DC050000E093040000000000'
-
   callSubroutine: s32'cmnRendaChain_Clear_Idling'
   hit: 
   sprite: s32'htn201_06', 1
