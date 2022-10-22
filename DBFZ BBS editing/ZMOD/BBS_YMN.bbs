@@ -5985,15 +5985,15 @@ beginState: s32'Kamehameha'
       Unknown633: 17, 20
       endUpon: 
     endUpon: 
-  sprite: s32'ymn409_00', 3
+  sprite: s32'ymn409_00', 2
   Unknown1698: 6
   Unknown1700: 4
   sprite: s32'ymn409_01', 1
-  sprite: s32'ymn409_01', 2
+  sprite: s32'ymn409_01', 1
   Unknown624: s16'vxxx213', 100, s16'vxxx214', 100, s16'', 0, s16'', 0
-  sprite: s32'ymn409_02', 3
-  sprite: s32'ymn409_03', 3
-  sprite: s32'ymn409_04', 3
+  sprite: s32'ymn409_02', 2
+  sprite: s32'ymn409_03', 2
+  sprite: s32'ymn409_04', 2
   sprite: s32'ymn409_05', 2
   createObject: s32'Kamehameha_Tame', 0
   sprite: s32'ymn409_06', 2

@@ -4850,9 +4850,10 @@ beginState: s32'InterceptKick_C'
     sprite: s32'vgs265_16', 4
     sprite: s32'vgs265_17', 4
     endState: 
+
 	beginState: s32'CommandGrab'
     upon: (IMMEDIATE)
-      callSubroutine: s32'cmnAtkLevel_3_AtkInit'
+      callSubroutine: s32'cmnAtkLevel_2_AtkInit'
       damage1: 700
       hitStop: 6
 	  guardType: (NONE)
@@ -4968,6 +4969,7 @@ beginState: s32'InterceptKick_C'
     sprite: s32'vgs202_15', 3
     sprite: s32'vgs202_16', 3
     endState: 
+
   beginState: s32'BigBangAttack'
     upon: (IMMEDIATE)
       Unknown1668: 20, 1

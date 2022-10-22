@@ -391,6 +391,17 @@ beginSubroutine: s32'RoundInit'
     Unknown1540: 300
     Unknown1539: 30
     endMove: 
+  addMove: s32'DragonFist'
+    moveType: (SPECIAL)
+    characterState: (STANDING)
+    moveInput: (INPUT_214)
+    moveInput: (INPUT_PRESS_KI)
+    addMoveFlag: (VARIABLE_3_TRUE)
+    Unknown1525: -530, -390, 460, 400
+    Unknown1582: 
+    Unknown1558: 
+    Unknown1539: 40
+    endMove: 
   addMove: s32'Kamehameha_Naname'
     moveType: (SPECIAL)
     characterState: (STANDING)
@@ -709,6 +720,7 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'AirGekiretu_B'
   registerMove: s32'AirGekiretu_C'
   registerMove: s32'Kamehameha'
+  registerMove: s32'DragonFist'
   registerMove: s32'Kamehameha_Naname'
   registerMove: s32'AirKamehameha'
   registerMove: s32'AirKamehameha_Naname'
@@ -2905,6 +2917,69 @@ beginState: s32'NmlAtk2C'
   sprite: s32'gks232_09', 3
   recoveryState: 
   headInvul: 0
+  sprite: s32'gks232_10', 3
+  sprite: s32'gks232_11', 3
+  characterSfx: s32'ARC_BTL_GKS_BasaSyuChakuti'
+  sprite: s32'gks232_12', 2
+  sprite: s32'gks232_13', 3
+  sprite: s32'gks232_14', 3
+  sprite: s32'gks022_02', 3
+  sprite: s32'gks022_03', 3
+  sprite: s32'gks022_04', 3
+  beginLabel: s32'loop'
+  sprite: s32'gks022_05', 3
+  sprite: s32'gks022_06', 3
+  sprite: s32'gks022_07', 3
+  endLabel: 
+  gotoLabel: s32'loop'
+  endState: 
+
+beginState: s32'DragonFist'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'Gekiretu_Init'
+    hitAirPushbackX: 20000
+    hitAirPushbackY: 45000
+    damage1: 1000
+    hitStop: 15
+    enableSuperArmor: 1
+    upon: 49
+      Unknown2041: s32'CameraCombo_2C'
+      if: (VARIABLE), (Result)
+        Unknown1067: 4, 80000, 350000
+        cameraMotion: -121595, 151836, 11403, 6468, 8268, 0, 72, 1, 25, 10, 1
+        endIf: 
+      endUpon: 
+    Unknown2121: s32'FinishCamera_NmlAtk2C'
+    endUpon: 
+  sprite: s32'gks232_00', 2
+  Unknown1698: 6
+  Unknown1700: 4
+  sprite: s32'gks232_01', 2
+  sprite: s32'gks232_02', 2
+  Unknown621: 2, 255
+  cmnSfx: s32'ARC_BTL_CMN_TobiagariHook'
+  sprite: s32'gks232_03', 2
+  sprite: s32'gks232_04', 2
+  sprite: s32'gks232_05', 3
+  physicsImpulseX: 50000
+  sprite: s32'gks232_06', 1
+  hit: 
+  enableSuperArmor: 0
+  callSubroutine: s32'cmnRendaChain_Clear_Idling'
+  physicsImpulseX: 15000
+  horizontalMomentum: 80
+  physicsImpulseY: 25000
+  resetGravity: 
+  landingRecovery: 7, 1
+  createObject: s32'cmn_Windpressure_Tate', (CENTER)
+  applyTo: (PREVIOUS)
+    modifyPositionX: 150000
+    modifyPositionY: 300000
+    endApply: 
+  sprite: s32'gks232_07', 2
+  sprite: s32'gks232_08', 2
+  sprite: s32'gks232_09', 3
+  recoveryState: 
   sprite: s32'gks232_10', 3
   sprite: s32'gks232_11', 3
   characterSfx: s32'ARC_BTL_GKS_BasaSyuChakuti'
